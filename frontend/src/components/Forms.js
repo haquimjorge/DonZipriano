@@ -2,6 +2,8 @@ import { Form, Button } from "react-bootstrap";
 
 const Forms = () => {
   return (
+      <div className="container">
+          <h2>Booking form </h2>
     <Form className="col-11 col-xl-6 my-5">
       <Form.Group className="mb-3" controlId="formBasicPassword">
         <Form.Label>First name</Form.Label>
@@ -26,6 +28,7 @@ const Forms = () => {
       Book
       </Button>
     </Form>
+    </div>
   );
 };
 
