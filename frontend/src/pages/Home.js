@@ -1,5 +1,5 @@
 import React from 'react'
-import Navbar from '../components/Navbar'
+import NavBar from '../components/NavBar'
 import Footer from '../components/Footer'
 import CalltoAction from '../components/CalltoAction'
 import AboutUs from '../components/AboutUs'
@@ -9,9 +9,10 @@ const Home = () => {
 
         return(
             <>
-                <Navbar/>
+                <h1>pROBANDO</h1>
+                <NavBar/>
                     <CalltoAction/>
-                    <PlatosSlider/>
+                    {/* <PlatosSlider/> */}
                     <AboutUs/>
                 <Footer/>
             </>

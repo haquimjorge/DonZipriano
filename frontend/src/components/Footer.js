@@ -1,11 +1,10 @@
 import React from "react";
-import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { FaTwitter, FaLinkedin, FaFacebookSquare } from "react-icons/fa";
 // import { IconName } from "react-icons/fc";
 import { Nav } from "react-bootstrap";
 
-const Navbar = () => {
+const Footer = () => {
   return (
     <>
       <div className="footer">
@@ -27,7 +26,7 @@ const Navbar = () => {
             <Link to="/">
               <span className="linkFooter">HOME</span>
             </Link>
-            <Link to="/Cities">
+            <Link to="/Menu">
               <span className="linkFooter">CITIES</span>
             </Link>
           </Nav>
@@ -41,4 +40,4 @@ const Navbar = () => {
     </>
   );
 };
-export default Navbar;
+export default Footer;
