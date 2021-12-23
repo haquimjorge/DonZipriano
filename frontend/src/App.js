@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Menu from "./pages/Menu";
-import Home from "./pages/Home";
+// import Menu from "./pages/Menu";
+// import Home from "./pages/Home";
+import Forms from "./components/Forms";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
          <Route path="/menu" element={<Menu/>}/>
          
     </Routes>  */}
+    <Forms/>
       </BrowserRouter>
     </>
   );
