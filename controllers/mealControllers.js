@@ -2,8 +2,6 @@ const Meal = require('../models/Meal')
 
 const mealControllers = {
     uploadMeal : async (req,res)=>{
-        console.log('esto llega del req.body')
-        console.log(req.body)
         const {name,price,lastPrice,image,description,type} = req.body
         try{
             let newMeal = new Meal({name,price,lastPrice,image,description,type}).save()
@@ -12,11 +10,9 @@ const mealControllers = {
         }catch(e){
             res.json({ success: false, error: e, response: null });
             console.error(e)
-
         }
     },
     getAllMeals : async(req,res)=>{
-        console.log('le pego')
         try{
             let allMeals = await Meal.find()
             res.json({success:true, error: null, response: allMeals})
@@ -24,7 +20,25 @@ const mealControllers = {
         }catch(e){
             res.json({ success: false, error: e, response: null });
             console.error(e)
-
+        }
+    },
+    modifyMeal : async (req,res)=>{
+        const {id} = req.body
+        try{
+            let updatedMeal = await Meal.findOneAndUpdate({_id: id}, { ...req.body })
+            res.json({success:true, error: null, response: updatedMeal})
+        }catch(e){
+            res.json({ success: false, error: e, response: null });
+            console.error(e)
+        }
+    },
+    deleteMeal : async (req,res)=>{
+        try{
+            let deletedMeal = await Meal.findOneAndDelete({_id:id}, {...req.body})
+            res.json({success:true, error: null, response: deletedMeal})
+        }catch(e){
+            res.json({ success: false, error: e, response: null });
+            console.error(e)
         }
     }
 }
