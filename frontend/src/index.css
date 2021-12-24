@@ -1,13 +1,82 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Cantarell&display=swap");
+
+
+* {
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Cantarell", sans-serif;
+  color: #ffffff;
+  background: rgb(34, 102, 55);
+  background: linear-gradient(
+    90deg,
+    rgba(34, 102, 55, 1) 10%,
+    rgba(237, 226, 226, 1) 45%,
+    rgba(186, 9, 9, 1) 80%
+  );
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+/* NAVBAR */
+
+nav {
+  min-height: 10vh;
+  display: flex;
+  background-color: #ffffff;
+}
+
+#logo-nav {
+  width: 10vw;
+}
+
+.header-logo {
+  width: 40vw;
+  min-height: 10vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.navbar {
+  width: 40vw;
+  min-height: 10vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+}
+
+.navbar ul li {
+  width: 10vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  font-size: 2rem;
+  color: #ba0909;
+  text-shadow: 3px 3px 2px rgba(0, 0, 0, 0.15);
+}
+
+/* SEPARATOR SVGS */
+
+.svg-bot {
+  margin-top: -0.5rem;
+}
+
+.svg-top {
+  margin-bottom: -0.5rem;
 }
