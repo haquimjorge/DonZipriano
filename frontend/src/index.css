@@ -8,7 +8,8 @@
 }
 
 body {
-  font-family: "Cantarell", sans-serif;
+  /* font-family: "Cantarell", sans-serif; */
+  font-family: "Permanent Marker", cursive;
   color: #ffffff;
   background: rgb(34, 102, 55);
   background: linear-gradient(
