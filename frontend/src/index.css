@@ -24,7 +24,7 @@ code {
     monospace;
 }
 
-/* NAVBAR */
+/* .............................NAVBAR .............................*/
 
 nav {
   min-height: 10vh;
@@ -71,7 +71,7 @@ nav {
   text-shadow: 3px 3px 2px rgba(0, 0, 0, 0.15);
 }
 
-/* SEPARATOR SVGS */
+/* .............................SEPARATOR SVGS .............................*/
 
 .svg-bot {
   margin-top: -0.5rem;
@@ -79,4 +79,48 @@ nav {
 
 .svg-top {
   margin-bottom: -0.5rem;
+}
+
+/*............................... HERO .............................*/ 
+.hero {
+  min-height: 85vh;
+
+  max-width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-banner {
+  width: 50vw;
+  min-height: 85vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#logo-hero {
+  width: 40vw;
+  
+}
+
+.hero-content {
+  width: 40vw;
+  min-height: 25vh;
+  text-shadow: 4px 4px 2px rgba(0, 0, 0, 0.6);
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  line-height: 7rem;
+}
+
+.restaurant-content {
+  height: 90vh;
+  background-color: rgba(2, 2, 2, 0.096);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),url(./assets/restaurant.jpg);
+  background-position: center;
+  background-size: cover;
+  margin-bottom: -6rem;
+  margin-top: -6rem;
 }

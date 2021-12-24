@@ -9,7 +9,7 @@ const NavBar = () => {
           <div className="header-logo">
             <img
               id="logo-nav"
-              src="/assets/DzLogo.png"
+              src="/assets/DonZLogo.png"
               alt="Logo Don Zipriano"
             />
           </div>
