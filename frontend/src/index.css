@@ -137,14 +137,14 @@ nav {
   margin-top: -6rem;
 }
 
-/* MAIN PAST */
+/* ...................MAIN PAST........... */
 
 .pasta-title {
   color: rgb(34, 102, 55);
   font-family: "Permanent Marker", cursive;
 }
 
-/* MAIN CHEF */
+/* ...............MAIN CHEF.............. */
 
 .chef-content {
   min-height: 90vh;
@@ -191,7 +191,7 @@ nav {
   margin-bottom: 2rem;
 }
 
-/* MAIN RESERVAS */
+/* ..................MAIN RESERVAS................... */
 
 .reservas-content {
   min-height: 40vh;
@@ -225,4 +225,33 @@ nav {
 
 .reservas-container p{
   font-size: 2rem;
+}
+
+/* ................. FOOOTER .......... */
+footer {
+  background-color: #ffffff;
+  min-height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ba0909;
+}
+
+.footer-container {
+  min-height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+iframe {
+  height: 20vh;
+  width: 30vw;
+  margin-left: 3rem;
+  border-radius: 3rem;
+  padding-bottom: 1rem;
+}
+
+footer ul li {
+  list-style: none;
 }

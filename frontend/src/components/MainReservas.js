@@ -18,7 +18,7 @@ const MainReservas = () => {
         </div>
         <div className=" chef-banner">
         <div className="reservas-container">
-            <h2 className="benvenuti-tittle">Take Away de Pizza::</h2>
+            <h2 className="benvenuti-tittle">Take Away de Pizza:</h2>
             <p>
             lunes a lunes de 8:00 a 23:00 hs.
             </p>
