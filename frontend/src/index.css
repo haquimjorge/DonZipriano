@@ -161,8 +161,15 @@ nav {
   width: 20vw;
 }
 
+
+
 .chef-banner {
   flex-direction: column;
+  width: 50vw;
+  min-height: 35vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .nombre-chef {
@@ -184,3 +191,38 @@ nav {
   margin-bottom: 2rem;
 }
 
+/* MAIN RESERVAS */
+
+.reservas-content {
+  min-height: 40vh;
+  background-color: rgba(2, 2, 2, 0.096);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url(./assets/brindis.jpg);
+  background-position: center;
+  background-size: cover;
+  margin-bottom: -6rem;
+  margin-top: -6rem;
+  flex-direction: column;
+}
+
+.reservas-tittle{
+  margin-top: 5rem;
+  font-size: 5rem;
+  color: #ba0909;
+  text-align: center;
+}
+
+.reservas-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.reservas-container h2{
+  font-size: 4rem;
+}
+
+.reservas-container p{
+  font-size: 2rem;
+}

@@ -4,9 +4,6 @@ const MainPizza = () => {
     return (
         <>
         <div className="hero">
-        <div className="hero-banner">
-          <img id="logo-hero" src="/assets/pizzadz.png" alt="Pizza Don Zipriano" />
-        </div>
         <div className="hero-content">
           <h1 className="pasta-title">La pizza è l’essenza della felicità</h1>
           <h2>
@@ -16,6 +13,10 @@ const MainPizza = () => {
             alias perspiciatis!
           </h2>
         </div>
+        <div className="hero-banner">
+          <img id="logo-hero" src="/assets/pizzadz.png" alt="Pizza Don Zipriano" />
+        </div>
+        
       </div>
         </>
     )
