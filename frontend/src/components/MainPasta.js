@@ -8,7 +8,7 @@ const MainPasta = () => {
           <img id="logo-hero" src="/assets/platodz.png" alt="Pasta Don Zipriano" />
         </div>
         <div className="hero-content">
-          <h1>La Migliore Pasta Napoletana.</h1>
+          <h1 className="pasta-title">La Migliore Pasta Napoletana</h1>
           <h2>
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam
             velit ab magni amet molestias modi suscipit quaerat excepturi. Error
