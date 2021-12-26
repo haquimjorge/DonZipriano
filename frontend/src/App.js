@@ -5,7 +5,7 @@ import Reservas from "./pages/Reservas";
 import Contacto from "./pages/Contacto";
 import Nosotros from "./pages/Nosotros";
 import Forms from "./components/Forms";
-import SignIn from "./pages/SignIn";
+import SignUp from "./pages/SignUp";
 
 function App() {
   return (
@@ -16,12 +16,10 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} exact />
           {/* <Route path="/menu" element={<Menu/>}/> */}
-          <Route path="/signin" element={<SignIn />} exact />
-          
-         
           <Route path="/form" element={<Forms />} exact />
           <Route path="/menu" element={<Menu/>}/>
           <Route path="/reservas" element={<Reservas/>}/>
+          <Route path="/signup" element={<SignUp/>}/>
           <Route path="/contacto" element={<Contacto/>}/>
           <Route path="/nosotros" element={<Nosotros/>}/>
         </Routes>

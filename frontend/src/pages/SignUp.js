@@ -1,5 +1,6 @@
 import { React, useState } from "react";
 import NavBar from "../components/NavBar";
+import Footer from "../components/Footer";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import FormR from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
@@ -25,7 +26,7 @@ const StringInput = ({ label, ...props }) => {
   );
 };
 
-const SignIn = () => {
+const SignUp = () => {
   const [showPass, setShowPass] = useState(false);
   const togglePassword = (e) => {
     const checked = e.target.checked;
@@ -39,12 +40,13 @@ const SignIn = () => {
   return (
     <>
       <NavBar />
-      <Container className="bg-dark signin-container">
-        <Row>
-          <Col sm={8}>
-            <h2>
-              Registrate en{" "}
-              <strong className="text-danger">Don Zipriano</strong>
+      <Container className="bg-dark signin-container col-7 ">
+            <div className="logoSignIn">
+            <img id="logo-hero" src="/assets/DonZLogo.png" alt="Logo Don Zipriano" />
+            </div>
+            <h2 className="registrate">
+              Registrate{" "}
+              {/* <strong className="text-danger">Don Zipriano</strong> */}
             </h2>
             <Formik
               initialValues={{
@@ -56,19 +58,19 @@ const SignIn = () => {
               }}
               validationSchema={Yup.object({
                 name: Yup.string()
-                  .max(15, "Must be 15 characters or less")
-                  .required("Required"),
+                  .max(15, "Debe tener 15 caracteres maximo")
+                  .required("Este campo es obligatorio"),
                 lastName: Yup.string()
-                  .max(20, "Must be 20 characters or less")
-                  .required("Required"),
+                  .max(20, "Debe tener 20 caracteres maximo")
+                  .required("Este campo es obligatorio"),
                 email: Yup.string()
-                  .email("Invalid email address")
-                  .required("Required"),
+                  .email("Email invalido")
+                  .required("Este campo es obligatorio"),
                 password: Yup.string()
-                  .min(7, "Must be at least 7 characters")
-                  .max(35, "Cannot exceed 30 characters")
-                  .required("Required"),
-                image: Yup.string().required("Required"),
+                  .min(7, "Debe tener minimo 7 caracteres")
+                  .max(30, "No debe exceder los 30 caracteres")
+                  .required("Este campo es obligatorio"),
+                image: Yup.string().required("Este campo es obligatorio"),
               })}
               onSubmit={(values, { setSubmitting }) => {
                 setTimeout(() => {
@@ -78,7 +80,7 @@ const SignIn = () => {
               }}
             >
               <Form>
-                <div className="d-flex">
+                <div className="d-flex gap-2">
                   <StringInput
                     label="Nombre"
                     name="name"
@@ -131,15 +133,12 @@ const SignIn = () => {
                   type="text"
                   placeholder="kevin"
                 />       
-
-                <button type="submit">Submit</button>
+                <button className="text-light bg-dark p-2 m-2" type="submit">Submit</button>
               </Form>
             </Formik>
-          </Col>
-          <Col sm={4}>imagen de fondo</Col>
-        </Row>
       </Container>
+      <Footer/>
     </>
   );
 };
-export default SignIn;
+export default SignUp;

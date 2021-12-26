@@ -204,11 +204,6 @@ nav {
   margin-top: -6rem;
 }
 
-.signin-container{
-    min-height: 50vh;
-  flex-direction: column;
-}
-
 .reservas-tittle{
   margin-top: 5rem;
   font-size: 5rem;
@@ -256,6 +251,9 @@ footer {
 }
 .redes div{
   margin: 0.5rem;
+}
+.redes div a{
+  color:rgba(138, 61, 61, 0.637)
 }
 
 iframe {
@@ -428,3 +426,24 @@ footer ul li {
     text-shadow: 3px 3px 2px rgba(0, 0, 0, 0.418);
     padding: 0.5rem;
 }
+
+/* ..................SOBRE NOSOTROS................... */
+
+.signin-container{
+  min-height: 50vh;
+flex-direction: column;
+}
+
+.logoSignIn {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+.logoSignIn img{
+  width: 50% !important;
+}
+
+.registrate {
+  text-align: center;
+}
+
