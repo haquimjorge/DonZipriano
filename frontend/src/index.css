@@ -243,6 +243,16 @@ footer {
   justify-content: center;
   align-items: center;
 }
+.footer-container div{
+  margin: 0.5rem;
+}
+.redes {
+  display: flex;
+  margin-left: 0.5rem;  
+}
+.redes div{
+  margin: 0.5rem;
+}
 
 iframe {
   height: 20vh;
