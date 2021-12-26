@@ -1,13 +1,17 @@
 const initialState = {
-    meals:null
+  meals: [],
+};
 
-}
+const mealReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case "fetchMealt":
+      return {
+        ...state,
+        meals: action.payload,
+      };
+    default:
+      return state;
+  }
+};
 
-const mealReducer = (state=initialState, action)=>{
-    switch(action.type){
-        default:
-            return state;
-    }
-}
-
-export default mealReducer
+export default mealReducer;

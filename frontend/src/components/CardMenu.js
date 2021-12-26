@@ -1,6 +1,7 @@
 import React from "react";
 
-const CardMenu = () => {
+const CardMenu = ({ meal }) => {
+  console.log(meal);
   return (
     <>
       <div className="card-menu-container">
