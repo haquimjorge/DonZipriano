@@ -4,12 +4,13 @@ const validator = require("../config/validator")
 const passport = require('../config/passport');
 const mealControllers = require('../controllers/mealControllers')
 
-const {getAllMeals, uploadMeal, modifyMeal} = mealControllers;
+const {getAllMeals, uploadMeal, modifyMeal, deleteMeal} = mealControllers;
 
 Router.route("/meals")
 .get(getAllMeals)
 .post(uploadMeal)
 .put(modifyMeal)
+.delete(deleteMeal)
 
 
 module.exports = Router

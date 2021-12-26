@@ -2,9 +2,9 @@ const Meal = require('../models/Meal')
 
 const mealControllers = {
     uploadMeal : async (req,res)=>{
-        const {name,price,lastPrice,image,description,type} = req.body
+        const {name,price,lastPrice,image,description,type,timeFood} = req.body
         try{
-            let newMeal = new Meal({name,price,lastPrice,image,description,type}).save()
+            let newMeal = new Meal({name,price,lastPrice,image,description,type,timeFood}).save()
             res.json({success:true, error: null, response: newMeal})
 
         }catch(e){
@@ -34,7 +34,7 @@ const mealControllers = {
     },
     deleteMeal : async (req,res)=>{
         try{
-            let deletedMeal = await Meal.findOneAndDelete({_id:id}, {...req.body})
+            let deletedMeal = await Meal.findOneAndDelete({_id:_id}, {...req.body})
             res.json({success:true, error: null, response: deletedMeal})
         }catch(e){
             res.json({ success: false, error: e, response: null });
