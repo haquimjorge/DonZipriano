@@ -6,7 +6,7 @@ const MainChef = () => {
       <div className="chef-content hero">
         <div className="hero-content chef-container">
           <div className="menu-container">
-            <img id="chef-pic" src="/assets/menudz.png" alt="Imagen del Chef" />
+            <img id="chef-pic" src="/assets/menudz.png" alt="Imagen del menu" />
 
             <h1 className="benvenuti-tittle">IL NOSTRO MENU</h1>
           </div>

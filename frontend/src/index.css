@@ -227,7 +227,7 @@ nav {
   font-size: 2rem;
 }
 
-/* ................. FOOOTER .......... */
+/* ................. FOOTER .......... */
 footer {
   background-color: #ffffff;
   min-height: 20vh;
@@ -264,4 +264,68 @@ iframe {
 
 footer ul li {
   list-style: none;
+}
+
+
+
+
+/* ..................SOBRE NOSOTROS................... */
+
+
+.tituloSobreNosotros{
+  margin: 1rem;
+  text-shadow: 3px 3px 2px rgba(0, 0, 0, 0.15);
+}
+
+.nuestraHistoria {  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ba090900;
+  /* color: black; */
+  text-shadow: 3px 3px 2px rgba(0, 0, 0, 0.15);
+  flex-direction: column;
+}
+
+.nuestroChef {  
+  display: flex;  
+  justify-content: center;
+  align-items: center;
+  background-color: #ba090900;
+  text-shadow: 3px 3px 2px rgba(0, 0, 0, 0.418);
+  flex-direction: column;
+}
+
+.nuestraCocina {
+  display: flex;  
+  justify-content: center;
+  align-items: center;
+  background-color: #ba090900;
+  flex-direction: column;
+}
+
+.internoNuestro {
+  display: flex;
+  padding: 0.5rem;
+  width: 70%;
+  margin:1rem;
+}
+
+.divImagenSobreNosotros{
+  display: flex;
+  width: 50%;
+}
+.divImagenSobreNosotros img{
+  width: 100%;
+  border-radius: 10px;
+}
+.sobreNosotrosTexto{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem;
+    text-shadow: 3px 3px 2px rgba(0, 0, 0, 0.418);
+    padding: 0.5rem;
 }
