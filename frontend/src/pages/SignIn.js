@@ -5,6 +5,8 @@ import FormR from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
+import {connect} from 'react-redux'
+import userActions from '../redux/action/userActions'
 
 import * as Yup from "yup";
 import { Formik, Form, useField } from "formik";
@@ -25,7 +27,7 @@ const StringInput = ({ label, ...props }) => {
   );
 };
 
-const SignIn = () => {
+const SignIn = (props) => {
   const [showPass, setShowPass] = useState(false);
   const togglePassword = (e) => {
     const checked = e.target.checked;
@@ -35,6 +37,8 @@ const SignIn = () => {
       setShowPass(false);
     }
   };
+
+  console.log()
 
   return (
     <>
@@ -71,10 +75,9 @@ const SignIn = () => {
                 image: Yup.string().required("Required"),
               })}
               onSubmit={(values, { setSubmitting }) => {
-                setTimeout(() => {
+                  props.uploadUser(values)
                   console.log(values);
                   setSubmitting(false);
-                }, 400);
               }}
             >
               <Form>
@@ -94,15 +97,14 @@ const SignIn = () => {
                     className="w-100"
                   />
                 </div>
-                
-                  <StringInput
-                    label="Correo Electrónico"
-                    name="email"
-                    type="email"
-                    placeholder="kevin"
-                  />
-                  <div>
-                      
+
+                <StringInput
+                  label="Correo Electrónico"
+                  name="email"
+                  type="email"
+                  placeholder="kevin"
+                />
+                <div>
                   <div>
                     <input
                       onClick={(e) => {
@@ -117,29 +119,47 @@ const SignIn = () => {
                       Show Password
                     </label>
                   </div>
-               
-                <StringInput
-                  label="Contraseña"
-                  name="password"
-                  type={showPass ? "text" : "password"}
-                  placeholder="kevin"
-                />
+
+                  <StringInput
+                    label="Contraseña"
+                    name="password"
+                    type={showPass ? "text" : "password"}
+                    placeholder="kevin"
+                  />
                 </div>
                 <StringInput
                   label="URL de Imagen"
                   name="image"
                   type="text"
                   placeholder="kevin"
-                />       
+                />
 
-                <button type="submit">Submit</button>
+                <button className="signin-button" type="submit">
+                  Submit
+                </button>
               </Form>
             </Formik>
           </Col>
-          <Col sm={4}>imagen de fondo</Col>
+          <Col
+            sm={4}
+          >
+             <div class="signin-picture"></div>
+
+
+          </Col>
         </Row>
       </Container>
     </>
   );
 };
-export default SignIn;
+
+const mapStateToProps = (state) => {
+    return {
+        user: state.authReducer.user   
+    };
+  };
+  
+  const mapDispatchToProps = {
+      uploadUser:userActions.uploadUser
+  };
+export default connect(mapStateToProps, mapDispatchToProps)(SignIn);
