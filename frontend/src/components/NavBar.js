@@ -26,7 +26,7 @@ const NavBar = () => {
               <li>
                 <NavLink
                   style={{ color: "#ba0909", textDecoration: "none" }}
-                  to="/"
+                  to="/menu"
                 >
                   Menu
                 </NavLink>
@@ -34,7 +34,7 @@ const NavBar = () => {
               <li>
                 <NavLink
                   style={{ color: "#ba0909", textDecoration: "none" }}
-                  to="/"
+                  to="/reservas"
                 >
                   Reservas
                 </NavLink>
@@ -42,7 +42,7 @@ const NavBar = () => {
               <li>
                 <NavLink
                   style={{ color: "#ba0909", textDecoration: "none" }}
-                  to="/"
+                  to="/contacto"
                 >
                   Contacto
                 </NavLink>
@@ -50,7 +50,7 @@ const NavBar = () => {
               <li>
                 <NavLink
                   style={{ color: "#ba0909", textDecoration: "none" }}
-                  to="/"
+                  to="/nosotros"
                 >
                   Nosotros
                 </NavLink>

@@ -1,9 +1,10 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Forms from "./components/Forms";
-// import Menu from "./pages/Menu";
+import Menu from "./pages/Menu";
 import Home from "./pages/Home";
-
-// import Forms from "./components/Forms";
+import Reservas from "./pages/Reservas";
+import Contacto from "./pages/Contacto";
+import Nosotros from "./pages/Nosotros";
+import Forms from "./components/Forms";
 import SignIn from "./pages/SignIn";
 
 function App() {
@@ -19,6 +20,10 @@ function App() {
           
          
           <Route path="/form" element={<Forms />} exact />
+          <Route path="/menu" element={<Menu/>}/>
+          <Route path="/reservas" element={<Reservas/>}/>
+          <Route path="/contacto" element={<Contacto/>}/>
+          <Route path="/nosotros" element={<Nosotros/>}/>
         </Routes>
         {/* <Forms/> */}
       </BrowserRouter>

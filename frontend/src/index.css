@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Cantarell&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
 
 * {
   padding: 0;
@@ -8,7 +8,8 @@
 }
 
 body {
-  font-family: "Cantarell", sans-serif;
+  /* font-family: "Cantarell", sans-serif; */
+  font-family: "Permanent Marker", cursive;
   color: #ffffff;
   background: rgb(34, 102, 55);
   background: linear-gradient(
@@ -20,11 +21,12 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
 /* .............................NAVBAR .............................*/
+
 
 nav {
   min-height: 10vh;
@@ -75,20 +77,28 @@ nav {
 
 .svg-bot {
   margin-top: -0.5rem;
+  
 }
+
+
 
 .svg-top {
   margin-bottom: -0.5rem;
+  
 }
 
-/*............................... HERO .............................*/ 
+/*............................... HERO .............................*/
 .hero {
   min-height: 85vh;
-
   max-width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.benvenuti-tittle {
+  color: #ba0909;
+  font-family: "Permanent Marker", cursive;
 }
 
 .hero-banner {
@@ -101,24 +111,93 @@ nav {
 
 #logo-hero {
   width: 40vw;
-  
 }
 
 .hero-content {
   width: 40vw;
   min-height: 25vh;
   text-shadow: 4px 4px 2px rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
 }
 
 .hero-content h1 {
-  font-size: 3.5rem;
+  font-size: 4.5rem;
   line-height: 7rem;
 }
 
 .restaurant-content {
   height: 90vh;
   background-color: rgba(2, 2, 2, 0.096);
-  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),url(./assets/restaurant.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url(./assets/restaurant.jpg);
+  background-position: center;
+  background-size: cover;
+  margin-bottom: -6rem;
+  margin-top: -6rem;
+}
+
+/* ...................MAIN PAST........... */
+
+.pasta-title {
+  color: rgb(34, 102, 55);
+  font-family: "Permanent Marker", cursive;
+}
+
+/* ...............MAIN CHEF.............. */
+
+.chef-content {
+  min-height: 90vh;
+  background-color: rgba(2, 2, 2, 0.096);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url(./assets/cheflour.jpg);
+  background-position: center;
+  background-size: cover;
+  margin-bottom: -6rem;
+  margin-top: -6rem;
+}
+
+#chef-pic {
+  width: 20vw;
+}
+
+
+
+.chef-banner {
+  flex-direction: column;
+  width: 50vw;
+  min-height: 35vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nombre-chef {
+  font-family: "Permanent Marker", cursive;
+  font-size: 4rem;
+}
+
+.menu-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: rotate(-15deg);
+}
+
+.subtittle-brangi {
+  width: 35vw;
+  font-family: "Permanent Marker", cursive;
+  margin-bottom: 2rem;
+}
+
+/* ..................MAIN RESERVAS................... */
+
+.reservas-content {
+  min-height: 40vh;
+  background-color: rgba(2, 2, 2, 0.096);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url(./assets/brindis.jpg);
   background-position: center;
   background-size: cover;
   margin-bottom: -6rem;
@@ -127,4 +206,130 @@ nav {
 
 .signin-container{
     min-height: 50vh;
+  flex-direction: column;
+}
+
+.reservas-tittle{
+  margin-top: 5rem;
+  font-size: 5rem;
+  color: #ba0909;
+  text-align: center;
+}
+
+.reservas-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.reservas-container h2{
+  font-size: 4rem;
+}
+
+.reservas-container p{
+  font-size: 2rem;
+}
+
+/* ................. FOOTER .......... */
+footer {
+  background-color: #ffffff;
+  min-height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ba0909;
+}
+
+.footer-container {
+  min-height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer-container div{
+  margin: 0.5rem;
+}
+.redes {
+  display: flex;
+  margin-left: 0.5rem;  
+}
+.redes div{
+  margin: 0.5rem;
+}
+
+iframe {
+  height: 20vh;
+  width: 30vw;
+  margin-left: 3rem;
+  border-radius: 3rem;
+  padding-bottom: 1rem;
+}
+
+footer ul li {
+  list-style: none;
+}
+
+
+
+
+/* ..................SOBRE NOSOTROS................... */
+
+
+.tituloSobreNosotros{
+  margin: 1rem;
+  text-shadow: 3px 3px 2px rgba(0, 0, 0, 0.15);
+}
+
+.nuestraHistoria {  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ba090900;
+  /* color: black; */
+  text-shadow: 3px 3px 2px rgba(0, 0, 0, 0.15);
+  flex-direction: column;
+}
+
+.nuestroChef {  
+  display: flex;  
+  justify-content: center;
+  align-items: center;
+  background-color: #ba090900;
+  text-shadow: 3px 3px 2px rgba(0, 0, 0, 0.418);
+  flex-direction: column;
+}
+
+.nuestraCocina {
+  display: flex;  
+  justify-content: center;
+  align-items: center;
+  background-color: #ba090900;
+  flex-direction: column;
+}
+
+.internoNuestro {
+  display: flex;
+  padding: 0.5rem;
+  width: 70%;
+  margin:1rem;
+}
+
+.divImagenSobreNosotros{
+  display: flex;
+  width: 50%;
+}
+.divImagenSobreNosotros img{
+  width: 100%;
+  border-radius: 10px;
+}
+.sobreNosotrosTexto{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem;
+    text-shadow: 3px 3px 2px rgba(0, 0, 0, 0.418);
+    padding: 0.5rem;
 }
