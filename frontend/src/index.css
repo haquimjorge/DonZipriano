@@ -265,3 +265,98 @@ iframe {
 footer ul li {
   list-style: none;
 }
+
+/* ---------- -------- CARD MENU ---------- */
+
+.card-menu-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 4px 4px 2px rgba(0, 0, 0, 0.6);
+}
+
+.card-menu {
+  width: 50vw;
+  /* border: 1px solid red; */
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgba(2, 2, 2, 0.096);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.418), rgba(0, 0, 0, 0.3)),
+    url(./assets/fondomenu.jpg);
+    background-size: cover;
+}
+
+.title-menu-container {
+  height: 15vh;
+  width: 50vw;
+  display: flex;
+}
+
+.logo-menu {
+  width: 15vw;
+}
+
+.titulo-menu {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.titulo-menu h1{
+  text-shadow: 4px 4px 2px rgba(0, 0, 0, 0.6);
+}
+
+.entradas {
+  width: 50vw;
+  min-height: 30vh;
+  /* border: 1px solid blue; */
+  margin-top: 4rem;
+}
+
+.entradas h4{
+  font-size: 2rem;
+  text-align: center;
+}
+
+.platos-entradas {
+  width: 50vw;
+  /* border: 1px solid green; */
+  min-height: 30vh;
+}
+
+.plato-principal {
+  width: 50vw;
+  min-height: 30vh;
+  /* border: 1px solid yellow; */
+}
+
+.plato-principal h4 {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.postre {
+  width: 50vw;
+  min-height: 30vh;
+  /* border: 1px solid orange; */
+}
+
+.postre h4 {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.bebestible {
+  width: 50vw;
+  min-height: 30vh;
+  /* border: 1px solid grey; */
+}
+
+.bebestible h4 {
+  font-size: 2rem;
+  text-align: center;
+}
