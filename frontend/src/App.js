@@ -1,7 +1,10 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Forms from "./components/Forms";
 // import Menu from "./pages/Menu";
 import Home from "./pages/Home";
+
 // import Forms from "./components/Forms";
+import SignIn from "./pages/SignIn";
 
 function App() {
   return (
@@ -12,6 +15,10 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} exact />
           {/* <Route path="/menu" element={<Menu/>}/> */}
+          <Route path="/signin" element={<SignIn />} exact />
+          
+         
+          <Route path="/form" element={<Forms />} exact />
         </Routes>
         {/* <Forms/> */}
       </BrowserRouter>
