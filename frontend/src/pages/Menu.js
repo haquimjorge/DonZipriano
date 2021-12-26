@@ -1,22 +1,20 @@
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 import Navbar from "../components/NavBar";
 import Footer from "../components/Footer";
 import CardMenu from "../components/CardMenu";
 import { connect } from "react-redux";
 import mealActions from "../redux/action/mealActions";
 
-
 const Menu = (props) => {
-  console.log(props.mealt);
 
   useEffect(() => {
-    props.fetchMealt()
-  }, [])
+    props.fetchMealt();
+  }, []);
 
   return (
     <>
       <Navbar />
-      <CardMenu mealt="mealt"/>
+      <CardMenu meal={props.mealt} />
       <Footer />
     </>
   );
