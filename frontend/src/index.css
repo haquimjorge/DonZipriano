@@ -202,6 +202,10 @@ nav {
   background-size: cover;
   margin-bottom: -6rem;
   margin-top: -6rem;
+}
+
+.signin-container{
+    min-height: 50vh;
   flex-direction: column;
 }
 
@@ -227,7 +231,7 @@ nav {
   font-size: 2rem;
 }
 
-/* ................. FOOOTER .......... */
+/* ................. FOOTER .......... */
 footer {
   background-color: #ffffff;
   min-height: 20vh;
@@ -265,6 +269,7 @@ iframe {
 footer ul li {
   list-style: none;
 }
+
 
 /* ---------- -------- CARD MENU ---------- */
 
@@ -359,4 +364,68 @@ footer ul li {
 .bebestible h4 {
   font-size: 2rem;
   text-align: center;
+
+
+
+
+/* ..................SOBRE NOSOTROS................... */
+
+
+.tituloSobreNosotros{
+  margin: 1rem;
+  text-shadow: 3px 3px 2px rgba(0, 0, 0, 0.15);
+}
+
+.nuestraHistoria {  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ba090900;
+  /* color: black; */
+  text-shadow: 3px 3px 2px rgba(0, 0, 0, 0.15);
+  flex-direction: column;
+}
+
+.nuestroChef {  
+  display: flex;  
+  justify-content: center;
+  align-items: center;
+  background-color: #ba090900;
+  text-shadow: 3px 3px 2px rgba(0, 0, 0, 0.418);
+  flex-direction: column;
+}
+
+.nuestraCocina {
+  display: flex;  
+  justify-content: center;
+  align-items: center;
+  background-color: #ba090900;
+  flex-direction: column;
+}
+
+.internoNuestro {
+  display: flex;
+  padding: 0.5rem;
+  width: 70%;
+  margin:1rem;
+}
+
+.divImagenSobreNosotros{
+  display: flex;
+  width: 50%;
+}
+.divImagenSobreNosotros img{
+  width: 100%;
+  border-radius: 10px;
+}
+.sobreNosotrosTexto{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem;
+    text-shadow: 3px 3px 2px rgba(0, 0, 0, 0.418);
+    padding: 0.5rem;
+>>>>>>> 9053daa88f92da8f8f40296b13911d774f1d6d51
 }

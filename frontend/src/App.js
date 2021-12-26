@@ -4,7 +4,8 @@ import Home from "./pages/Home";
 import Reservas from "./pages/Reservas";
 import Contacto from "./pages/Contacto";
 import Nosotros from "./pages/Nosotros";
-// import Forms from "./components/Forms";
+import Forms from "./components/Forms";
+import SignIn from "./pages/SignIn";
 
 function App() {
   return (
@@ -14,6 +15,11 @@ function App() {
         {/* <ToastContainer autoClose={4000} /> */}
         <Routes>
           <Route path="/" element={<Home />} exact />
+          {/* <Route path="/menu" element={<Menu/>}/> */}
+          <Route path="/signin" element={<SignIn />} exact />
+          
+         
+          <Route path="/form" element={<Forms />} exact />
           <Route path="/menu" element={<Menu/>}/>
           <Route path="/reservas" element={<Reservas/>}/>
           <Route path="/contacto" element={<Contacto/>}/>
