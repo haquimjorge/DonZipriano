@@ -7,6 +7,8 @@ import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 import {connect} from 'react-redux'
 import userActions from '../redux/action/userActions'
+import { Navigate } from "react-router-dom";
+
 
 import * as Yup from "yup";
 import { Formik, Form, useField } from "formik";
@@ -38,7 +40,13 @@ const SignIn = (props) => {
     }
   };
 
-  console.log()
+  console.log('COMPONENTE: ESTE ES EL USER')
+  console.log(props.user)
+  console.log('COMPONENTE: ESTE ES EL ERROR')
+  console.log(props.error)
+  if(props.user){
+    return <Navigate to="/" />  
+  }
 
   return (
     <>
@@ -75,8 +83,7 @@ const SignIn = (props) => {
                 image: Yup.string().required("Required"),
               })}
               onSubmit={(values, { setSubmitting }) => {
-                  props.uploadUser(values)
-                  console.log(values);
+                  props.saveUser(values)
                   setSubmitting(false);
               }}
             >
@@ -137,6 +144,7 @@ const SignIn = (props) => {
                 <button className="signin-button" type="submit">
                   Submit
                 </button>
+                {props.error? <div className="text-danger">{props.error[0].message}</div> : ''}
               </Form>
             </Formik>
           </Col>
@@ -155,11 +163,12 @@ const SignIn = (props) => {
 
 const mapStateToProps = (state) => {
     return {
-        user: state.authReducer.user   
+        user: state.authReducer.user,
+        error: state.authReducer.error
     };
   };
   
   const mapDispatchToProps = {
-      uploadUser:userActions.uploadUser
+      saveUser:userActions.saveUser
   };
 export default connect(mapStateToProps, mapDispatchToProps)(SignIn);

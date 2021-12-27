@@ -1,17 +1,52 @@
 const User = require("../models/User");
+const bcryptjs = require("bcryptjs"); //encripta y desencripta
+const jwt = require("jsonwebtoken");
 
 const userControllers = {
   uploadUser: async (req, res) => {
     const { name, lastName, email, password, image } = req.body;
+    let user = await User.findOne({email})
     try {
-      let newUser = await new User({
-        name,
-        lastName,
-        email,
-        password,
-        image,
-      }).save();
-      res.json({ success: true, error: null, response: newUser });
+        if(user){
+            if(user.googleUser){
+                const token = jwt.sign({ user }, process.env.SECRET_KEY);
+                console.log('if googleuser token '+JSON.stringify(token))
+                return res.json({
+                    response: user,
+                    success: true,
+                    error: null,
+                    token: token,
+                  });
+                  
+            }
+        }
+        if(user){
+            res.json({
+                response: null,
+                success: false,
+                error: [
+                  {
+                    message: "Email " + user.email + " is already taken",
+                    path: ["email"],
+                  },
+                ],
+              });
+              console.log('email taken')
+        } else{
+            const passwordHashed = bcryptjs.hashSync(password, 10);
+        let user = await new User({
+          name,
+          lastName,
+          email,
+          password: passwordHashed,
+          image
+        }).save();
+        const token = jwt.sign({ user }, process.env.SECRET_KEY);
+
+        res.json({ response: user, success: true, error: null, token: token });
+        console.log('se crea new user')
+        }
+  
     } catch (e) {
       res.json({ success: false, error: e, response: null });
       console.error(e);
@@ -49,5 +84,13 @@ const userControllers = {
       console.error(e);
     }
   },
+  authUser: (req, res) => {
+    try {
+      const userAuth = req.user;
+      res.json({ success: true, response: userAuth, error: null });
+    } catch (e) {
+      res.json({ success: false, response: null, error: e });
+    }
+  }
 };
 module.exports = userControllers;

@@ -13,6 +13,7 @@ const Menu = (props) => {
     props.fetchMealt()
   }, [])
 
+
   return (
     <>
       <Navbar />
