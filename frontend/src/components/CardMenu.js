@@ -1,19 +1,20 @@
 import React from "react";
-
+import "animate.css";
 
 const CardMenu = ({ meal }) => {
-
   console.log(meal);
 
-  const mealEntradas = meal.filter((meal) => meal.timeFood === "Entrada")
-  const mealPlatosPrincipales = meal.filter((meal) => meal.timeFood === "Plato Principal")
-  const mealPostres = meal.filter((meal) => meal.timeFood === "Postre")
-  const mealBebidas = meal.filter((meal) => meal.timeFood === "Bebestible")
+  const mealEntradas = meal.filter((meal) => meal.timeFood === "Entrada");
+  const mealPlatosPrincipales = meal.filter(
+    (meal) => meal.timeFood === "Plato Principal"
+  );
+  const mealPostres = meal.filter((meal) => meal.timeFood === "Postre");
+  const mealBebidas = meal.filter((meal) => meal.timeFood === "Bebestible");
 
-  console.log(mealEntradas)
-  console.log(mealPlatosPrincipales)
-  console.log(mealPostres)
-  console.log(mealBebidas)
+  console.log(mealEntradas);
+  console.log(mealPlatosPrincipales);
+  console.log(mealPostres);
+  console.log(mealBebidas);
 
   return (
     <>
@@ -36,23 +37,23 @@ const CardMenu = ({ meal }) => {
             <div className="platos-entradas">
               {mealEntradas.map((entrada) => {
                 return (
-                  <div className="card-food-container">
+                  <div className="card-food-container animate__animated animate__backInLeft">
                     <h5>{entrada.name}</h5>
-                    <div className="food-content-container">
-                    <div className="card-food-content">
-                      <p>{entrada.description}</p>
-                      <p>{entrada.type}</p>
-                      <p className="precios-menu">$ {entrada.price}</p>
-                    </div>
-                    <div className="card-food-pic" style={{
-                            backgroundImage: `URL(${entrada.image})`,
-                          }}>
-                      
-                    </div>
-                    
+                    <div className="food-content-container ">
+                      <div className="card-food-content">
+                        <p>{entrada.description}</p>
+                        <p>{entrada.type}</p>
+                        <p className="precios-menu">$ {entrada.price}</p>
+                      </div>
+                      <div
+                        className="card-food-pic"
+                        style={{
+                          backgroundImage: `URL(${entrada.image})`,
+                        }}
+                      ></div>
                     </div>
                   </div>
-                )
+                );
               })}
             </div>
           </div>
@@ -64,20 +65,20 @@ const CardMenu = ({ meal }) => {
                   <div className="card-food-container">
                     <h5>{plato.name}</h5>
                     <div className="food-content-container">
-                    <div className="card-food-content">
-                      <p>{plato.description}</p>
-                      <p>{plato.type}</p>
-                      <p className="precios-menu">$ {plato.price}</p>
-                    </div>
-                    <div className="card-food-pic" style={{
-                            backgroundImage: `URL(${plato.image})`,
-                          }}>
-                      
-                    </div>
-                    
+                      <div className="card-food-content">
+                        <p>{plato.description}</p>
+                        <p>{plato.type}</p>
+                        <p className="precios-menu">$ {plato.price}</p>
+                      </div>
+                      <div
+                        className="card-food-pic"
+                        style={{
+                          backgroundImage: `URL(${plato.image})`,
+                        }}
+                      ></div>
                     </div>
                   </div>
-                )
+                );
               })}
             </div>
           </div>
@@ -89,20 +90,20 @@ const CardMenu = ({ meal }) => {
                   <div className="card-food-container">
                     <h5>{postre.name}</h5>
                     <div className="food-content-container">
-                    <div className="card-food-content">
-                      <p>{postre.description}</p>
-                      <p>{postre.type}</p>
-                      <p className="precios-menu">$ {postre.price}</p>
-                    </div>
-                    <div className="card-food-pic" style={{
-                            backgroundImage: `URL(${postre.image})`,
-                          }}>
-                      
-                    </div>
-                    
+                      <div className="card-food-content">
+                        <p>{postre.description}</p>
+                        <p>{postre.type}</p>
+                        <p className="precios-menu">$ {postre.price}</p>
+                      </div>
+                      <div
+                        className="card-food-pic"
+                        style={{
+                          backgroundImage: `URL(${postre.image})`,
+                        }}
+                      ></div>
                     </div>
                   </div>
-                )
+                );
               })}
             </div>
           </div>
@@ -114,20 +115,20 @@ const CardMenu = ({ meal }) => {
                   <div className="card-food-container">
                     <h5>{bebida.name}</h5>
                     <div className="food-content-container">
-                    <div className="card-food-content">
-                      <p>{bebida.description}</p>
-                      <p>{bebida.type}</p>
-                      <p className="precios-menu">$ {bebida.price}</p>
-                    </div>
-                    <div className="card-food-pic" style={{
-                            backgroundImage: `URL(${bebida.image})`,
-                          }}>
-                      
-                    </div>
-                    
+                      <div className="card-food-content">
+                        <p>{bebida.description}</p>
+                        <p>{bebida.type}</p>
+                        <p className="precios-menu">$ {bebida.price}</p>
+                      </div>
+                      <div
+                        className="card-food-pic"
+                        style={{
+                          backgroundImage: `URL(${bebida.image})`,
+                        }}
+                      ></div>
                     </div>
                   </div>
-                )
+                );
               })}
             </div>
           </div>
