@@ -36,6 +36,10 @@ function App(props) {
             ""
           )}
 
+<<<<<<< HEAD
+=======
+          {/* <Route path="/form" element={<Forms />} exact /> */}
+>>>>>>> 6cf3cdb33312240813bd2f9f5a02011e3dfbc93d
           <Route path="/menu" element={<Menu />} />
           <Route path="/reservas" element={<Reservas />} />
           <Route path="/eventos" element={<Eventos/>} />
