@@ -139,7 +139,7 @@ nav {
 
 /*............................... HERO .............................*/
 .hero {
-  min-height: 85vh;
+  min-height: 100vh;
   max-width: 100vw;
   display: flex;
   justify-content: center;
@@ -152,7 +152,7 @@ nav {
 }
 
 .hero-banner {
-  width: 50vw;
+  width: 80vw;
   min-height: 85vh;
   display: flex;
   justify-content: center;
@@ -177,14 +177,14 @@ nav {
 }
 
 .restaurant-content {
-  height: 90vh;
+  height: 100vh;
   background-color: rgba(2, 2, 2, 0.096);
   background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
     url(./assets/restaurant.jpg);
   background-position: center;
   background-size: cover;
-  margin-bottom: -6rem;
-  margin-top: -6rem;
+  /* margin-bottom: -6rem;
+  margin-top: -6rem; */
 }
 
 /* ...................MAIN PAST........... */
@@ -236,7 +236,7 @@ nav {
 }
 
 .subtittle-brangi {
-  width: 35vw;
+  width: 50vw;
   font-family: "Permanent Marker", cursive;
   margin-bottom: 2rem;
 }
@@ -296,20 +296,28 @@ footer {
   margin: 0.5rem;
 }
 .redes {
+  
   display: flex;
-  margin-left: 0.5rem;  
+  flex-direction: column;
+   
 }
 .redes div{
+  
   margin: 0.5rem;
 }
 .redes div a{
+  
   color:rgba(138, 61, 61, 0.637)
+}
+
+.icon-f{
+  font-size: 2rem;
 }
 
 iframe {
   height: 20vh;
-  width: 30vw;
-  margin-left: 3rem;
+  width: 20vw;
+  margin-left: 3rem; 
   border-radius: 3rem;
   padding-bottom: 1rem;
 }
@@ -612,4 +620,118 @@ text-align: center;
 
 @keyframes blink {
   50% { border-color: transparent;}
+}
+
+
+
+
+@media  (max-width: 420px) {
+  .restaurant-content{   
+    display: flex;
+    justify-content: space-around;
+   
+  } 
+  .main-text-hero{
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  .hero-content h1 {
+    font-size: 3rem;
+    line-height: 7rem;
+    
+  }
+  
+  .hero-content{
+    width:100%;
+    padding:0.5rem;
+    font-size: 1rem;
+  }
+
+    .hero-banner{
+      min-height: 30vh;
+    }
+
+  .hero{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .pasta-title{
+    padding: 1rem;
+    text-align: center;
+    font-size: 2em!important;
+   margin-top: 2rem;
+  }
+
+  .pasta-text{
+    font-size: 1rem;
+    padding-bottom:3rem!important;
+    margin:1rem;
+    text-align: center;
+  }
+
+  .menu-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform:none;
+  }
+
+  #logo-hero{
+    width:70%;
+  }
+  #chef-pic{
+    width:40%;
+    margin-top:2rem!important;
+  }
+
+  .benvenuti-tittle, .nombre-chef{
+    font-size: 2rem!important;
+    text-align: center;
+  }
+
+  .subtittle-brangi h4{
+    font-size: 1rem!important;
+    padding:1rem;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+ 
+ 
+  iframe {
+    height: 20vh;
+    width: 50vw;
+     margin-left: 0rem;
+    border-radius: 3rem;
+    padding-bottom: 1rem;
+  }
+
+  .footer-integrantes{
+    font-size: 0.5rem;
+   
+  }
+  .icon-f{
+    font-size: 1rem!important;
+  }
+  footer {
+    background-color: #ffffff;
+    min-height: 20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #ba0909;
+  }
+
+  .footer-container{
+    display: flex;
+    justify-content: space-around;
+  }
+  .footer-integrantes{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+  }
 }

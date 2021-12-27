@@ -6,7 +6,7 @@ const Hero = () => {
       <div className="restaurant-content hero">
         <div className="hero-content">
           <h1 className="benvenuti-tittle maquina-escribir-benvenuti">BENVENUTI</h1>
-          <h2>
+          <h2 className="main-text-hero">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam
             velit ab magni amet molestias modi suscipit quaerat excepturi. Error
             esse voluptatum ab dignissimos? Mollitia, molestiae qui nesciunt eum
