@@ -43,8 +43,8 @@ const NavBar = (props) => {
             <Link className="nav-link" to="/reservas">
               Reservas
             </Link>
-            <Link className="nav-link" to="/contacto">
-              Contacto
+            <Link className="nav-link" to="/eventos">
+              Eventos
             </Link>
             <Link className="nav-link" to="/nosotros">
               Nosotros

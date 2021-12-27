@@ -2,9 +2,9 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Menu from "./pages/Menu";
 import Home from "./pages/Home";
 import Reservas from "./pages/Reservas";
-import Contacto from "./pages/Contacto";
+import Eventos from "./pages/Eventos";
 import Nosotros from "./pages/Nosotros";
-import Forms from "./components/Forms";
+// import Forms from "./components/FormEventos";
 import SignUp from "./pages/SignUp";
 import SignIn from "./pages/SignIn";
 import { useEffect } from "react";
@@ -32,10 +32,10 @@ function App(props) {
           {!token? <Route path="/ingresar" element={<SignIn />} exact /> : '' }
           {!token? <Route path="/registrarse" element={<SignUp />} exact /> : '' }
           
-          <Route path="/form" element={<Forms />} exact />
+          {/* <Route path="/form" element={<Forms />} exact /> */}
           <Route path="/menu" element={<Menu />} />
           <Route path="/reservas" element={<Reservas />} />
-          <Route path="/contacto" element={<Contacto />} />
+          <Route path="/eventos" element={<Eventos/>} />
           <Route path="/nosotros" element={<Nosotros />} />
           <Route path="*" element={<Home />} />
         </Routes>
