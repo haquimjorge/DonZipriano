@@ -2,8 +2,8 @@ import { Form, Button } from "react-bootstrap";
 
 const FormEventos = () => {
   return (
-    <div className="container">
-      <h4>Completa el siguiente formulario y nos contactaremos pronto</h4>
+    <div className="container formEventos">
+      <h4>Completa el siguiente formulario y nos contactaremos pronto:</h4>
       <Form className="col-11 col-xl-6 my-5">
         <Form.Group className="mb-3" controlId="formBasicPassword">
           <Form.Label>Nombre</Form.Label>

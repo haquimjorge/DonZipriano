@@ -7,12 +7,10 @@ const Eventos = () => {
   return (
     <>
       <NavBar />
-      <h1>Consultas por eventos</h1>
-      <div>
-        <div className="contenedorLogoEventos">
-          <img src="/assets/DonZLogo.png" alt="Logo Don Zipriano" />
-        </div>
-        <div>
+      <div class='wave-top'></div>
+      <h1 className="tituloEventos">Consultas por eventos</h1>
+      <div className="contenedorEventos">
+        <div className="contenedorDescripcionEventos">
           <p>
             Don Zipriano es la sede ideal para eventos privados y corporativos!
             Ofreciendo un extenso salon contamos con mas de 25 mesas, cocina, equipo de sonido, y
@@ -21,9 +19,13 @@ const Eventos = () => {
              <p>Estamos disponibles para hacer reuniones de planeamiento y hacer un menu a gusto del cliente para el evento.</p>
              <p>Complete el siguiente formulario y nos contactaaremos brevemente via mail, o contactenos a +54 11 3540-2027 (Whatsapp) / 4672-3089 (telefono del local)</p>
         </div>
+        <div className="contenedorLogoEventos">
+          <img src="/assets/DonZLogo.png" alt="Logo Don Zipriano" />
+        </div>
       </div>
-
+      <div className="contenedorFormEventos">
       <FormEventos />
+      </div>
       <Footer />
     </>
   );

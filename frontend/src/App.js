@@ -36,7 +36,6 @@ function App(props) {
             ""
           )}
 
-          <Route path="/form" element={<Forms />} exact />
           <Route path="/menu" element={<Menu />} />
           <Route path="/reservas" element={<Reservas />} />
           <Route path="/eventos" element={<Eventos/>} />
