@@ -6,10 +6,13 @@ const mealControllers = require('../controllers/mealControllers')
 const userControllers = require('../controllers/userControllers')
 
 const {getAllMeals, uploadMeal, modifyMeal,deleteMeal} = mealControllers;
-const {uploadUser, authUser, signIn} = userControllers
+const {uploadUser, authUser, signIn, signUp} = userControllers
+
+Router.route('/user/google')
+.post(validator,uploadUser)
 
 Router.route('/user/registrar')
-.post(validator,uploadUser)
+.post(validator,signUp)
 
 Router.route("/user/autenticar").get(passport.authenticate('jwt',{session:false}), authUser)
 

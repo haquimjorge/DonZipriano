@@ -55,7 +55,7 @@ const SignUp = (props) => {
     };
     props.saveUser(googleUser)
   }
-  
+
   if (props.user) {
     return <Navigate to="/" />;
   }
@@ -107,7 +107,7 @@ const SignUp = (props) => {
             image: Yup.string().required("Este campo es obligatorio"),
           })}
           onSubmit={(values, { setSubmitting }) => {
-            props.saveUser(values);
+            props.signUp(values);
             setSubmitting(false);
           }}
         >
@@ -201,6 +201,6 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = {
-  saveUser: userActions.saveUser,
+  signUp: userActions.signUp,
 };
 export default connect(mapStateToProps, mapDispatchToProps)(SignUp);
