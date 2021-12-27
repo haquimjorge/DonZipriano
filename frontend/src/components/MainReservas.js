@@ -3,8 +3,8 @@ import React from "react";
 const MainReservas = () => {
   return (
     <>
-      {/* <div className="reservas-content hero">
-        <h1 className="reservas-tittle">HORARIOS Y RESERVAS</h1>
+      <div className="reservas-content hero">
+        <h1 className="pasta-title hsyreservas">HORARIOS Y RESERVAS</h1>
         <div className="hero-content chef-container">
           <div className="reservas-container">
             <h2 className="benvenuti-tittle">Restaurante:</h2>
@@ -18,16 +18,16 @@ const MainReservas = () => {
         </div>
         <div className=" chef-banner">
         <div className="reservas-container">
-            <h2 className="benvenuti-tittle">Take Away de Pizza:</h2>
+            <h2 className="benvenuti-tittle" >Take Away de Pizza:</h2>
             <p>
             lunes a lunes de 8:00 a 23:00 hs.
             </p>
-            <p>
+            <p className="pb-5">
             Hacé tu pedido por WhatsApp
             </p>
           </div>
         </div>
-      </div> */}
+      </div>
     </>
   );
 };

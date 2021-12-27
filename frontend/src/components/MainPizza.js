@@ -14,7 +14,7 @@ const MainPizza = () => {
           </h2>
         </div>
         <div className="hero-banner">
-          <img id="logo-hero" src="/assets/pizzadz.png" alt="Pizza Don Zipriano" />
+          <img id="logo-hero1" src="/assets/pizzadz.png" alt="Pizza Don Zipriano" />
         </div>
         
       </div>

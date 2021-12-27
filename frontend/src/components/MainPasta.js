@@ -9,11 +9,9 @@ const MainPasta = () => {
         </div>
         <div className="hero-content">
           <h1 className="pasta-title">La Migliore Pasta Napoletana</h1>
-          <h2 className="pasta-text">
+          <h2 className="pasta-text pb-5">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam
-            velit ab magni amet molestias modi suscipit quaerat excepturi. Error
-            esse voluptatum ab dignissimos? Mollitia, molestiae qui nesciunt eum
-            alias perspiciatis!
+            velit ab magni amet molestias
           </h2>
         </div>
       </div>

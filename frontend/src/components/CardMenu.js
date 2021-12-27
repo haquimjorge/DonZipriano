@@ -131,7 +131,8 @@ const CardMenu = ({ meal }) => {
             </div>
           </div>
           <div className="postre">
-            <h4>Postres</h4>
+            
+            <h4 className="title-postres">Postres</h4>
             <div className="slider-container-main">
               <div className="slider-container">
                 <Slider
