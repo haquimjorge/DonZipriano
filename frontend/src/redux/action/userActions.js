@@ -6,7 +6,7 @@ const userActions = {
       console.log("ACTION: ME LLEGA ESTO DEL COMPONENTE");
       console.log(user);
       let response = await axios.post(
-        "http://localhost:4000/api/user/registrar",
+        "http://localhost:4000/api/user/google",
         user
       );
       if (response.data.response) {
@@ -61,6 +61,23 @@ const userActions = {
       });
     };
   },
+  signUp : (user)=>{
+    return async (dispatch) => {
+        let response = await axios.post(
+          "http://localhost:4000/api/user/registrar",
+          user
+        );
+        if (response.data.response) {
+          localStorage.setItem("token", response.data.token);
+        }
+        console.log("ACTION: ESTO DEVUELVE EL BACKEND");
+        console.log(response.data);
+        dispatch({
+          type: "SAVE_USER",
+          payload: { user: response.data.response, error: response.data.error },
+        });
+      };
+  }
 };
 
 export default userActions;

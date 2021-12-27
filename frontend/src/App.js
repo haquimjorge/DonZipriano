@@ -14,13 +14,13 @@ import { connect } from "react-redux";
 function App(props) {
   const { authUser } = props;
   const token = localStorage.getItem("token");
-  console.log(token? 'true':'false')
+  console.log(token ? "true" : "false");
 
   useEffect(() => {
     if (token) {
       authUser();
     }
-  }, [authUser,token]);
+  }, [authUser, token]);
   return (
     <>
       {/* <h1>Probando</h1> */}
@@ -29,10 +29,14 @@ function App(props) {
         <Routes>
           <Route path="/" element={<Home />} exact />
           {/* <Route path="/menu" element={<Menu/>}/> */}
-          {!token? <Route path="/ingresar" element={<SignIn />} exact /> : '' }
-          {!token? <Route path="/registrarse" element={<SignUp />} exact /> : '' }
-          
-          {/* <Route path="/form" element={<Forms />} exact /> */}
+          {!token ? <Route path="/ingresar" element={<SignIn />} exact /> : ""}
+          {!token ? (
+            <Route path="/registrarse" element={<SignUp />} exact />
+          ) : (
+            ""
+          )}
+
+          <Route path="/form" element={<Forms />} exact />
           <Route path="/menu" element={<Menu />} />
           <Route path="/reservas" element={<Reservas />} />
           <Route path="/eventos" element={<Eventos/>} />

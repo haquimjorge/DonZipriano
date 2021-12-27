@@ -42,8 +42,6 @@ nav {
 }
 .nav-link-container .nav-link:hover{
     color: rgb(46, 126, 71) !important;
-    font-size: 2rem !important;
-    text-shadow: 2px 2px rgba(0, 0, 0, 0.61) !important;
 
 }
 .dropdown-toggle{
@@ -463,6 +461,18 @@ footer ul li {
 .precios-menu {
   color: rgb(34, 102, 55);
   font-size: 1.7rem;
+}
+
+.slider-container {
+  width: 35rem;
+  
+}
+
+.slider-container-main {
+  width: 50vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* ..................SOBRE NOSOTROS................... */
