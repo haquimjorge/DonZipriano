@@ -463,6 +463,18 @@ footer ul li {
   font-size: 1.7rem;
 }
 
+.slider-container {
+  width: 35rem;
+  
+}
+
+.slider-container-main {
+  width: 50vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /* ..................SOBRE NOSOTROS................... */
 
 
