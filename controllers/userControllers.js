@@ -10,9 +10,10 @@ const userControllers = {
         if(user){
             if(user.googleUser){
                 const token = jwt.sign({ user }, process.env.SECRET_KEY);
-                console.log('if googleuser token '+JSON.stringify(token))
-                user.emailVerified = true
-                user.save()
+                if(!user.emailVerified){
+                    user.emailVerified = true
+                    user.save()
+                }
                 return res.json({
                     response: user,
                     success: true,
@@ -27,12 +28,11 @@ const userControllers = {
                 success: false,
                 error: [
                   {
-                    message: "Email " + user.email + " is already taken",
+                    message: "Correo electrónico " + user.email + " ya esta en uso",
                     path: ["email"],
                   },
                 ],
               });
-              console.log('email taken')
         } else{
             const passwordHashed = bcryptjs.hashSync(password, 10);
         let user = await new User({
@@ -46,7 +46,39 @@ const userControllers = {
         const token = jwt.sign({ user }, process.env.SECRET_KEY);
 
         res.json({ response: user, success: true, error: null, token: token });
-        console.log('se crea new user')
+        }
+  
+    } catch (e) {
+      res.json({ success: false, error: e, response: null });
+      console.error(e);
+    }
+  },
+  signUp : async (req,res)=>{
+    const { name, lastName, email, password, image } = req.body;
+    let user = await User.findOne({email})
+    try {
+        if(user){
+            res.json({
+                response: null,
+                success: false,
+                error: [
+                  {
+                    message: "Correo electrónico" + user.email + " ya esta en uso",
+                    path: ["email"],
+                  },
+                ],
+              });
+        } else{
+            const passwordHashed = bcryptjs.hashSync(password, 10);
+        let user = await new User({
+          name,
+          lastName,
+          email,
+          password: passwordHashed,
+          image,
+        }).save();
+        const token = jwt.sign({ user }, process.env.SECRET_KEY);
+        res.json({ response: user, success: true, error: null, token: token });
         }
   
     } catch (e) {
@@ -116,20 +148,20 @@ const userControllers = {
           res.json({
             success: false,
             response: null,
-            error: "Invalid Email",
+            error: "Correo electrónico inválido",
           });
         } else {
           res.json({
             success: false,
             response: null,
-            error: "The username or password is incorrect",
+            error: "Correo electrónico o contraseña inválido",
           });
         }
       } else {
         res.json({
           success: false,
           response: null,
-          error: "Email is not registered",
+          error: "Correo electrónico en uso",
         });
       }
     } catch (e) {
