@@ -3,29 +3,29 @@ import { Form, Button } from "react-bootstrap";
 const Forms = () => {
   return (
       <div className="container">
-          <h2>Booking form </h2>
+          <h2>Formulario de reserva</h2>
     <Form className="col-11 col-xl-6 my-5">
       <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>First name</Form.Label>
-        <Form.Control type="text" placeholder="First name" />
+        <Form.Label>Nombre</Form.Label>
+        <Form.Control type="text" placeholder="Nombre" />
       </Form.Group>
       <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>Surname</Form.Label>
-        <Form.Control type="text" placeholder="Surname"/>
+        <Form.Label>Apellido</Form.Label>
+        <Form.Control type="text" placeholder="Apellido"/>
       </Form.Group>
       <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>Email address</Form.Label>
-        <Form.Control type="email" placeholder="Enter email" />
-        <Form.Text className="text-muted">
+        <Form.Label>Direccion de correo electronico</Form.Label>
+        <Form.Control type="email" placeholder="Correo electronico" />
+        {/* <Form.Text className="text-muted">
           We'll never share your email with anyone else.
-        </Form.Text>
+        </Form.Text> */}
       </Form.Group>
       <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>Mobile</Form.Label>
-        <Form.Control type="number" placeholder="mobile" />
+        <Form.Label>Telefono mobil</Form.Label>
+        <Form.Control type="number" placeholder="Telefono mobil" />
       </Form.Group>
       <Button variant="primary" type="submit">
-      Book
+      Reservar
       </Button>
     </Form>
     </div>
