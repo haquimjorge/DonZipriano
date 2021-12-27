@@ -96,13 +96,13 @@ nav {
   align-items: center;
 }
 
-.navbar {
-  /* width: 40vw; */
-  /* min-height: 10vh;
+/* .navbar {
+   width: 40vw; 
+   min-height: 10vh;
   display: flex;
   justify-content: space-evenly;
-  align-items: center; */
-}
+  align-items: center; 
+} */
 
 .navbar ul {
   list-style: none;

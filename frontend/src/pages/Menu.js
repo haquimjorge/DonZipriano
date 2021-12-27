@@ -7,25 +7,26 @@ import mealActions from "../redux/action/mealActions";
 
 const Menu = (props) => {
   console.log(props)
+  const {fetchMeal} = props
   useEffect(() => {
-    props.fetchMealt();
-  }, []);
+    fetchMeal();
+  }, [fetchMeal]);
 
 
   return (
     <>
       <Navbar />
-      <CardMenu meal={props.mealt} />
+      <CardMenu meal={props.meal} />
       <Footer />
     </>
   );
 };
 const mapDispatchToProps = {
-  fetchMealt: mealActions.fetchMealt,
+  fetchMeal: mealActions.fetchMeal,
 };
 const mapStateToProps = (state) => {
   return {
-    mealt: state.mealsReducer.meals,
+    meal: state.mealsReducer.meals,
   };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(Menu);

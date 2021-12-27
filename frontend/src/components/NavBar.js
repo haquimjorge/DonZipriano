@@ -1,7 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
 import Navbar from 'react-bootstrap/Navbar'
-import NavDropdown from 'react-bootstrap/NavDropdown'
 import Nav from 'react-bootstrap/Nav'
 import Dropdown from 'react-bootstrap/Dropdown'
 import DropdownButton from 'react-bootstrap/DropdownButton'
@@ -13,15 +11,12 @@ import Image from "react-bootstrap/Image";
 import User from "../assets/user.png";
 
 const NavBar = (props) => {
-    const token = localStorage.getItem('token')
     let imagenUsuario = (
         <Image
           className="user-icon"
           style={props.user? { backgroundImage: `url(${props.user.image})` } : { backgroundImage: `url(${User})` }}
         ></Image>
       );
-      console.log('usuario es')
-      console.log(props.user)
   return (
     <>
   <Navbar collapseOnSelect expand="md" className="main-nav-container">

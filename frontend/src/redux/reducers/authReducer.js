@@ -20,6 +20,12 @@ const authReducer = (state = initialState, action) => {
       return {
         ...initialState,
       };
+      case "SIGN_IN":
+          return{
+              ...state,
+              user:action.payload.user,
+              error:action.payload.error
+          }
     default:
       return state;
   }

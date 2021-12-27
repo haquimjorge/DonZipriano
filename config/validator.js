@@ -46,7 +46,6 @@ const validator = (req, res, next) => {
       "string.empty": "Password cannot be empty",
     }),
     image: joi.required(),
-    country: joi.required(),
     googleUser: joi.boolean(),
   });
   const validation = schema.validate(req.body, { abortEarly: false });

@@ -1,8 +1,8 @@
 import axios from "axios";
 
 const mealActions = {
-  fetchMealt: () => {
-    return (dispatch, getState) => {
+  fetchMeal: () => {
+    return (dispatch) => {
       axios
         .get("http://localhost:4000/api/meals")
         .then((res) => dispatch({ type: "fetchMealt", payload: res.data.response }));

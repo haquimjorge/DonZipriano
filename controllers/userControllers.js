@@ -91,6 +91,47 @@ const userControllers = {
     } catch (e) {
       res.json({ success: false, response: null, error: e });
     }
-  }
+  },
+  signIn: async (req, res) => {
+    const { email, password, googleUser } = req.body;
+    try {
+      let user = await User.findOne({ email });
+
+      if (user) {
+        let samePassword = user
+          ? bcryptjs.compareSync(password, user.password)
+          : false;
+        if (user && samePassword) {
+          const token = jwt.sign({ user }, process.env.SECRET_KEY);
+          res.json({
+            success: true,
+            response: user,
+            error: null,
+            token: token,
+          });
+        } else if (user.googleUser && !googleUser) {
+          res.json({
+            success: false,
+            response: null,
+            error: "Invalid Email",
+          });
+        } else {
+          res.json({
+            success: false,
+            response: null,
+            error: "The username or password is incorrect",
+          });
+        }
+      } else {
+        res.json({
+          success: false,
+          response: null,
+          error: "Email is not registered",
+        });
+      }
+    } catch (e) {
+      res.json({ success: false, error: e.message, response: null });
+    }
+  },
 };
 module.exports = userControllers;

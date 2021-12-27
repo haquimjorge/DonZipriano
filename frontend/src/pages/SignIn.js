@@ -9,7 +9,6 @@ import userActions from "../redux/action/userActions";
 import { Navigate } from "react-router-dom";
 
 import * as Yup from "yup";
-import YupPassword from "yup-password";
 import { Formik, Form, useField } from "formik";
 
 const StringInput = ({ label, ...props }) => {
@@ -28,8 +27,7 @@ const StringInput = ({ label, ...props }) => {
   );
 };
 
-const SignUp = (props) => {
-  YupPassword(Yup);
+const SignIn = (props) => {
   const [showPass, setShowPass] = useState(false);
   const togglePassword = (e) => {
     const checked = e.target.checked;
@@ -39,6 +37,11 @@ const SignUp = (props) => {
       setShowPass(false);
     }
   };
+
+  console.log("COMPONENTE: ESTE ES EL USER");
+  console.log(props.user);
+  console.log("COMPONENTE: ESTE ES EL ERROR");
+  console.log(props.error);
   if (props.user) {
     return <Navigate to="/" />;
   }
@@ -54,27 +57,13 @@ const SignUp = (props) => {
             alt="Logo Don Zipriano"
           />
         </div>
-        <h2 className="registrate">
-          Registrate{" "}
-          {/* <strong className="text-danger">Don Zipriano</strong> */}
-        </h2>
+        <h2 className="registrate">Ingresar</h2>
         <Formik
           initialValues={{
-            name: "",
-            lastName: "",
             email: "",
             password: "",
-            image: "",
           }}
           validationSchema={Yup.object({
-            name: Yup.string()
-              .max(15, "Debe tener 15 caracteres maximo")
-              .trim()
-              .required("Este campo es obligatorio"),
-            lastName: Yup.string()
-              .max(20, "Debe tener 20 caracteres maximo")
-              .trim()
-              .required("Este campo es obligatorio"),
             email: Yup.string()
               .email("Email invalido")
               .trim()
@@ -82,36 +71,14 @@ const SignUp = (props) => {
             password: Yup.string()
               .min(7, "Debe tener minimo 7 caracteres")
               .max(30, "No debe exceder los 30 caracteres")
-              .minLowercase(3, "Al menos 3 minúsculas")
-              .minUppercase(1, "Al menos 1 mayúscula")
-              .minNumbers(1, "Al menos 1 número")
-              .minSymbols(1, "Al menos 1 símbolo")
               .required("Este campo es obligatorio"),
-            image: Yup.string().required("Este campo es obligatorio"),
           })}
           onSubmit={(values, { setSubmitting }) => {
-            props.saveUser(values);
+            props.signIn(values);
             setSubmitting(false);
           }}
         >
           <Form>
-            <div className="d-flex gap-2">
-              <StringInput
-                label="Nombre"
-                name="name"
-                type="text"
-                placeholder="kevin"
-                className="w-100"
-              />
-              <StringInput
-                label="Apellido"
-                name="lastName"
-                type="text"
-                placeholder="kevin"
-                className="w-100"
-              />
-            </div>
-
             <StringInput
               label="Correo Electrónico"
               name="email"
@@ -130,7 +97,7 @@ const SignUp = (props) => {
                   id="flexCheckDefault"
                 />
                 <label className="form-check-label text-white ms-1">
-                  Show Password
+                  Mostrar Contraseña
                 </label>
               </div>
 
@@ -141,19 +108,13 @@ const SignUp = (props) => {
                 placeholder="kevin"
               />
             </div>
-            <StringInput
-              label="URL de Imagen"
-              name="image"
-              type="text"
-              placeholder="kevin"
-            />
             <div className="btn-container">
               <button className="text-light p-2 m-2 btn-sign" type="submit">
-                Registrate
+                Ingresar
               </button>
             </div>
             {props.error ? (
-              <div className="text-danger">{props.error[0].message}</div>
+              <div className="text-danger">{props.error}</div>
             ) : (
               ""
             )}
@@ -173,6 +134,6 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = {
-  saveUser: userActions.saveUser,
+  signIn: userActions.signIn,
 };
-export default connect(mapStateToProps, mapDispatchToProps)(SignUp);
+export default connect(mapStateToProps, mapDispatchToProps)(SignIn);
