@@ -1,82 +1,92 @@
 import React from "react";
-import Navbar from 'react-bootstrap/Navbar'
-import Nav from 'react-bootstrap/Nav'
-import Dropdown from 'react-bootstrap/Dropdown'
-import DropdownButton from 'react-bootstrap/DropdownButton'
+import Navbar from "react-bootstrap/Navbar";
+import Nav from "react-bootstrap/Nav";
+import Dropdown from "react-bootstrap/Dropdown";
+import DropdownButton from "react-bootstrap/DropdownButton";
 import Container from "react-bootstrap/Container";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import userActions from '../redux/action/userActions'
+import userActions from "../redux/action/userActions";
 import Image from "react-bootstrap/Image";
 import User from "../assets/user.png";
+import "animate.css";
 
 const NavBar = (props) => {
-    let imagenUsuario = (
-        <Image
-          className="user-icon"
-          style={props.user? { backgroundImage: `url(${props.user.image})` } : { backgroundImage: `url(${User})` }}
-        ></Image>
-      );
+  let imagenUsuario = (
+    <Image
+      className="user-icon"
+      style={
+        props.user
+          ? { backgroundImage: `url(${props.user.image})` }
+          : { backgroundImage: `url(${User})` }
+      }
+    ></Image>
+  );
   return (
     <>
-  <Navbar collapseOnSelect expand="md" className="main-nav-container">
-      <Container>
-      <Link to="/" className="nav-brands order-1">
-          <img
-            id="logo-nav"
-            src="/assets/DonZLogo.png"
-            alt="Don Zipriano Logo"
-          ></img>
-        </Link>
-        
-        
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav" className="toggle-nav order-md-3 order-2">
-          <Nav className="d-flex justify-content-center container align-items-center main-nav flex-wrap nav-link-container">
-          
-            <Link className="nav-link" to="/">
-              Home
-            </Link>
-            <Link className="nav-link" to="/menu">
-              Menú
-            </Link>
-            <Link className="nav-link" to="/reservas">
-              Reservas
-            </Link>
-            <Link className="nav-link" to="/contacto">
-              Contacto
-            </Link>
-            <Link className="nav-link" to="/nosotros">
-              Nosotros
-            </Link>         
-          </Nav>
-          
-        </Navbar.Collapse>
-        <DropdownButton align='end' className="order-xxl-3 order-xl-3 order-lg-3 order-md-3 order-sm-1 order-1" id="dropdown-basic-button" title={imagenUsuario}>
+      <Navbar collapseOnSelect expand="md" className="main-nav-container">
+        <Container>
+          <Link to="/" className="nav-brands order-1">
+            <img
+              className="animate__animated animate__flipInX"
+              id="logo-nav"
+              src="/assets/DonZLogo.png"
+              alt="Don Zipriano Logo"
+            ></img>
+          </Link>
+
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Collapse
+            id="responsive-navbar-nav"
+            className="toggle-nav order-md-3 order-2"
+          >
+            <Nav className="d-flex justify-content-center container align-items-center main-nav flex-wrap nav-link-container">
+              <Link className="nav-link" to="/">
+                Home
+              </Link>
+              <Link className="nav-link" to="/menu">
+                Menú
+              </Link>
+              <Link className="nav-link" to="/reservas">
+                Reservas
+              </Link>
+              <Link className="nav-link" to="/eventos">
+                Eventos
+              </Link>
+              <Link className="nav-link" to="/nosotros">
+                Nosotros
+              </Link>
+            </Nav>
+          </Navbar.Collapse>
+          <DropdownButton
+            align="end"
+            className="order-xxl-3 order-xl-3 order-lg-3 order-md-3 order-sm-1 order-1"
+            id="dropdown-basic-button"
+            title={imagenUsuario}
+          >
             {props.user ? (
-                <>
-              <Dropdown.Item as={Link} to="/account">
-                Account
-              </Dropdown.Item>
-              <Dropdown.Item onClick={() => props.logOut()}>
-              Log Out
-            </Dropdown.Item>
-            </>
+              <>
+                <Dropdown.Item as={Link} to="/account">
+                  Account
+                </Dropdown.Item>
+                <Dropdown.Item onClick={() => props.logOut()}>
+                  Log Out
+                </Dropdown.Item>
+              </>
             ) : (
-                <>
-              <Dropdown.Item as={Link} to="/ingresar">
-                Ingresar
-              </Dropdown.Item>
-              <Dropdown.Item as={Link} to="/registrarse">
-              Registrarse
-            </Dropdown.Item>
-            </>
+              <>
+                <Dropdown.Item as={Link} to="/ingresar">
+                  Ingresar
+                </Dropdown.Item>
+                <Dropdown.Item as={Link} to="/registrarse">
+                  Registrarse
+                </Dropdown.Item>
+              </>
             )}
           </DropdownButton>
-    
-      </Container>
-    </Navbar>
-     {/* <header>
+        </Container>
+      </Navbar>
+      {/* <header>
         <nav>
           <div className="header-logo">
             <img
@@ -162,13 +172,13 @@ const NavBar = (props) => {
   );
 };
 const mapStateToProps = (state) => {
-    return {
-      user: state.authReducer.user,
-    };
+  return {
+    user: state.authReducer.user,
   };
-  
-  const mapDispatchToProps = {
-    logOut: userActions.logOut,
-  };
-  
-  export default connect(mapStateToProps, mapDispatchToProps)(NavBar);
+};
+
+const mapDispatchToProps = {
+  logOut: userActions.logOut,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(NavBar);

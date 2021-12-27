@@ -6,7 +6,7 @@ const CardMenu = ({ meal }) => {
   console.log(meal);
 
   const mealEntradas = meal.filter((meal) => meal.timeFood === "Entrada");
-  
+
   const mealPlatosPrincipales = meal.filter(
     (meal) => meal.timeFood === "Plato Principal"
   );
@@ -27,7 +27,7 @@ const CardMenu = ({ meal }) => {
   return (
     <>
       <div className="card-menu-container">
-        <div className="card-menu">
+        <div className="card-menu animate__animated animate__fadeInLeft">
           {/* <Slider
               value={value}
               onChange={handleChange}
@@ -70,7 +70,7 @@ const CardMenu = ({ meal }) => {
                 .filter((meal) => meal.price <= value)
                 .map((entrada) => {
                   return (
-                    <div className="card-food-container animate__animated animate__backInLeft">
+                    <div className="card-food-container animate__animated animate__shakeX">
                       <h5>{entrada.name}</h5>
                       <div className="food-content-container ">
                         <div className="card-food-content">
