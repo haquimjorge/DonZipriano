@@ -40,7 +40,7 @@ const SignUp = () => {
   return (
     <>
       <NavBar />
-      <Container className="bg-dark signin-container col-7 ">
+      <Container className=" signin-container col-7 ">
             <div className="logoSignIn">
             <img id="logo-hero" src="/assets/DonZLogo.png" alt="Logo Don Zipriano" />
             </div>
@@ -133,7 +133,9 @@ const SignUp = () => {
                   type="text"
                   placeholder="kevin"
                 />       
-                <button className="text-light bg-dark p-2 m-2" type="submit">Submit</button>
+                <div className="btn-container">
+                <button className="text-light p-2 m-2 btn-sign" type="submit">Registrate</button>
+                </div>
               </Form>
             </Formik>
       </Container>

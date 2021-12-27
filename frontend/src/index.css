@@ -281,14 +281,19 @@ footer ul li {
 .card-menu {
   width: 50vw;
   /* border: 1px solid red; */
+  border-radius: 5rem;
   min-height: 80vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: rgba(2, 2, 2, 0.096);
-  background-image: linear-gradient(rgba(0, 0, 0, 0.418), rgba(0, 0, 0, 0.3)),
-    url(./assets/fondomenu.jpg);
+  background-color: rgba(2, 2, 2, 0.767);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.698), rgba(0, 0, 0, 0.678)),
+    url(./assets/fondomenu.png);
     background-size: cover;
+    background-position: center;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.88);
+-webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.88);
+-moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.88);
 }
 
 .title-menu-container {
@@ -318,6 +323,7 @@ footer ul li {
   min-height: 30vh;
   /* border: 1px solid blue; */
   margin-top: 4rem;
+  
 }
 
 .entradas h4{
@@ -329,6 +335,10 @@ footer ul li {
   width: 50vw;
   /* border: 1px solid green; */
   min-height: 30vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  
 }
 
 .plato-principal {
@@ -364,7 +374,46 @@ footer ul li {
   text-align: center;
 }
 
+.card-food-container {
+  margin-top: 1rem;
+  /* border: 1px solid red; */
+  border-radius: 5rem;
+  width: 23vw;
+  height: 27vh;
+  background-color: #000000a6;
+  box-shadow: 10px 10px 5px 0px rgba(28,28,28,0.88);
+-webkit-box-shadow: 10px 10px 5px 0px rgba(28,28,28,0.88);
+-moz-box-shadow: 10px 10px 5px 0px rgba(28,28,28,0.88);
+}
 
+.card-food-container h5{
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.card-food-content {
+  /* border: 1px solid yellow; */
+  width: 13vw;
+  padding: 1rem;
+}
+
+.food-content-container {
+  display: flex;
+}
+
+.card-food-pic {
+  width: 10vw;
+  height: 20vh;
+  border-radius: 5rem;
+  background-size: cover;
+  background-position: center;
+}
+
+.precios-menu {
+  color: rgb(34, 102, 55);
+  font-size: 1.7rem;
+}
 
 /* ..................SOBRE NOSOTROS................... */
 
@@ -427,7 +476,7 @@ footer ul li {
     padding: 0.5rem;
 }
 
-/* ..................SOBRE NOSOTROS................... */
+/* ..................SIGN UP................... */
 
 .signin-container{
   min-height: 50vh;
@@ -445,5 +494,30 @@ flex-direction: column;
 
 .registrate {
   text-align: center;
+  text-shadow: 4px 4px 2px rgba(0, 0, 0, 0.6);
 }
+
+.btn-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-sign {
+  padding: 1rem 1.5rem !important;
+  background-color: rgb(34, 102, 55);
+  border-radius: 5rem;
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.88);
+-webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.88);
+-moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.88);
+text-align: center;
+
+}
+
+.btn-sign:hover {
+  transition: 1s;
+  background-color: #ba0909;
+}
+
 
