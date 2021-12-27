@@ -7,6 +7,7 @@ import Container from "react-bootstrap/Container";
 import { connect } from "react-redux";
 import userActions from "../redux/action/userActions";
 import { Navigate } from "react-router-dom";
+import {GoogleLogin} from 'react-google-login'
 
 import * as Yup from "yup";
 import YupPassword from "yup-password";
@@ -39,6 +40,22 @@ const SignUp = (props) => {
       setShowPass(false);
     }
   };
+
+  const responseGoogle = (response) => {
+    const { givenName, familyName, email, googleId, imageUrl } =
+    response.profileObj;
+    const googlePassword = googleId + "F1#";
+    let googleUser = {
+      name: givenName,
+      lastName: familyName,
+      email: email,
+      password: googlePassword,
+      image: imageUrl,
+      googleUser: true,
+    };
+    props.saveUser(googleUser)
+  }
+
   if (props.user) {
     return <Navigate to="/" />;
   }
@@ -90,7 +107,7 @@ const SignUp = (props) => {
             image: Yup.string().required("Este campo es obligatorio"),
           })}
           onSubmit={(values, { setSubmitting }) => {
-            props.saveUser(values);
+            props.signUp(values);
             setSubmitting(false);
           }}
         >
@@ -157,6 +174,17 @@ const SignUp = (props) => {
             ) : (
               ""
             )}
+            <div className="d-flex justify-content-center flex-column align-items-center">
+
+<p className="text-white">o ingresa con Google</p>
+      <GoogleLogin
+        clientId="190201580680-u46pho0n2vjalcan540tm22oan4vhc0v.apps.googleusercontent.com"
+        buttonText="Sign in with Google"
+        onSuccess={responseGoogle}
+        onFailure={responseGoogle}
+        cookiePolicy={"single_host_origin"}
+      />
+</div>
           </Form>
         </Formik>
       </Container>
@@ -173,6 +201,6 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = {
-  saveUser: userActions.saveUser,
+  signUp: userActions.signUp,
 };
 export default connect(mapStateToProps, mapDispatchToProps)(SignUp);

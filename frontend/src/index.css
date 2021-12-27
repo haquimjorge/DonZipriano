@@ -42,8 +42,6 @@ nav {
 }
 .nav-link-container .nav-link:hover{
     color: rgb(46, 126, 71) !important;
-    font-size: 2rem !important;
-    text-shadow: 2px 2px rgba(0, 0, 0, 0.61) !important;
 
 }
 .dropdown-toggle{
@@ -473,6 +471,18 @@ footer ul li {
   font-size: 1.7rem;
 }
 
+.slider-container {
+  width: 35rem;
+  
+}
+
+.slider-container-main {
+  width: 50vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /* ..................SOBRE NOSOTROS................... */
 
 
@@ -532,7 +542,6 @@ footer ul li {
     margin: 1rem;
     text-shadow: 3px 3px 2px rgba(0, 0, 0, 0.418);
     padding: 0.5rem;
-    font-size: large;
 }
 
 .signin-picture{
@@ -609,7 +618,7 @@ text-align: center;
   white-space: nowrap;
   border-right: 4px solid;
   width: 9ch;
-
+  
   animation: typing 2s steps(9), blink .5s infinite step-end alternate;
   overflow: hidden;
 }
@@ -622,6 +631,7 @@ text-align: center;
   50% { border-color: transparent;}
 }
 
+<<<<<<< HEAD
 
 
 
@@ -735,3 +745,61 @@ text-align: center;
     width: 30%;
   }
 }
+=======
+/* ........... pagEVENTOS ................ */
+
+.tituloEventos {
+  text-align: center;
+  text-shadow: 2px 2px rgba(92, 28, 28, 0.657) !important;
+  backdrop-filter: blur(10px);
+  backdrop-filter: brightness(80%);
+  margin-bottom: 0;
+}
+
+.contenedorEventos {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  align-self: center !important;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+  backdrop-filter: brightness(80%);
+}
+
+.contenedorLogoEventos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:25%;
+  margin-left:1rem;
+}
+.contenedorLogoEventos img{
+    width: 100%;
+  }
+
+.contenedorDescripcionEventos {
+  padding: 0.5rem;
+  margin: 0.5rem;
+  text-align: justify;
+  width: 40%;
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.486) !important;
+  font-size: large;
+}
+
+.contenedorFormEventos {
+  backdrop-filter: blur(10px);
+  backdrop-filter: brightness(80%);
+  display: flex;
+  justify-content: center;
+}
+
+.formEventos {
+  width: 65%;
+}
+.formEventos h4{
+  padding: 0.5rem;
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.486) !important;
+  text-decoration: underline  rgba(255, 0, 0, 0.02);
+}
+>>>>>>> refs/remotes/origin/main

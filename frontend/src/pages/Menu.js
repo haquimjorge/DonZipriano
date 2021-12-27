@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import Navbar from "../components/NavBar";
+import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import CardMenu from "../components/CardMenu";
 import { connect } from "react-redux";
@@ -15,7 +15,7 @@ const Menu = (props) => {
 
   return (
     <>
-      <Navbar />
+      <NavBar />
       <CardMenu meal={props.meal} />
       <Footer />
     </>
