@@ -65,7 +65,7 @@ const userActions = {
     return async (dispatch) => {
       let response = await axios.put('http://localhost:4000/api/user/modificar', userMod)
       if (response.data.success) dispatch({
-        type: "MODIFY",
+        type: "SIGN_IN",
         payload: { user: response.data.response, error: response.data.error }
       })
       else return response.data.error
