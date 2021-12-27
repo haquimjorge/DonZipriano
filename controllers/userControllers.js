@@ -4,20 +4,21 @@ const jwt = require("jsonwebtoken");
 
 const userControllers = {
   uploadUser: async (req, res) => {
-    const { name, lastName, email, password, image } = req.body;
+    const { name, lastName, email, password, image, googleUser } = req.body;
     let user = await User.findOne({email})
     try {
         if(user){
             if(user.googleUser){
                 const token = jwt.sign({ user }, process.env.SECRET_KEY);
                 console.log('if googleuser token '+JSON.stringify(token))
+                user.emailVerified = true
+                user.save()
                 return res.json({
                     response: user,
                     success: true,
                     error: null,
                     token: token,
-                  });
-                  
+                  });     
             }
         }
         if(user){
@@ -39,7 +40,8 @@ const userControllers = {
           lastName,
           email,
           password: passwordHashed,
-          image
+          image,
+          googleUser
         }).save();
         const token = jwt.sign({ user }, process.env.SECRET_KEY);
 
