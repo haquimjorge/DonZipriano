@@ -5,7 +5,7 @@ import Reservas from "./pages/Reservas";
 import Contacto from "./pages/Contacto";
 import Nosotros from "./pages/Nosotros";
 import Forms from "./components/Forms";
-import SignIn from "./pages/SignIn";
+import SignUp from "./pages/SignUp";
 import { useEffect } from "react";
 import userActions from "./redux/action/userActions";
 import { connect } from "react-redux";
@@ -28,8 +28,8 @@ function App(props) {
         <Routes>
           <Route path="/" element={<Home />} exact />
           {/* <Route path="/menu" element={<Menu/>}/> */}
-          {!token? <Route path="/ingresar" element={<SignIn />} exact /> : '' }
-          {!token? <Route path="/registrarse" element={<SignIn />} exact /> : '' }
+          {!token? <Route path="/ingresar" element={<SignUp />} exact /> : '' }
+          {!token? <Route path="/registrarse" element={<SignUp />} exact /> : '' }
           
           <Route path="/form" element={<Forms />} exact />
           <Route path="/menu" element={<Menu />} />

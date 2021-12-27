@@ -40,7 +40,7 @@ const Footer = () => {
               <li>
                 <NavLink
                   style={{ color: "#ba0909", textDecoration: "none" }}
-                  to="/"
+                  to="/menu"
                 >
                   Menu
                 </NavLink>
@@ -48,7 +48,7 @@ const Footer = () => {
               <li>
                 <NavLink
                   style={{ color: "#ba0909", textDecoration: "none" }}
-                  to="/"
+                  to="/reservas"
                 >
                   Reservas
                 </NavLink>
@@ -56,7 +56,7 @@ const Footer = () => {
               <li>
                 <NavLink
                   style={{ color: "#ba0909", textDecoration: "none" }}
-                  to="/"
+                  to="/contacto"
                 >
                   Contacto
                 </NavLink>
@@ -64,7 +64,7 @@ const Footer = () => {
               <li>
                 <NavLink
                   style={{ color: "#ba0909", textDecoration: "none" }}
-                  to="/"
+                  to="/nosotros"
                 >
                   Nosotros
                 </NavLink>
@@ -87,13 +87,19 @@ const Footer = () => {
           </div>
           <div className="redes">
             <div className="icon-f">
+              <a target="_blank" rel="noreferrer"  rel="noopener" href={'https://www.facebook.com'}>
               <FaFacebookSquare className="icon" />
+              </a>
             </div>
             <div className="icon-f">
+              <a target="_blank" rel="noreferrer"  rel="noopener" href={'https://www.twitter.com'}>
               <FaTwitter className="icon" />
+              </a>
             </div>
             <div className="icon-f">
+              <a target="_blank" rel="noreferrer"  rel="noopener" href={'https://www.linkedin.com'}>
               <FaLinkedin className="icon" />
+              </a>
             </div>
           </div>
         </div>

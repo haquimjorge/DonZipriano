@@ -119,6 +119,14 @@ const NavBar = (props) => {
               <li>
                 <NavLink
                   style={{ color: "#ba0909", textDecoration: "none" }}
+                  to="/signUp"
+                >
+                  Registrate
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  style={{ color: "#ba0909", textDecoration: "none" }}
                   to="/contacto"
                 >
                   Contacto
