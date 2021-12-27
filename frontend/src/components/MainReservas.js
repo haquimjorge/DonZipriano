@@ -3,7 +3,7 @@ import React from "react";
 const MainReservas = () => {
   return (
     <>
-      {/* <div className="reservas-content hero">
+      <div className="reservas-content hero">
         <h1 className="reservas-tittle">HORARIOS Y RESERVAS</h1>
         <div className="hero-content chef-container">
           <div className="reservas-container">
@@ -27,7 +27,7 @@ const MainReservas = () => {
             </p>
           </div>
         </div>
-      </div> */}
+      </div>
     </>
   );
 };
