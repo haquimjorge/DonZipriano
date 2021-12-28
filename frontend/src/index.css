@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Cantarell&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Cantarell&display=swap"); */
 @import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
 
 * {
@@ -9,14 +9,15 @@
 
 body {
   /* font-family: "Cantarell", sans-serif; */
+  /* font-family: 'DM Sans', sans-serif; */
   font-family: "Permanent Marker", cursive;
   color: #ffffff;
   background: rgb(34, 102, 55);
   background: linear-gradient(
     90deg,
-    rgba(34, 102, 55, 1) 10%,
-    rgba(237, 226, 226, 1) 45%,
-    rgba(186, 9, 9, 1) 80%
+    rgb(30, 90, 49) 10%,
+    rgb(221, 213, 213) 46%,
+    rgba(186, 9, 9, 1) 75%
   );
 }
 
@@ -554,7 +555,7 @@ footer ul li {
 #imagenChef {
   height: 70% !important;
   padding: 1rem;
-  align-self: center;
+  align-self: flex-start;
 }
 
 .sobreNosotrosTexto{
@@ -568,8 +569,18 @@ footer ul li {
   padding: 0.5rem;
 }
 
+.sobreNosotrosTexto p{
+  font-family: 'DM Sans', sans-serif !important;
+  color:#fafafa;
+}
 
-@media (max-width: 1000px){
+#textoChef{
+  font-family: 'DM Sans', sans-serif !important;
+  color:#fafafa;
+}
+
+
+@media (max-width: 1270px){
 
   .internoNuestro {
     display: flex;
@@ -592,7 +603,16 @@ footer ul li {
     backdrop-filter: blur(10px);
     backdrop-filter: brightness(40%) !important; 
   }
+  
+.sobreNosotrosTexto p{
+  font-family: 'DM Sans', sans-serif !important;
+  color:#fafafa;
+}
 
+#textoChef{
+  font-family: 'DM Sans', sans-serif !important;
+  color:#fafafa;
+}
   .divImagenSobreNosotros{
     display: flex;
     width: 100%;
@@ -951,6 +971,8 @@ text-align: center;
   width: 40%;
   text-shadow: 2px 2px rgba(0, 0, 0, 0.486) !important;
   font-size: large;
+  font-family: 'DM Sans', sans-serif !important;
+  color:#fafafa;
 }
 
 .contenedorFormEventos {

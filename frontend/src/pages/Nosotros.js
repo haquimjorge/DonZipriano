@@ -42,7 +42,7 @@ const Nosotros = () => {
         <div>
           <h1>Nuestro Chef</h1>
         </div>
-        <div className="internoNuestro">
+        <div className="internoNuestro" id="textoChef">
           <div className="divImagenSobreNosotros" id="imagenChef">
             <img src="/assets/brangi.jpg" alt="Imagen del Chef" />
           </div>
