@@ -506,6 +506,8 @@ footer ul li {
   flex-direction: column;
   backdrop-filter: blur(5px);
   backdrop-filter: brightness(85%);
+  letter-spacing: 0.1em;
+
 }
 
 .nuestroChef {  
@@ -517,6 +519,11 @@ footer ul li {
   flex-direction: column;
   backdrop-filter: blur(5px);
   backdrop-filter: brightness(85%);
+  letter-spacing: 0.1em;
+}
+.nuestroChef h1{
+  padding: 1rem;
+  
 }
 
 .nuestraCocina {
@@ -538,10 +545,18 @@ footer ul li {
   display: flex;
   width: 50%;
 }
+
 .divImagenSobreNosotros img{
   width: 100%;
   border-radius: 10px;
 }
+
+#imagenChef {
+  height: 70% !important;
+  padding: 1rem;
+  align-self: center;
+}
+
 .sobreNosotrosTexto{
     width: 50%;
     display: flex;

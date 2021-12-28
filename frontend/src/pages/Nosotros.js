@@ -16,21 +16,22 @@ const Nosotros = () => {
           <h1  className="tituloSobreNosotros" >Nuestra Historia</h1>
             <p>
               {" "}
-              Dos primos, soñadores, apegados a sus raíces, apasionados por la
-              cocina, comenzaron Don Zipriano en 2010, nombrandolo en honor a su
-              abuelo, quien desde pequeños les transmitio el arte de la cocina
-              italiana. Poner en practica estos conocimientos de su herencia y
-              al servicio de sus clientes es su mision. En una busqueda
+              Somos dos primos, soñadores, apegados a nuestras raíces, apasionados por la
+              cocina. Comenzamos Don Zipriano en 2010, nombrandolo en honor a nuestro querido
+              abuelo, quien vino de Italia en 1960 y desde pequeños nos transmitio el arte de la cocina
+              italiana. Poner en practica estos conocimientos de su herencia, y
+              al servicio de sus clientes, es nuestra mision. En una busqueda
               constante por ofrecer la mayor calidad posible, por ofrecer
-              variados sabores que gusten, los primos Jose y Lucrecia llevan ya
+              variados sabores que gusten, llevamos ya
               mas de 10 años en el barrio. Ofrecer esta autentica experiencia
               gastronomica Italiana, es un logro posible gracias a el gran
-              equipo coordinado para ello.
+              equipo coordinado para ello, y al cariño que le ponemos dia a dia.
+              "Dar de comer es un acto de amor".
             </p>
           </div>
           <div className="divImagenSobreNosotros">
             <img
-              src="/assets/donZiprianoSobreNosotros.png"
+              src="/assets/donZiprianoSobreNosotrosEdit.png"
               alt="Imagen de don zipriano"
             />
           </div>
@@ -42,12 +43,11 @@ const Nosotros = () => {
           <h1>Nuestro Chef</h1>
         </div>
         <div className="internoNuestro">
-          <div className="divImagenSobreNosotros">
-            <img src="/assets/chefdz.png" alt="Imagen del Chef" />
+          <div className="divImagenSobreNosotros" id="imagenChef">
+            <img src="/assets/brangi.jpg" alt="Imagen del Chef" />
           </div>
           <div className="sobreNosotrosTexto">
-            Nacido en Napoli, chef executivo, pizzaiolo napoletano. Luigi
-            Iavarone llegó a Uruguay por la temporada 2016/2017 con Eatalian
+            Nacido en Napoli, chef executivo, pizzaiolo napoletano. Brangi Hubine llegó a Uruguay por la temporada 2016/2017 con Eatalian
             Style, un emprendimiento gastronómico en La Barra, Punta del este
             con recetas del sud Italia modernizadas, respetando siempre los
             ingredientes y los sabores tradicionales. En el mercado Argentino
