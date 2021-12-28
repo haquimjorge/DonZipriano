@@ -1138,3 +1138,47 @@ text-align: center;
 .verify-page-text{
   
 }
+
+/** ----------------------- MESAS ------------ */
+
+.mesas-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.suelo-mesas {
+  background-image: url("./assets/fondosuelo.jpg");
+  background-size: cover;
+  background-position: center;
+  width: 50vw;
+  min-height: 50vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 2rem;
+  border-radius: 10rem;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.88);
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.88);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.88);
+}
+
+.contenedor-mesa {
+  width: 8vw;
+  margin-top: 5rem;
+}
+
+.mesa-disponible {
+  width: 5vw;
+  cursor: pointer;
+}
+
+.reservas-title {
+  text-align: center;
+  text-shadow: 4px 4px 2px rgba(0, 0, 0, 0.6);
+}
+
+.reservas-title h2 {
+  font-size: 5rem;
+  color: #ba0909;
+}

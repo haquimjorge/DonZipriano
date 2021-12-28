@@ -1,15 +1,31 @@
-import React from 'react'
-import Navbar from '../components/NavBar'
-import Footer from '../components/Footer'
+import React, { useEffect } from "react";
+import Navbar from "../components/NavBar";
+import Footer from "../components/Footer";
+import Mesas from "../components/Mesas";
+import tableActions from "../redux/action/tableActions";
+import { connect } from "react-redux";
 
+const Reservas = (props) => {
+  console.log(props);
+  const { fetchTable } = props;
+  useEffect(() => {
+    fetchTable();
+  }, [fetchTable]);
 
-const Reservas = () => {
-
-        return(
-            <>
-                <Navbar/>
-                <Footer/>
-            </>
-        )
-}
-export default Reservas;
+  return (
+    <>
+      <Navbar />
+      <Mesas table={props.table} />
+      <Footer />
+    </>
+  );
+};
+const mapDispatchToProps = {
+  fetchTable: tableActions.fetchTable,
+};
+const mapStateToProps = (state) => {
+  return {
+    table: state.tableReducer.tables,
+  };
+};
+export default connect(mapStateToProps, mapDispatchToProps)(Reservas);
