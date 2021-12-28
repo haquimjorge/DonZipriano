@@ -24,10 +24,14 @@ const sendEmail = async(email,uniqueString)=>{
         subject: "Verificacion de email usuario",
         html: `
         <div>
-            <img src='https://www.google.com/logos/doodles/2021/seasonal-holidays-2021-6753651837109324-s.png' alt='logo zipriano'/>
-            <h2>Gracias por registrarte con nosotros!</h2>
-            <p>Con tu cuenta podras: Hacer reseñas, Reservar y darle favorito a las comidas</p>
-            <p>Por favor, para verificar tu correo, haz click <a href="http://localhost:4000/api/verify/${uniqueString}">aqui</a></p>
+            <img style="display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 100px;
+            height:100px;" src='https://i.imgur.com/di3iSw5.png' alt='logo zipriano'/>
+            <h2 style="text-align:center;  font-size: 1.5rem;">Gracias por registrarte con nosotros!</h2>
+            <p style="text-align:center">Con tu cuenta podras: Hacer reseñas, Reservar y darle favorito a las comidas</p>
+            <p style="text-align:center; font-size: 1.2rem;">Por favor, para verificar tu correo, haz click <a href="http://localhost:4000/api/verify/${uniqueString}">aqui</a></p>
         </div>`
     }
     await transporter.sendMail(mailOptions, function(error,response){
@@ -95,7 +99,7 @@ const userControllers = {
                 success: false,
                 error: [
                   {
-                    message: "Correo electrónico" + user.email + " ya esta en uso",
+                    message: user.email + " ya esta registrado",
                     path: ["email"],
                   },
                 ],

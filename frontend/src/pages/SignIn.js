@@ -128,7 +128,7 @@ const SignIn = (props) => {
               </button>
             </div>
             {props.error ? (
-              <div className="text-danger">{props.error}</div>
+              <div className="text-danger text-center">{props.error}</div>
             ) : (
               ""
             )}
