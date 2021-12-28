@@ -1182,3 +1182,12 @@ text-align: center;
   font-size: 5rem;
   color: #ba0909;
 }
+/* Chatbot */
+
+.chatbot {
+  --df-messenger-chat-background-color: #e00505;
+  --df-messenger-button-titlebar-color: #000000;
+  --df-messenger-font-color: #000000;
+  --df-messenger-bot-message: #ffffff;
+  --df-messenger-send-icon: #02880e;
+}
