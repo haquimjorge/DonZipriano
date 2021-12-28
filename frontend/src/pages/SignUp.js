@@ -8,10 +8,11 @@ import { connect } from "react-redux";
 import userActions from "../redux/action/userActions";
 import { Navigate } from "react-router-dom";
 import {GoogleLogin} from 'react-google-login'
-
 import * as Yup from "yup";
 import YupPassword from "yup-password";
 import { Formik, Form, useField } from "formik";
+import Alert from 'react-bootstrap/Alert'
+import Button from 'react-bootstrap/Button'
 
 const StringInput = ({ label, ...props }) => {
   const [field, meta] = useField(props);
@@ -29,6 +30,7 @@ const StringInput = ({ label, ...props }) => {
   );
 };
 
+
 const SignUp = (props) => {
   YupPassword(Yup);
   const [showPass, setShowPass] = useState(false);
@@ -41,6 +43,8 @@ const SignUp = (props) => {
     }
   };
 
+  console.log('MESSAGE EN SIGN UP')
+  console.log(props.message)
   const responseGoogle = (response) => {
     const { givenName, familyName, email, googleId, imageUrl } =
     response.profileObj;
@@ -165,9 +169,10 @@ const SignUp = (props) => {
               placeholder="kevin"
             />
             <div className="btn-container">
-              <button className="text-light p-2 m-2 btn-sign" type="submit">
+               
+             <button className="text-light p-2 m-2 btn-sign" type="submit">
                 Registrate
-              </button>
+              </button> 
             </div>
             {props.error ? (
               <div className="text-danger">{props.error[0].message}</div>
@@ -197,6 +202,7 @@ const mapStateToProps = (state) => {
   return {
     user: state.authReducer.user,
     error: state.authReducer.error,
+    message: state.authReducer.message
   };
 };
 

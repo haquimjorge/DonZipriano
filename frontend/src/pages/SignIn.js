@@ -1,8 +1,7 @@
 import { React, useState } from "react";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
-import FloatingLabel from "react-bootstrap/FloatingLabel";
-import FormR from "react-bootstrap/Form";
+
 import Container from "react-bootstrap/Container";
 import { connect } from "react-redux";
 import userActions from "../redux/action/userActions";
@@ -11,6 +10,8 @@ import {GoogleLogin} from 'react-google-login'
 
 import * as Yup from "yup";
 import { Formik, Form, useField } from "formik";
+import FloatingLabel from "react-bootstrap/FloatingLabel";
+import FormR from "react-bootstrap/Form";
 
 const StringInput = ({ label, ...props }) => {
   const [field, meta] = useField(props);
@@ -54,12 +55,7 @@ const SignIn = (props) => {
     };
     props.saveUser(googleUser)
   }
-  
 
-  console.log("COMPONENTE: ESTE ES EL USER");
-  console.log(props.user);
-  console.log("COMPONENTE: ESTE ES EL ERROR");
-  console.log(props.error);
   if (props.user) {
     return <Navigate to="/" />;
   }

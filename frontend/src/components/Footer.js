@@ -15,8 +15,8 @@ const Footer = () => {
       >
         <defs>
           <linearGradient id="sw-gradient-0" x1="0" x2="0" y1="1" y2="0">
-            <stop stop-color="rgba(255, 255, 255, 1)" offset="0%"></stop>
-            <stop stop-color="rgba(255, 255, 255, 1)" offset="100%"></stop>
+            <stop stopColor="rgba(255, 255, 255, 1)" offset="0%"></stop>
+            <stop stopColor="rgba(255, 255, 255, 1)" offset="100%"></stop>
           </linearGradient>
         </defs>
         <path
@@ -81,7 +81,7 @@ const Footer = () => {
             width="600"
             height="450"
             style={{border:"0"}}
-            allowfullscreen=""
+            allowFullScreen=""
             loading="lazy"
           ></iframe>
           </div>
