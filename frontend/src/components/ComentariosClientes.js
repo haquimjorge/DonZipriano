@@ -93,7 +93,8 @@ const ComentariosClientes = () => {
 
   return (
     <>
-        <Carousel onSelect={handleSelect} interval={3000}>
+    <div className="containerCarousel">
+          <Carousel onSelect={handleSelect} interval={6000}>
           {Array.from({ length: arrayComentarios.length / imagesPerSlide  }).map(
             (_, mapIndex) => (
               <Carousel.Item key={mapIndex} className="p-2">
@@ -111,7 +112,8 @@ const ComentariosClientes = () => {
             )
           )}
         </Carousel>
-              
+        </div>
+
     </>)
 };
 

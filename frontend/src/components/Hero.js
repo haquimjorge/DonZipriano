@@ -6,14 +6,10 @@ const Hero = () => {
     <div>
       <div className="restaurant-content hero">
         <div className="hero-content">
-          <h1 className="benvenuti-tittle maquina-escribir-benvenuti">
-            BENVENUTI
-          </h1>
-          <h2>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam
-            velit ab magni amet molestias modi suscipit quaerat excepturi. Error
-            esse voluptatum ab dignissimos? Mollitia, molestiae qui nesciunt eum
-            alias perspiciatis!
+          <h1 className="benvenuti-tittle maquina-escribir-benvenuti">BENVENUTI</h1>
+          <h2 className="main-text-hero">
+          Deléitate con la cocina italiana, que se sirve con la amigable hospitalidad de Buenos Aires.
+          Dirigido por sus propios dueños, la familia Zipriano, dinastía italiana de restaurantes por décadas, combina servicio atento con un menú amplio, buenos vinos y los ingredientes más frescos.
           </h2>
         </div>
         <div className="hero-banner">
