@@ -85,7 +85,7 @@ const userActions = {
       console.log(response.data);
       dispatch({
         type: "SAVE_USER",
-        payload: { user: response.data.response, error: response.data.error },
+        payload: { user: response.data.response, error: response.data.error, message: response.data.message },
       });
     };
   }

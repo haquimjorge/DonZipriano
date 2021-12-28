@@ -146,7 +146,14 @@ nav {
 }
 
 .hsyreservas{
-  text-shadow: 4px 4px 2px rgb(0 0 0 / 60%);
+  color:rgb(197, 15, 15)!important;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.788);
+  font-size: 4rem;
+}
+
+.hsyreservas:hover{
+  text-shadow: 2px 2px 2px rgba(255, 255, 255, 0.788);
+
 }
 .benvenuti-tittle {
   color: #ba0909;
@@ -154,6 +161,17 @@ nav {
   text-shadow: 4px 4px 2px rgb(0 0 0 / 60%);
 }
 
+.benvenuti-tittle-nostro{
+  color:Red;
+}
+
+.benvenuti-tittle-nostro:hover{
+  text-shadow: 2px 2px 2px rgba(255, 255, 255, 0.788);
+}
+
+a{
+  text-decoration: none!important;
+}
 .hero-banner {
   /* width: 80vw; */
   min-height: 85vh;
@@ -205,7 +223,7 @@ nav {
 /* ...............MAIN CHEF.............. */
 
 .chef-content {
-  min-height: 90vh;
+  min-height: 100vh;
   background-color: rgba(2, 2, 2, 0.096);
   background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
     url(./assets/cheflour.jpg);
@@ -213,6 +231,7 @@ nav {
   background-size: cover;
   margin-bottom: -6rem;
   margin-top: -6rem;
+  padding:1rem;
 }
 
 #chef-pic {
@@ -240,7 +259,7 @@ nav {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  transform: rotate(-15deg);
+  transform: rotate(-10deg);
 }
 
 .subtittle-brangi {
@@ -258,8 +277,11 @@ nav {
     url(./assets/brindis.jpg);
   background-position: center;
   background-size: cover;
+  height: 100vh;
   margin-bottom: -6rem;
   margin-top: -6rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .reservas-tittle{
@@ -274,14 +296,15 @@ nav {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+ 
 }
 
 .reservas-container h2{
-  font-size: 4rem;
+  font-size: 2rem;
 }
 
 .reservas-container p{
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 /* ................. FOOTER .......... */
@@ -725,9 +748,38 @@ text-align: center;
   50% { border-color: transparent;}
 }
 
+@media (min-width:1100px){
+  .card-food-container {
+    margin-top: 1rem;
+    border-radius: 5rem;
+    width: 80vw;
+    height: 35vh;
+    
+  
+  }
 
+  .card-food-content{
+    font-size: 15px;
+  }
+}
+@media (min-width: 769px) and (max-width: 1000px) {
+  .card-food-container {
+    margin-top: 1rem;
+    border-radius: 5rem;
+    width: 80vw;
+    height: 40vh;
+    
+  
+  }
 
+  .main-text-hero{
+    font-size: 25px;
+  }
+}
 
+@media (min-width:769px){
+ 
+}
 @media  (max-width: 768px) {
   .restaurant-content{   
     display: flex;
@@ -783,7 +835,7 @@ text-align: center;
   }
 
   #logo-hero{
-    width:70%;
+    width:40%;
     
   }
   #chef-pic{
@@ -937,7 +989,7 @@ text-align: center;
 }
 
 
-@media (max-width: 500px){
+@media (max-width: 700px){
   .footer-integrantes {
     font-size: 0.5rem!important;
   }
@@ -1039,11 +1091,13 @@ text-align: center;
   background-position: 20%;
   padding: 2rem;
   margin: 2rem 0 2rem 0;
+  width: 100%;
 }
 
 .containerCarousel Carousel{
   width: 100% !important;
 }
+
 
 .cardComentarios {
   color: white !important;
@@ -1055,6 +1109,7 @@ text-align: center;
   width: 100% !important;
   backdrop-filter: blur(5px);
   backdrop-filter: brightness(55%);
+  height: 20vh!important;
 }
 
 .imagenUserComentarios {
@@ -1062,6 +1117,7 @@ text-align: center;
   height:100px;
   border-radius: 50% !important;
   padding: 1rem;
+  object-fit: cover!important;
 }
 
 .comentarioUsuario {
@@ -1070,6 +1126,62 @@ text-align: center;
  letter-spacing: 0.1em;
 }
 
+/* ........... Pagina de verificacion ................ */
+
+.text-shadow{
+    text-shadow: 2px 2px 5px black;
+}
+.google-text{
+    font-size: 1.3rem;
+}
+
+.verify-page-text{
+  
+}
+
+/** ----------------------- MESAS ------------ */
+
+.mesas-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.suelo-mesas {
+  background-image: url("./assets/fondosuelo.jpg");
+  background-size: cover;
+  background-position: center;
+  width: 50vw;
+  min-height: 50vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 2rem;
+  border-radius: 10rem;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.88);
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.88);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.88);
+}
+
+.contenedor-mesa {
+  width: 8vw;
+  margin-top: 5rem;
+}
+
+.mesa-disponible {
+  width: 5vw;
+  cursor: pointer;
+}
+
+.reservas-title {
+  text-align: center;
+  text-shadow: 4px 4px 2px rgba(0, 0, 0, 0.6);
+}
+
+.reservas-title h2 {
+  font-size: 5rem;
+  color: #ba0909;
+}
 /* Chatbot */
 
 .chatbot {

@@ -150,7 +150,7 @@ const NavBar = (props) => {
         </nav>
       </header> */}
       <svg
-        class="svg-bot"
+        className="svg-bot"
         style={{ transform: "rotate(180deg)", transition: "0.3s" }}
         viewBox="0 0 1440 110"
         version="1.1"
@@ -158,8 +158,8 @@ const NavBar = (props) => {
       >
         <defs>
           <linearGradient id="sw-gradient-0" x1="0" x2="0" y1="1" y2="0">
-            <stop stop-color="rgba(255, 255, 255, 1)" offset="0%"></stop>
-            <stop stop-color="rgba(255, 255, 255, 1)" offset="100%"></stop>
+            <stop stopColor="rgba(255, 255, 255, 1)" offset="0%"></stop>
+            <stop stopColor="rgba(255, 255, 255, 1)" offset="100%"></stop>
           </linearGradient>
         </defs>
         <path

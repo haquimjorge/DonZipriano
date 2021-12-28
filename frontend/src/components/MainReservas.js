@@ -1,10 +1,12 @@
 import React from "react";
+import {Link} from "react-router-dom"
 
 const MainReservas = () => {
   return (
     <>
-      <div className="reservas-content hero">
-        <h1 className="pasta-title hsyreservas">HORARIOS Y RESERVAS</h1>
+      <div className="reservas-content hero container">
+
+      <Link to="/Reservas"><h1 className="pasta-title hsyreservas">HORARIOS Y RESERVAS</h1></Link>
         <div className="hero-content chef-container">
           <div className="reservas-container">
             <h2 className="benvenuti-tittle">Restaurante:</h2>

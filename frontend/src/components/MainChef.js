@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom"
 
 const MainChef = () => {
   return (
@@ -7,8 +8,8 @@ const MainChef = () => {
         <div className="hero-content chef-container">
           <div className="menu-container">
             <img id="chef-pic" src="/assets/menudz.png" alt="Imagen del menu" />
-
-            <h1 className="benvenuti-tittle">IL NOSTRO MENU</h1>
+            <Link to="/Menu"><h1 className="benvenuti-tittle-nostro"> IL NOSTRO MENU</h1></Link>
+            
           </div>
         </div>
         <div className="hero-banner chef-banner">

@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import { React, useState, useEffect } from "react";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
@@ -8,10 +8,18 @@ import { connect } from "react-redux";
 import userActions from "../redux/action/userActions";
 import { Navigate } from "react-router-dom";
 import {GoogleLogin} from 'react-google-login'
-
 import * as Yup from "yup";
 import YupPassword from "yup-password";
 import { Formik, Form, useField } from "formik";
+import Alert from 'react-bootstrap/Alert'
+import Button from 'react-bootstrap/Button'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { useFormik } from 'formik';
+import lottie from "lottie-web";
+import pizzaAnim from '../lotties/pizza-animaton.json'
+import { Link } from "react-router-dom";
+
 
 const StringInput = ({ label, ...props }) => {
   const [field, meta] = useField(props);
@@ -29,7 +37,9 @@ const StringInput = ({ label, ...props }) => {
   );
 };
 
+
 const SignUp = (props) => {
+
   YupPassword(Yup);
   const [showPass, setShowPass] = useState(false);
   const togglePassword = (e) => {
@@ -40,7 +50,42 @@ const SignUp = (props) => {
       setShowPass(false);
     }
   };
+  useEffect(()=>{
+    lottie.loadAnimation({
+        container: document.querySelector("#pizza-animation"),
+        animationData: pizzaAnim,
+      })
+  },[])
+    
 
+  const notify = () => {
+      if(props.message){
+          toast.success(props.message,{
+            position: "bottom-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            });
+      }else if(props.error){
+        toast.error(props.error[0].message,{
+            position: "bottom-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            });
+      }
+
+  }
+  
+
+  console.log('MESSAGE EN SIGN UP')
+  console.log(props.message)
   const responseGoogle = (response) => {
     const { givenName, familyName, email, googleId, imageUrl } =
     response.profileObj;
@@ -71,10 +116,37 @@ const SignUp = (props) => {
             alt="Logo Don Zipriano"
           />
         </div>
-        <h2 className="registrate">
-          Registrate{" "}
-          {/* <strong className="text-danger">Don Zipriano</strong> */}
-        </h2>
+        
+        {notify()}
+            
+
+        <ToastContainer
+        position="bottom-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+         />
+
+        {props.message? (
+        
+        <div className="d-flex justify-content center flex-column align-items-center">
+            <p className="display-6 text-center">Gracias por registrarte con nosotros, por favor verifica tu bandeja de entrada.</p>
+            
+     
+        </div>
+        
+        
+        
+        ): (<>
+            <h2 className="registrate">
+            Registrate{" "}
+            {/* <strong className="text-danger">Don Zipriano</strong> */}
+          </h2>
         <Formik
           initialValues={{
             name: "",
@@ -106,7 +178,7 @@ const SignUp = (props) => {
               .required("Este campo es obligatorio"),
             image: Yup.string().required("Este campo es obligatorio"),
           })}
-          onSubmit={(values, { setSubmitting }) => {
+          onSubmit={(values, { setSubmitting}) => {
             props.signUp(values);
             setSubmitting(false);
           }}
@@ -165,18 +237,22 @@ const SignUp = (props) => {
               placeholder="kevin"
             />
             <div className="btn-container">
-              <button className="text-light p-2 m-2 btn-sign" type="submit">
+               
+             <button className="text-light p-2 m-2 btn-sign" type="submit">
                 Registrate
-              </button>
+              </button> 
+              
+  
             </div>
             {props.error ? (
-              <div className="text-danger">{props.error[0].message}</div>
+              <div className="text-danger text-center">{props.error[0].message}</div>
             ) : (
               ""
             )}
             <div className="d-flex justify-content-center flex-column align-items-center">
 
-<p className="text-white">o ingresa con Google</p>
+            <p className="text-center disabled text-shadow">Ya tienes cuenta? Ingresa <Link className="text-danger" to="/ingresar"> <strong>aca</strong></Link> </p>
+<p className="text-white text-shadow google-text">o ingresa con Google</p>
       <GoogleLogin
         clientId="190201580680-u46pho0n2vjalcan540tm22oan4vhc0v.apps.googleusercontent.com"
         buttonText="Sign in with Google"
@@ -186,7 +262,12 @@ const SignUp = (props) => {
       />
 </div>
           </Form>
-        </Formik>
+        </Formik></>)}
+        <div className="d-flex justify-content-center align-items-center">
+
+        <div  style={props.message?  { width: 200, height: 200 } :{ width: 0, height: 0 } } id="pizza-animation"     className={props.message? 'visible':'invisible'}></div>
+        </div>
+        
       </Container>
       <Footer />
     </>
@@ -197,6 +278,7 @@ const mapStateToProps = (state) => {
   return {
     user: state.authReducer.user,
     error: state.authReducer.error,
+    message: state.authReducer.message
   };
 };
 
