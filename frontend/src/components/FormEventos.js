@@ -1,24 +1,101 @@
-import { Form, Button } from "react-bootstrap";
+import React, { useState } from "react";
+import { Form, Button, Alert } from "react-bootstrap";
+import { useForm } from "react-hook-form";
 
 const FormEventos = () => {
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm();
+
+  const [form, setForm] = useState({
+    nombre: "",
+    lastName: "",
+    email: "",
+    password: "",
+    photo: "",
+    country: "",
+  });
+
+  const handleChange = (e) => {
+    e.preventDefault();
+    setForm({
+      ...form,
+    });
+  };
+
   return (
     <div className="container formEventos">
       <h4>Completa el siguiente formulario y nos contactaremos pronto:</h4>
-      <Form className="col-11 col-xl-6 my-5">
+      <Form className="col-11 col-xl-6 my-5" onSubmit={handleSubmit("")}>
         <Form.Group className="mb-3" controlId="formBasicPassword">
           <Form.Label>Nombre</Form.Label>
-          <Form.Control type="text" placeholder="Nombre" />
+          <Form.Control
+            {...register("nombre", {
+              required: { value: true, message: "Este campo es obligatorio" },
+              pattern: {
+                pattern: /^[A-Za-z]+$/i,
+                message: "Texto ingresado invalido",
+              },
+            })}
+            type="text"
+            placeholder="Nombre"
+            name="nombre"
+            onChange={handleChange}
+            value={form.firstName}
+          />
+          {errors.nombre && (
+            <Alert className="col-xl-12 p-0 m-0" variant="warning">
+              <span>{errors.nombre.message}</span>
+            </Alert>
+          )}
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicPassword">
           <Form.Label>Apellido</Form.Label>
-          <Form.Control type="text" placeholder="Apellido" />
+          <Form.Control
+            {...register("apellido", {
+              required: { value: true, message: "Este campo es obligatorio" },
+              pattern: {
+                pattern: /^[A-Za-z]+$/i,
+                message: "Texto ingresado invalido",
+              },
+            })}
+            type="text"
+            placeholder="Apellido"
+            name="apellido"
+            onChange={handleChange}
+            value={form.apellido}
+          />
+          {errors.apellido && (
+            <Alert className="col-xl-12 p-0 m-0" variant="warning">
+              <span>{errors.apellido.message}</span>
+            </Alert>
+          )}
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Direccion de correo electronico</Form.Label>
-          <Form.Control type="email" placeholder="Correo electronico" />
-          {/* <Form.Text className="text-muted">
-          We'll never share your email with anyone else.
-        </Form.Text> */}
+          <Form.Control
+            {...register("email", {
+              required: { value: true, message: "Este campo es obligatorio" },
+              pattern: {
+                value:
+                  /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/,
+                message: "Texto ingresado invalido",
+              },
+            })}
+            type="email"
+            placeholder="Correo electronico"
+            name="email"
+            onChange={handleChange}
+            value={form.email}
+          />
+          {errors.email && (
+            <Alert className="col-xl-12 p-0 m-0" variant="warning">
+              <span>{errors.email.message}</span>
+            </Alert>
+          )}
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicPassword">
           <Form.Label>Telefono movil</Form.Label>
@@ -26,21 +103,54 @@ const FormEventos = () => {
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicPassword">
           <div className="d-flex gap-1">
-             <div className="col-6  ">
-            <Form.Label>¿Que evento queres hacer?</Form.Label>
-            <Form.Select aria-label="Default select example">
-              <option>Tipo de evento</option>
-              <option value="1">Casamiento</option>
-              <option value="2">Fiesta de 15</option>
-              <option value="3">Cumpleaños</option>
-              <option value="3">Evento corporativo</option>
-              <option value="3">Otros</option>
-            </Form.Select>
-             </div>
-             <div className="col-5">
-            <Form.Label>¿Cuantas personas asistiran?</Form.Label>
-            <Form.Control type="number" placeholder="cantidad de invitados" />
-             </div>
+            <div className="col-6  ">
+              <Form.Label>¿Que evento queres hacer?</Form.Label>
+              <Form.Select
+                {...register("evento", {
+                  required: {
+                    value: true,
+                    message: "Este campo es obligatorio",
+                  },
+                })}
+                aria-label="Default select example"
+                name="evento"
+                onChange={handleChange}
+                value={form.evento}
+              >
+                {errors.evento && (
+                  <Alert className="col-xl-12 p-0 m-0" variant="warning">
+                    <span>{errors.evento.message}</span>
+                  </Alert>
+                )}
+                <option>Tipo de evento</option>
+                <option value="Casamiento">Casamiento</option>
+                <option value="Fiesta de 15">Fiesta de 15</option>
+                <option value="Cumpleaños">Cumpleaños</option>
+                <option value="Evento corporativo">Evento corporativo</option>
+                <option value="Otros">Otros</option>
+              </Form.Select>
+            </div>
+            <div className="col-5">
+              <Form.Label>¿Cuantas personas asistiran?</Form.Label>
+              <Form.Control
+                {...register("invitados", {
+                  required: {
+                    value: true,
+                    message: "Este campo es obligatorio",
+                  },
+                })}
+                type="number"
+                placeholder="cantidad de invitados"
+                name="invitados"
+                onChange={handleChange}
+                value={form.invitados}
+              />
+              {errors.invitados && (
+                <Alert className="col-xl-12 p-0 m-0" variant="warning">
+                  <span>{errors.invitados.message}</span>
+                </Alert>
+              )}
+            </div>
           </div>
         </Form.Group>
         <Button variant="primary text-light" type="submit">

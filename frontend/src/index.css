@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Cantarell&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Cantarell&display=swap"); */
 @import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
 
 * {
@@ -9,14 +9,15 @@
 
 body {
   /* font-family: "Cantarell", sans-serif; */
+  /* font-family: 'DM Sans', sans-serif; */
   font-family: "Permanent Marker", cursive;
   color: #ffffff;
   background: rgb(34, 102, 55);
   background: linear-gradient(
     90deg,
-    rgba(34, 102, 55, 1) 10%,
-    rgba(237, 226, 226, 1) 45%,
-    rgba(186, 9, 9, 1) 80%
+    rgb(30, 90, 49) 10%,
+    rgb(221, 213, 213) 46%,
+    rgba(186, 9, 9, 1) 75%
   );
 }
 
@@ -519,6 +520,8 @@ footer ul li {
   flex-direction: column;
   backdrop-filter: blur(5px);
   backdrop-filter: brightness(85%);
+  letter-spacing: 0.1em;
+  
 }
 
 .nuestroChef {  
@@ -530,6 +533,11 @@ footer ul li {
   flex-direction: column;
   backdrop-filter: blur(5px);
   backdrop-filter: brightness(85%);
+  letter-spacing: 0.1em;
+}
+.nuestroChef h1{
+  padding: 1rem;
+  
 }
 
 .nuestraCocina {
@@ -551,25 +559,88 @@ footer ul li {
   display: flex;
   width: 50%;
 }
+
 .divImagenSobreNosotros img{
   width: 100%;
   border-radius: 10px;
 }
+
+#imagenChef {
+  height: 70% !important;
+  padding: 1rem;
+  align-self: flex-start;
+}
+
 .sobreNosotrosTexto{
-    width: 50%;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem;
+  text-shadow: 3px 3px 2px rgba(0, 0, 0, 0.418);
+  padding: 0.5rem;
+}
+
+.sobreNosotrosTexto p{
+  font-family: 'DM Sans', sans-serif !important;
+  color:#fafafa;
+}
+
+#textoChef{
+  font-family: 'DM Sans', sans-serif !important;
+  color:#fafafa;
+}
+
+
+@media (max-width: 1270px){
+
+  .internoNuestro {
+    display: flex;
+    flex-direction: column !important;
+    padding: 0.6rem;
+    width: 100%;
+    margin:0.5rem;
+  
+  }
+
+  .sobreNosotrosTexto{
+    width: 100%;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    margin: 1rem;
+    margin: 0rem;
     text-shadow: 3px 3px 2px rgba(0, 0, 0, 0.418);
-    padding: 0.5rem;
+    padding: 0rem;
+    backdrop-filter: blur(10px);
+    backdrop-filter: brightness(40%) !important; 
+  }
+  
+.sobreNosotrosTexto p{
+  font-family: 'DM Sans', sans-serif !important;
+  color:#fafafa;
 }
 
+#textoChef{
+  font-family: 'DM Sans', sans-serif !important;
+  color:#fafafa;
+}
+  .divImagenSobreNosotros{
+    display: flex;
+    width: 100%;
+  }
+
+}
+
+/* ............⬆⬆⬆ SOBRE NOSOTROS ⬆⬆⬆...................... */
+
+
+
 .signin-picture{
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
     background-image: url("https://images.unsplash.com/photo-1611765083444-a3ce30f1c885?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80");
 
     height: 100%; 
@@ -933,6 +1004,8 @@ text-align: center;
   width: 40%;
   text-shadow: 2px 2px rgba(0, 0, 0, 0.486) !important;
   font-size: large;
+  font-family: 'DM Sans', sans-serif !important;
+  color:#fafafa;
 }
 
 .contenedorFormEventos {
