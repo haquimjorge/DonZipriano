@@ -3,7 +3,7 @@ import React from "react";
 const MainReservas = () => {
   return (
     <>
-      <div className="reservas-content hero">
+      <div className="reservas-content hero container">
         <h1 className="pasta-title hsyreservas">HORARIOS Y RESERVAS</h1>
         <div className="hero-content chef-container">
           <div className="reservas-container">

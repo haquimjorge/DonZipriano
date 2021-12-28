@@ -258,6 +258,7 @@ nav {
     url(./assets/brindis.jpg);
   background-position: center;
   background-size: cover;
+  height: 100vh;
   margin-bottom: -6rem;
   margin-top: -6rem;
 }
@@ -725,9 +726,38 @@ text-align: center;
   50% { border-color: transparent;}
 }
 
+@media (min-width:1100px){
+  .card-food-container {
+    margin-top: 1rem;
+    border-radius: 5rem;
+    width: 80vw;
+    height: 35vh;
+    
+  
+  }
 
+  .card-food-content{
+    font-size: 15px;
+  }
+}
+@media (min-width: 769px) and (max-width: 1000px) {
+  .card-food-container {
+    margin-top: 1rem;
+    border-radius: 5rem;
+    width: 80vw;
+    height: 40vh;
+    
+  
+  }
 
+  .main-text-hero{
+    font-size: 25px;
+  }
+}
 
+@media (min-width:769px){
+ 
+}
 @media  (max-width: 768px) {
   .restaurant-content{   
     display: flex;
@@ -783,7 +813,7 @@ text-align: center;
   }
 
   #logo-hero{
-    width:70%;
+    width:40%;
     
   }
   #chef-pic{
@@ -937,7 +967,7 @@ text-align: center;
 }
 
 
-@media (max-width: 500px){
+@media (max-width: 700px){
   .footer-integrantes {
     font-size: 0.5rem!important;
   }
