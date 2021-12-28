@@ -34,10 +34,10 @@ const FormEventos = () => {
           <Form.Label>Nombre</Form.Label>
           <Form.Control
             {...register("nombre", {
-              required: { value: true, message: "Field is required" },
+              required: { value: true, message: "Este campo es obligatorio" },
               pattern: {
                 pattern: /^[A-Za-z]+$/i,
-                message: "The format is not correct",
+                message: "Texto ingresado invalido",
               },
             })}
             type="text"
@@ -56,10 +56,10 @@ const FormEventos = () => {
           <Form.Label>Apellido</Form.Label>
           <Form.Control
             {...register("apellido", {
-              required: { value: true, message: "Field is required" },
+              required: { value: true, message: "Este campo es obligatorio" },
               pattern: {
                 pattern: /^[A-Za-z]+$/i,
-                message: "The format is not correct",
+                message: "Texto ingresado invalido",
               },
             })}
             type="text"
@@ -78,11 +78,11 @@ const FormEventos = () => {
           <Form.Label>Direccion de correo electronico</Form.Label>
           <Form.Control
             {...register("email", {
-              required: { value: true, message: "Field is required" },
+              required: { value: true, message: "Este campo es obligatorio" },
               pattern: {
                 value:
-                  /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i,
-                message: "The format is not correct",
+                  /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/,
+                message: "Texto ingresado invalido",
               },
             })}
             type="email"
@@ -109,7 +109,7 @@ const FormEventos = () => {
                 {...register("evento", {
                   required: {
                     value: true,
-                    message: "Field is required",
+                    message: "Este campo es obligatorio",
                   },
                 })}
                 aria-label="Default select example"
@@ -136,7 +136,7 @@ const FormEventos = () => {
                 {...register("invitados", {
                   required: {
                     value: true,
-                    message: "Field is required",
+                    message: "Este campo es obligatorio",
                   },
                 })}
                 type="number"
