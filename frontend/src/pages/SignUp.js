@@ -18,6 +18,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { useFormik } from 'formik';
 import lottie from "lottie-web";
 import pizzaAnim from '../lotties/pizza-animaton.json'
+import { Link } from "react-router-dom";
 
 
 const StringInput = ({ label, ...props }) => {
@@ -250,7 +251,8 @@ const SignUp = (props) => {
             )}
             <div className="d-flex justify-content-center flex-column align-items-center">
 
-<p className="text-white">o ingresa con Google</p>
+            <p className="text-center disabled text-shadow">Ya tienes cuenta? Ingresa <Link className="text-danger" to="/ingresar"> <strong>aca</strong></Link> </p>
+<p className="text-white text-shadow google-text">o ingresa con Google</p>
       <GoogleLogin
         clientId="190201580680-u46pho0n2vjalcan540tm22oan4vhc0v.apps.googleusercontent.com"
         buttonText="Sign in with Google"

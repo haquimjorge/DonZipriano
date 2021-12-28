@@ -12,6 +12,7 @@ import Account from "./pages/Account"
 import userActions from "./redux/action/userActions";
 import { connect } from "react-redux";
 import { Navigate } from "react-router-dom";
+import Verify from './pages/Verify'
 
 function App(props) {
   const { authUser,user } = props;
@@ -43,6 +44,7 @@ function App(props) {
           <Route path="/nosotros" element={<Nosotros />} />
           <Route path="*" element={<Navigate to="/" />} />
           <Route path="/account" element={<Account />}/>
+          <Route path="/verificacion" element={<Verify />}/>
         </Routes>
         {/* <Forms/> */}
       </BrowserRouter>

@@ -1137,6 +1137,18 @@ text-align: center;
  letter-spacing: 0.1em;
 }
 
+/* ........... Pagina de verificacion ................ */
+
+.text-shadow{
+    text-shadow: 2px 2px 5px black;
+}
+.google-text{
+    font-size: 1.3rem;
+}
+
+.verify-page-text{
+  
+}
 
 /** ----------------------- MESAS ------------ */
 
