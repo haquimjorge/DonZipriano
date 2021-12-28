@@ -144,9 +144,13 @@ nav {
   align-items: center;
 }
 
+.hsyreservas{
+  text-shadow: 4px 4px 2px rgb(0 0 0 / 60%);
+}
 .benvenuti-tittle {
   color: #ba0909;
   font-family: "Permanent Marker", cursive;
+  text-shadow: 4px 4px 2px rgb(0 0 0 / 60%);
 }
 
 .hero-banner {
@@ -633,8 +637,13 @@ text-align: center;
 
 
 
+@media (max-width: 500px){
+  .footer-integrantes {
+    font-size: 0.5rem!important;
+}
+}
 
-@media  (max-width: 420px) {
+@media  (max-width: 768px) {
   .restaurant-content{   
     display: flex;
     justify-content: space-around;
@@ -664,6 +673,7 @@ text-align: center;
   .hero{
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
   }
 
   .pasta-title{
@@ -675,8 +685,7 @@ text-align: center;
 
   .pasta-text{
     font-size: 1rem;
-    padding-bottom:3rem!important;
-    margin:1rem;
+    
     text-align: center;
   }
 
@@ -690,12 +699,17 @@ text-align: center;
 
   #logo-hero{
     width:70%;
+    
   }
   #chef-pic{
     width:40%;
     margin-top:2rem!important;
   }
 
+  #logo-hero1{
+    width:70%;
+   padding-bottom: 3rem;; 
+  }
   .benvenuti-tittle, .nombre-chef{
     font-size: 2rem!important;
     text-align: center;
@@ -718,7 +732,7 @@ text-align: center;
   }
 
   .footer-integrantes{
-    font-size: 0.5rem;
+    font-size: 1rem;
    
   }
   .icon-f{
@@ -743,6 +757,104 @@ text-align: center;
     flex-direction: column;
     width: 30%;
   }
+ /*MENU*/
+  .card-menu{
+    width:90vw;
+  }
+  .title-menu-container {
+    height: 15vh;
+    width: 90vw;
+    display: flex;
+    
+  }
+  .title-menu-container h1{
+    font-size: 1.5rem!important;
+  }
+  .entradas{
+    align-items: center;
+    width:90vw;
+  }
+
+  #logo-nav{
+    display: none;
+  }
+
+  .title-postres{
+    text-align:center!important;
+  }
+  .slider-container-main {
+    width: 90vw;
+    display:flex;
+    justify-content: center;
+    
+  }
+
+  .slider-container{
+    width:50%;
+  }
+  .platos-entradas{
+    width: 90vw;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 70%;
+    padding:1rem;
+  }
+    .card-food-container {
+      margin-top: 1rem;
+      /* border: 1px solid red; */
+      border-radius: 5rem;
+      width: 100%;
+      height: 30vh;
+     
+    }
+  
+
+  .card-food-content{
+    font-size: 0.8rem;
+    width: 50%;
+  }
+
+
+  .card-food-container {
+    margin-top: 1rem;
+    /* border: 1px solid red; */
+    border-radius: 5rem;
+    width: 80vw;
+    height: 40vh;
+  
+  }
+
+  .food-content-container {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .card-food-pic {
+    width: 20vw;
+    height: 20vh;
+    border-radius: 5rem;
+    background-size: cover;
+    background-position: center;
+  }
+  .card-menu-container{
+    padding:2rem;
+  }
+  .reservas-container{
+    display: flex;    
+    flex-direction: column;
+    align-content: center;
+   
+    height: auto;
+    
+   
+  }
+  .reservas-container p {
+    font-size: 1.2rem;
+  }
+
+
+  
 }
 /* ........... pagEVENTOS ................ */
 
@@ -800,3 +912,27 @@ text-align: center;
   text-shadow: 2px 2px rgba(0, 0, 0, 0.486) !important;
   text-decoration: underline  rgba(255, 0, 0, 0.02);
 }
+
+
+/* ........... ComentariosClientes ................ */
+
+
+.containerCarousel {
+  background-color: #f0060600;
+  /* width:95%; */
+  justify-self: center !important;
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: center;
+}
+.containerCarousel Carousel{
+  width: 100% !important;
+  color: black !important;
+}
+
+.imagenUserComentarios {
+  width:100px !important;
+  height:100px;
+  border-radius: 50% !important;
+}
+
