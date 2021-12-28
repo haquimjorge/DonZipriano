@@ -100,8 +100,9 @@ const userControllers = {
     try {
       let editedUser = await User.findOneAndUpdate(
         { _id: id },
-        { ...req.body }
-      );
+        { ...req.body },
+        {new:true}
+      )
       res.json({ success: true, error: null, response: editedUser });
     } catch (e) {
       res.json({ success: false, error: e, response: null });

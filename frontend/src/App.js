@@ -7,6 +7,7 @@ import Nosotros from "./pages/Nosotros";
 // import Forms from "./components/FormEventos";
 import SignUp from "./pages/SignUp";
 import SignIn from "./pages/SignIn";
+import Account from "./pages/Account"
 import { useEffect } from "react";
 import userActions from "./redux/action/userActions";
 import { connect } from "react-redux";
@@ -40,6 +41,7 @@ function App(props) {
           <Route path="/reservas" element={<Reservas />} />
           <Route path="/eventos" element={<Eventos/>} />
           <Route path="/nosotros" element={<Nosotros />} />
+          <Route path="/account" element={<Account />}/>
           <Route path="*" element={<Home />} />
         </Routes>
         {/* <Forms/> */}
