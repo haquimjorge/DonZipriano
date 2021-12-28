@@ -13,12 +13,14 @@ const FormEventos = () => {
   const [form, setForm] = useState({
     nombre: "",
     lastName: "",
-    email: "",
+    mail: "",
     password: "",
     photo: "",
     country: "",
   });
-
+  const onSubmit = (data) => {
+    alert(JSON.stringify(data));
+  };
   const handleChange = (e) => {
     e.preventDefault();
     setForm({
@@ -29,11 +31,13 @@ const FormEventos = () => {
   return (
     <div className="container formEventos">
       <h4>Completa el siguiente formulario y nos contactaremos pronto:</h4>
-      <Form className="col-11 col-xl-6 my-5" onSubmit={handleSubmit("")}>
+      <Form className="col-11 col-xl-6 my-5" onSubmit={handleSubmit(onSubmit)}>
         <Form.Group className="mb-3" controlId="formBasicPassword">
           <Form.Label>Nombre</Form.Label>
           <Form.Control
             {...register("nombre", {
+              minLength: 2,
+              maxLength: 15,
               required: { value: true, message: "Este campo es obligatorio" },
               pattern: {
                 pattern: /^[A-Za-z]+$/i,
@@ -46,9 +50,19 @@ const FormEventos = () => {
             onChange={handleChange}
             value={form.firstName}
           />
-          {errors.nombre && (
+          {errors?.nombre && (
             <Alert className="col-xl-12 p-0 m-0" variant="warning">
               <span>{errors.nombre.message}</span>
+            </Alert>
+          )}
+          {errors?.nombre?.type === "maxLength" && (
+            <Alert className="col-xl-12 p-0 m-0" variant="warning">
+              <span>El nombre no puede superar los 20 caracteres</span>
+            </Alert>
+          )}
+          {errors?.nombre?.type === "minLength" && (
+            <Alert className="col-xl-12 p-0 m-0" variant="warning">
+              <span>El nombre no puede tener menos de 2 caracteres</span>
             </Alert>
           )}
         </Form.Group>
@@ -56,6 +70,8 @@ const FormEventos = () => {
           <Form.Label>Apellido</Form.Label>
           <Form.Control
             {...register("apellido", {
+              minLength: 2,
+              maxLength: 15,
               required: { value: true, message: "Este campo es obligatorio" },
               pattern: {
                 pattern: /^[A-Za-z]+$/i,
@@ -71,6 +87,16 @@ const FormEventos = () => {
           {errors.apellido && (
             <Alert className="col-xl-12 p-0 m-0" variant="warning">
               <span>{errors.apellido.message}</span>
+            </Alert>
+          )}
+          {errors?.apellido?.type === "maxLength" && (
+            <Alert className="col-xl-12 p-0 m-0" variant="warning">
+              <span>El apellido no puede superar los 15 caracteres</span>
+            </Alert>
+          )}
+          {errors?.apellido?.type === "minLength" && (
+            <Alert className="col-xl-12 p-0 m-0" variant="warning">
+              <span>El apellido no puede tener menos de 2 caracteres</span>
             </Alert>
           )}
         </Form.Group>
