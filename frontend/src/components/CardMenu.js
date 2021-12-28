@@ -47,7 +47,7 @@ const CardMenu = ({ meal }) => {
               />
             </div> */}
             <div className="titulo-menu">
-              <h1>Menu</h1>
+              <h1>Menu </h1>
             </div>
           </div>
           <div className="entradas">

@@ -1,11 +1,12 @@
-import {combineReducers} from "redux"
-import mealsReducer from './mealsReducer'
-import authReducer from './authReducer'
-
+import { combineReducers } from "redux";
+import mealsReducer from "./mealsReducer";
+import authReducer from "./authReducer";
+import tableReducer from "./tableReducer"
 
 const mainReducer = combineReducers({
-    mealsReducer,
-    authReducer
-})
+  mealsReducer,
+  authReducer,
+  tableReducer,
+});
 
-export default mainReducer
+export default mainReducer;

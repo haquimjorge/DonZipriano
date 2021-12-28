@@ -1,6 +1,7 @@
 const initialState = {
   user: null,
   error: null,
+  message:null
 };
 
 const authReducer = (state = initialState, action) => {
@@ -10,6 +11,7 @@ const authReducer = (state = initialState, action) => {
         ...state,
         user: action.payload.user,
         error: action.payload.error,
+        message:action.payload.message
       };
 
     case "IS_AUTH":

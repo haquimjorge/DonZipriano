@@ -146,7 +146,14 @@ nav {
 }
 
 .hsyreservas{
-  text-shadow: 4px 4px 2px rgb(0 0 0 / 60%);
+  color:rgb(197, 15, 15)!important;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.788);
+  font-size: 4rem;
+}
+
+.hsyreservas:hover{
+  text-shadow: 2px 2px 2px rgba(255, 255, 255, 0.788);
+
 }
 .benvenuti-tittle {
   color: #ba0909;
@@ -154,6 +161,17 @@ nav {
   text-shadow: 4px 4px 2px rgb(0 0 0 / 60%);
 }
 
+.benvenuti-tittle-nostro{
+  color:Red;
+}
+
+.benvenuti-tittle-nostro:hover{
+  text-shadow: 2px 2px 2px rgba(255, 255, 255, 0.788);
+}
+
+a{
+  text-decoration: none!important;
+}
 .hero-banner {
   /* width: 80vw; */
   min-height: 85vh;
@@ -164,6 +182,10 @@ nav {
 
 #logo-hero {
   width: 40vw;
+}
+
+#logo-hero1{
+  width:40vw;
 }
 
 .hero-content {
@@ -203,7 +225,7 @@ nav {
 /* ...............MAIN CHEF.............. */
 
 .chef-content {
-  min-height: 90vh;
+  min-height: 100vh;
   background-color: rgba(2, 2, 2, 0.096);
   background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
     url(./assets/cheflour.jpg);
@@ -211,6 +233,7 @@ nav {
   background-size: cover;
   margin-bottom: -6rem;
   margin-top: -6rem;
+  padding:1rem;
 }
 
 #chef-pic {
@@ -238,7 +261,7 @@ nav {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  transform: rotate(-15deg);
+  transform: rotate(-10deg);
 }
 .titulo-menu h1{
   letter-spacing: 12px !important;
@@ -259,8 +282,11 @@ nav {
     url(./assets/brindis.jpg);
   background-position: center;
   background-size: cover;
+  height: 100vh;
   margin-bottom: -6rem;
   margin-top: -6rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .reservas-tittle{
@@ -275,14 +301,15 @@ nav {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+ 
 }
 
 .reservas-container h2{
-  font-size: 4rem;
+  font-size: 2rem;
 }
 
 .reservas-container p{
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 /* ................. FOOTER .......... */
@@ -297,19 +324,26 @@ footer {
 
 .footer-container {
   min-height: 20vh;
+  width:70%;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
 }
 .footer-container div{
   margin: 0.5rem;
 }
-.redes {
+.footer-integrantes {
   
-  display: flex;
-  flex-direction: column;
-   
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+  align-content: center;
 }
+
+.redes {
+  display: flex;
+}
+
 .redes div{
   
   margin: 0.5rem;
@@ -346,7 +380,7 @@ footer ul li {
 }
 
 .card-menu {
-  width: 50vw;
+  width: 80vw;
   /* border: 1px solid red; */
   border-radius: 5rem;
   min-height: 80vh;
@@ -365,8 +399,10 @@ footer ul li {
 
 .title-menu-container {
   height: 15vh;
-  width: 50vw;
+  width: 100%;
   display: flex;
+  justify-content: center;
+  
 }
 
 .logo-menu {
@@ -392,9 +428,9 @@ footer ul li {
 }
 
 .entradas {
-  width: 50vw;
+  width: 100%;
   min-height: 30vh;
-  /* border: 1px solid blue; */
+ 
   margin-top: 4rem;
   
 }
@@ -405,8 +441,7 @@ footer ul li {
 }
 
 .platos-entradas {
-  width: 50vw;
-  /* border: 1px solid green; */
+  width: 100%;
   min-height: 30vh;
   display: flex;
   flex-wrap: wrap;
@@ -415,9 +450,9 @@ footer ul li {
 }
 
 .plato-principal {
-  width: 50vw;
+  
   min-height: 30vh;
-  /* border: 1px solid yellow; */
+ 
 }
 
 .plato-principal h4 {
@@ -426,9 +461,8 @@ footer ul li {
 }
 
 .postre {
-  width: 50vw;
-  min-height: 30vh;
-  /* border: 1px solid orange; */
+   min-height: 30vh;
+  
 }
 
 .postre h4 {
@@ -437,9 +471,9 @@ footer ul li {
 }
 
 .bebestible {
-  width: 50vw;
+ width: 100%;
   min-height: 30vh;
-  /* border: 1px solid grey; */
+ 
 }
 
 .bebestible h4 {
@@ -448,11 +482,11 @@ footer ul li {
 }
 
 .card-food-container {
+ 
   margin-top: 1rem;
-  /* border: 1px solid red; */
   border-radius: 5rem;
-  width: 23vw;
-  height: 27vh;
+  width: 50%!important;
+  height: 40vh;
   background-color: #000000a6;
   box-shadow: 10px 10px 5px 0px rgba(28,28,28,0.88);
 -webkit-box-shadow: 10px 10px 5px 0px rgba(28,28,28,0.88);
@@ -466,13 +500,14 @@ footer ul li {
 }
 
 .card-food-content {
-  /* border: 1px solid yellow; */
-  width: 13vw;
-  padding: 1rem;
+  width: 50%;
+ font-size: 15px;
 }
 
 .food-content-container {
   display: flex;
+  justify-content: space-evenly;
+ 
 }
 
 .card-food-pic {
@@ -489,12 +524,13 @@ footer ul li {
 }
 
 .slider-container {
-  width: 35rem;
+  align-self: center;
+  width: 50%;
   
 }
 
 .slider-container-main {
-  width: 50vw;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -645,6 +681,7 @@ footer ul li {
 }
 
 
+
 @media (max-width: 991px){
     .nav-link-container .nav-link{
 
@@ -722,14 +759,38 @@ text-align: center;
   50% { border-color: transparent;}
 }
 
+@media (min-width:1100px){
+  .card-food-container {
+    margin-top: 1rem;
+    border-radius: 5rem;
+    width: 80vw;
+    height: 35vh;
+    
+  
+  }
 
-
-@media (max-width: 500px){
-  .footer-integrantes {
-    font-size: 0.5rem!important;
+  .card-food-content{
+    font-size: 15px;
+  }
 }
+@media (min-width: 769px) and (max-width: 1000px) {
+  .card-food-container {
+    margin-top: 1rem;
+    border-radius: 5rem;
+    width: 80vw;
+    height: 40vh;
+    
+  
+  }
+
+  .main-text-hero{
+    font-size: 25px;
+  }
 }
 
+@media (min-width:769px){
+ 
+}
 @media  (max-width: 768px) {
   .restaurant-content{   
     display: flex;
@@ -785,7 +846,7 @@ text-align: center;
   }
 
   #logo-hero{
-    width:70%;
+    width:40%;
     
   }
   #chef-pic{
@@ -848,31 +909,26 @@ text-align: center;
   .card-menu{
     width:90vw;
   }
-  .title-menu-container {
+  /* .title-menu-container {
     height: 15vh;
-    width: 90vw;
+    width: 100%;
     display: flex;
-    
-  }
- 
-
+    justify-content: center;
+  } */
   .title-menu-container h1{
     font-size: 1.5rem!important;
   }
   .entradas{
     align-items: center;
-    width:90vw;
+    width:100%;
   }
 
-  #logo-nav{
-    display: none;
-  }
-
+ 
   .title-postres{
     text-align:center!important;
   }
   .slider-container-main {
-    width: 90vw;
+    width: 100%;
     display:flex;
     justify-content: center;
     
@@ -882,22 +938,20 @@ text-align: center;
     width:50%;
   }
   .platos-entradas{
-    width: 90vw;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    width: 70%;
+    width: 100%;
+    
     padding:1rem;
   }
-    .card-food-container {
-      margin-top: 1rem;
-      /* border: 1px solid red; */
-      border-radius: 5rem;
-      width: 100%;
-      height: 30vh;
-     
-    }
-  
+
+  .card-food-container {
+    margin-top: 1rem;
+    
+    border-radius: 5rem;
+    width: 100%!important;
+    height: 30vh;
+    
+  }
+
 
   .card-food-content{
     font-size: 0.8rem;
@@ -907,7 +961,6 @@ text-align: center;
 
   .card-food-container {
     margin-top: 1rem;
-    /* border: 1px solid red; */
     border-radius: 5rem;
     width: 80vw;
     height: 40vh;
@@ -943,6 +996,36 @@ text-align: center;
   }
 
 
+  
+}
+
+
+@media (max-width: 700px){
+  .footer-integrantes {
+    font-size: 0.5rem!important;
+  }
+  .redes {  
+    display: flex;
+   flex-direction: column;    
+  }
+ 
+ 
+}
+
+
+
+@media (min-width:420px) {
+  #logo-nav{
+    width:70px;
+  }
+
+  
+  
+}
+@media (max-width:419px) {
+  #logo-nav{
+    display:none;
+  }
   
 }
 /* ........... pagEVENTOS ................ */
@@ -1019,11 +1102,13 @@ text-align: center;
   background-position: 20%;
   padding: 2rem;
   margin: 2rem 0 2rem 0;
+  width: 100%;
 }
 
 .containerCarousel Carousel{
   width: 100% !important;
 }
+
 
 .cardComentarios {
   color: white !important;
@@ -1035,6 +1120,7 @@ text-align: center;
   width: 100% !important;
   backdrop-filter: blur(5px);
   backdrop-filter: brightness(55%);
+  height: 20vh!important;
 }
 
 .imagenUserComentarios {
@@ -1042,6 +1128,7 @@ text-align: center;
   height:100px;
   border-radius: 50% !important;
   padding: 1rem;
+  object-fit: cover!important;
 }
 
 .comentarioUsuario {
@@ -1050,3 +1137,47 @@ text-align: center;
  letter-spacing: 0.1em;
 }
 
+
+/** ----------------------- MESAS ------------ */
+
+.mesas-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.suelo-mesas {
+  background-image: url("./assets/fondosuelo.jpg");
+  background-size: cover;
+  background-position: center;
+  width: 50vw;
+  min-height: 50vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 2rem;
+  border-radius: 10rem;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.88);
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.88);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.88);
+}
+
+.contenedor-mesa {
+  width: 8vw;
+  margin-top: 5rem;
+}
+
+.mesa-disponible {
+  width: 5vw;
+  cursor: pointer;
+}
+
+.reservas-title {
+  text-align: center;
+  text-shadow: 4px 4px 2px rgba(0, 0, 0, 0.6);
+}
+
+.reservas-title h2 {
+  font-size: 5rem;
+  color: #ba0909;
+}
