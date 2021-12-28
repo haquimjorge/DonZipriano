@@ -6,15 +6,12 @@ const MainPizza = () => {
         <div className="hero">
         <div className="hero-content">
           <h1 className="pasta-title">La pizza è l’essenza della felicità</h1>
-          <h2>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam
-            velit ab magni amet molestias modi suscipit quaerat excepturi. Error
-            esse voluptatum ab dignissimos? Mollitia, molestiae qui nesciunt eum
-            alias perspiciatis!
+          <h2 className="pasta-text">
+          Si eres un amante de la comida italiana, aquí encontrarás un gran abanico de opciones para saciar tu paladar.
           </h2>
         </div>
         <div className="hero-banner">
-          <img id="logo-hero" src="/assets/pizzadz.png" alt="Pizza Don Zipriano" />
+          <img id="logo-hero1" src="/assets/pizzadz.png" alt="Pizza Don Zipriano" />
         </div>
         
       </div>
