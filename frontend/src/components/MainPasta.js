@@ -10,8 +10,7 @@ const MainPasta = () => {
         <div className="hero-content">
           <h1 className="pasta-title">La Migliore Pasta Napoletana</h1>
           <h2 className="pasta-text pb-5">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam
-            velit ab magni amet molestias
+          La pasta es uno de los alimentos más consumidos porque admite una gran variedad de preparaciones, es fácil y rápida de cocinar y su delicioso sabor gusta a nuestros grandes y pequeños comensales.
           </h2>
         </div>
       </div>

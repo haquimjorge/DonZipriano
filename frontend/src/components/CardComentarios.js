@@ -81,16 +81,18 @@ const CardComentarios = (props) => {
     <>
        {arrayComentarios.slice(index, index + imgPerSlide).map((comentario) => (
         <Col key={comentario.user.nombre}>
-          <Card>
+          <Card className="d-flex cardComentarios">
+            {/* <Card.ImgOverlay> */}
             <Card.Img variant="top" className="imagenUserComentarios" src={comentario.user.imagenUser} alt={comentario.user.apellido} />
-            <Card.ImgOverlay>
-              <Card.Title className="text-white col-6 text-center image-title">
-              {`${comentario.user.nombre} ${comentario.user.apellido}:`}
-              </Card.Title>
-              <Card.Title className="text-white col-6 text-center image-title">
-              {`${comentario.comentario}`}
-              </Card.Title>
-            </Card.ImgOverlay>
+              <div className="comentarioUsuario">
+                  <Card.Title className="text-light col-6 text-center image-title">
+                  {`${comentario.user.nombre} ${comentario.user.apellido}:`}
+                  </Card.Title>
+                  <Card.Text className="text-light col-6 text-center image-title">
+                  {`"${comentario.comentario}"`}
+                  </Card.Text>
+              </div>
+            {/* </Card.ImgOverlay> */}
           </Card>
         </Col>
       ))}

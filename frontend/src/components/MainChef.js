@@ -16,7 +16,7 @@ const MainChef = () => {
           <h2 className="nombre-chef">Brangi Hubine</h2>
           <div className="subtittle-brangi">
           <h4>
-            NAPOLETANO NON SI È PER LA RESIDENZA MA PER SENSO D'APPARTENENZA
+            "Napoletano non si è per la residenza ma per senso d' appartenenza"
           </h4>
           </div>
         </div>
