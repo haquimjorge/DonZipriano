@@ -13,12 +13,14 @@ const FormEventos = () => {
   const [form, setForm] = useState({
     nombre: "",
     lastName: "",
-    email: "",
+    mail: "",
     password: "",
     photo: "",
     country: "",
   });
-
+  const onSubmit = (data) => {
+    alert(JSON.stringify(data));
+  };
   const handleChange = (e) => {
     e.preventDefault();
     setForm({
@@ -29,12 +31,17 @@ const FormEventos = () => {
   return (
     <div className="container formEventos">
       <h4>Completa el siguiente formulario y nos contactaremos pronto:</h4>
-      <Form className="col-11 col-xl-6 my-5" onSubmit={handleSubmit("")}>
+      <Form className="col-11 col-xl-6 my-5" onSubmit={handleSubmit(onSubmit)}>
         <Form.Group className="mb-3" controlId="formBasicPassword">
           <Form.Label>Nombre</Form.Label>
           <Form.Control
             {...register("nombre", {
-              required: { value: true, message: "Field is required" },
+              required: {
+                value: true,
+                message: "Field is required",
+              },
+              minLength: 2,
+              maxLength: 15,
               pattern: {
                 pattern: /^[A-Za-z]+$/i,
                 message: "The format is not correct",
@@ -46,9 +53,19 @@ const FormEventos = () => {
             onChange={handleChange}
             value={form.firstName}
           />
-          {errors.nombre && (
+          {errors?.nombre && (
             <Alert className="col-xl-12 p-0 m-0" variant="warning">
               <span>{errors.nombre.message}</span>
+            </Alert>
+          )}
+          {errors?.nombre?.type === "maxLength" && (
+            <Alert className="col-xl-12 p-0 m-0" variant="warning">
+              <span>El nombre no puede superar los 20 caracteres</span>
+            </Alert>
+          )}
+          {errors?.nombre?.type === "minLength" && (
+            <Alert className="col-xl-12 p-0 m-0" variant="warning">
+              <span>El nombre no puede tener menos de 2 caracteres</span>
             </Alert>
           )}
         </Form.Group>
@@ -57,6 +74,8 @@ const FormEventos = () => {
           <Form.Control
             {...register("apellido", {
               required: { value: true, message: "Field is required" },
+              minLength: 2,
+              maxLength: 15,
               pattern: {
                 pattern: /^[A-Za-z]+$/i,
                 message: "The format is not correct",
@@ -73,6 +92,16 @@ const FormEventos = () => {
               <span>{errors.apellido.message}</span>
             </Alert>
           )}
+          {errors?.apellido?.type === "maxLength" && (
+            <Alert className="col-xl-12 p-0 m-0" variant="warning">
+              <span>El apellido no puede superar los 15 caracteres</span>
+            </Alert>
+          )}
+          {errors?.apellido?.type === "minLength" && (
+            <Alert className="col-xl-12 p-0 m-0" variant="warning">
+              <span>El apellido no puede tener menos de 2 caracteres</span>
+            </Alert>
+          )}
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Direccion de correo electronico</Form.Label>
@@ -81,7 +110,7 @@ const FormEventos = () => {
               required: { value: true, message: "Field is required" },
               pattern: {
                 value:
-                  /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i,
+                  /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/,
                 message: "The format is not correct",
               },
             })}
