@@ -574,9 +574,10 @@ footer ul li {
   .internoNuestro {
     display: flex;
     flex-direction: column !important;
-    padding: 0.5rem;
-    width: 70%;
-    margin:1rem;
+    padding: 0.6rem;
+    width: 100%;
+    margin:0.5rem;
+  
   }
 
   .sobreNosotrosTexto{
@@ -585,9 +586,11 @@ footer ul li {
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    margin: 1rem;
+    margin: 0rem;
     text-shadow: 3px 3px 2px rgba(0, 0, 0, 0.418);
-    padding: 0.5rem;
+    padding: 0rem;
+    backdrop-filter: blur(10px);
+    backdrop-filter: brightness(40%) !important; 
   }
 
   .divImagenSobreNosotros{
