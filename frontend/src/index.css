@@ -146,7 +146,14 @@ nav {
 }
 
 .hsyreservas{
-  text-shadow: 4px 4px 2px rgb(0 0 0 / 60%);
+  color:rgb(197, 15, 15)!important;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.788);
+  font-size: 4rem;
+}
+
+.hsyreservas:hover{
+  text-shadow: 2px 2px 2px rgba(255, 255, 255, 0.788);
+
 }
 .benvenuti-tittle {
   color: #ba0909;
@@ -154,6 +161,17 @@ nav {
   text-shadow: 4px 4px 2px rgb(0 0 0 / 60%);
 }
 
+.benvenuti-tittle-nostro{
+  color:Red;
+}
+
+.benvenuti-tittle-nostro:hover{
+  text-shadow: 2px 2px 2px rgba(255, 255, 255, 0.788);
+}
+
+a{
+  text-decoration: none!important;
+}
 .hero-banner {
   /* width: 80vw; */
   min-height: 85vh;
@@ -205,7 +223,7 @@ nav {
 /* ...............MAIN CHEF.............. */
 
 .chef-content {
-  min-height: 90vh;
+  min-height: 100vh;
   background-color: rgba(2, 2, 2, 0.096);
   background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
     url(./assets/cheflour.jpg);
@@ -213,6 +231,7 @@ nav {
   background-size: cover;
   margin-bottom: -6rem;
   margin-top: -6rem;
+  padding:1rem;
 }
 
 #chef-pic {
@@ -240,7 +259,7 @@ nav {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  transform: rotate(-15deg);
+  transform: rotate(-10deg);
 }
 
 .subtittle-brangi {
@@ -261,6 +280,8 @@ nav {
   height: 100vh;
   margin-bottom: -6rem;
   margin-top: -6rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .reservas-tittle{
@@ -275,14 +296,15 @@ nav {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+ 
 }
 
 .reservas-container h2{
-  font-size: 4rem;
+  font-size: 2rem;
 }
 
 .reservas-container p{
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 /* ................. FOOTER .......... */
