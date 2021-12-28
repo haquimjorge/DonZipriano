@@ -220,7 +220,7 @@ const userControllers = {
       if(user){
           user.emailVerified=true
           user.save()
-          res.redirect("http://localhost:3000/")
+          res.redirect("http://localhost:3000/verificacion")
         //   return  res.json({success:true, response:"Su email se ha verificado correctamente"})
         //   aca redireccionar  auna pagina donde te dice que el email ha sido verificado correctamente
         // redireccionar y logear inmediatamente, seria tomar el user y pasar el token al local storage

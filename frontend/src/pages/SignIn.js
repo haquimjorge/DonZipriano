@@ -1,7 +1,7 @@
 import { React, useState } from "react";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
-
+import { Link } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import { connect } from "react-redux";
 import userActions from "../redux/action/userActions";
@@ -71,6 +71,7 @@ const SignIn = (props) => {
             alt="Logo Don Zipriano"
           />
         </div>
+
         <h2 className="registrate">Ingresar</h2>
         <Formik
           initialValues={{
@@ -132,9 +133,12 @@ const SignIn = (props) => {
             ) : (
               ""
             )}
+            
+                <p className="text-center disabled text-shadow">No tienes cuenta? Registrate <Link className="text-danger" to="/registrarse"><strong>aca</strong></Link> </p>
+            
             <div className="d-flex justify-content-center flex-column align-items-center">
 
-            <p className="text-white">o ingresa con Google</p>
+            <p className="text-white text-shadow google-text">o ingresa con Google</p>
                   <GoogleLogin
                     clientId="190201580680-u46pho0n2vjalcan540tm22oan4vhc0v.apps.googleusercontent.com"
                     buttonText="Sign in with Google"
