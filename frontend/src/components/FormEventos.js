@@ -13,7 +13,7 @@ const FormEventos = () => {
   const [form, setForm] = useState({
     nombre: "",
     lastName: "",
-    mail: "",
+    email: "",
     password: "",
     photo: "",
     country: "",
@@ -156,7 +156,7 @@ const FormEventos = () => {
                 <option value="Otros">Otros</option>
               </Form.Select>
             </div>
-            <div className="col-5">
+            <div className="col-6">
               <Form.Label>¿Cuantas personas asistiran?</Form.Label>
               <Form.Control
                 {...register("invitados", {

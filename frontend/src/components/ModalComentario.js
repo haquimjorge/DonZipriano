@@ -1,9 +1,34 @@
-import React from 'react'
+import {React, useRef, useState} from 'react'
+import commentsActions from "../redux/action/commentsActions";
+import { connect } from "react-redux";
 import {Modal, Button} from 'react-bootstrap'
-// require("react-bootstrap/Modal")
+import toasty from "./Toast";
+import {Link} from 'react-router-dom'
+
+
+
 
 function ModalComentario(props) {
-    return (
+
+const token = localStorage.getItem("token");
+const {  user, postComment } = props;
+
+const [comment, setComment]=useState('')
+const _id = user ? user._id: null;
+
+const handleEnviar = async () => {
+
+    setComment(!comment);
+    if (!_id) {
+      toasty("error", `debes estar registrado para dejar una reseña, registrate ${<span as={Link} to={'/registrarse'} >aqui</span>}`);
+    } else {
+      let response = await postComment(comment, token);
+    }
+
+}
+
+
+  return (
       <Modal
         {...props}
         size="lg"
@@ -17,22 +42,31 @@ function ModalComentario(props) {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          {/* <h4>Dejanos tu feedback</h4> */}
-          {/* <p>
-            Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-            dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-            consectetur ac, vestibulum at eros.
-          </p> */}
           <form>
-              <textarea maxLength={150}/>
+              <textarea placeholder="reseña" maxLength={150}/>
           </form>
         </Modal.Body>
         <Modal.Footer>
           <Button className='botonesModal' onClick={props.onHide}>Cancelar</Button>
-          <Button className='botonesModal' onClick={props.onHide}>Enviar</Button>
+          <Button className='botonesModal' onClick={handleEnviar}>Enviar</Button>
         </Modal.Footer>
       </Modal>
     );
   }
 
-  export default ModalComentario
+  // export default ModalComentario
+
+
+  const mapStateToProps = (state) => {
+    return {
+      // user: state.commentsReducer.comments,
+      user: state.authReducer.user,
+
+    };
+  };
+  
+  const mapDispatchToProps = {
+    postComment: commentsActions.postComment
+  };
+  
+  export default connect(mapStateToProps, mapDispatchToProps)(ModalComentario);
