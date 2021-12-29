@@ -9,7 +9,7 @@ const commentsControllers = {
   
   postComment: (req, res) => {
     const bodyComment = req.body;
-    new Comment(bodyComment).save().then((resp) => Comment.findOne({_id:resp._id}).populate("itineraryId")
+    new Comment(bodyComment).save().then((resp) => Comment.findOne({_id:resp._id})
     .populate({ path: "user", select: ["email", "image", "name"] })
     .then((resp => res.json({resp})))
     )

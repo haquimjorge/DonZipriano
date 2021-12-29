@@ -2,6 +2,8 @@ import React from "react";
 import { Carousel, Row } from "react-bootstrap";
 import BotonModalComentario from "./BotonModalComentario";
 import CardComentarios from './CardComentarios'
+import commentsActions from '../redux/action/commentsActions'
+import {useEffect} from 'react'
 
 
 
@@ -74,8 +76,14 @@ let arrayComentarios = [
 
 
 
-const ComentariosClientes = () => {
+const ComentariosClientes = (props) => {
  
+
+    /*useEffect(()=>{
+      if(!comments) props.getComments
+    },[])*/
+
+
     const handleSelect = (_, e) => {
         if (e !== undefined) {
           e.target.className.includes("next")
@@ -122,5 +130,15 @@ const ComentariosClientes = () => {
     </>)
 };
 
-export default ComentariosClientes;
+const mapStateToProps = (state) => {
+  return {
+    comments: state.commentsReducer.comments
+  };
+};
+
+const mapDispatchToProps = {
+  getComments: commentsActions.getComments
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(ComentariosClientes);
 

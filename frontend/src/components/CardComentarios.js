@@ -3,7 +3,7 @@ import { Card, Col } from "react-bootstrap";
 
 
 
-let arrayComentarios = [
+/*let arrayComentarios = [
   
             {  
                 comentario: "Me gusto la calidad de la pasta y la salsa, lo recomiendo!",
@@ -68,7 +68,7 @@ let arrayComentarios = [
 
          
     },
-];
+];*/
 
 
 
@@ -76,11 +76,11 @@ let arrayComentarios = [
 
 const CardComentarios = (props) => {
     
-    const {imgPerSlide, index} = props
+    const {imgPerSlide, index, list} = props
     return (
     <>
-       {arrayComentarios.slice(index, index + imgPerSlide).map((comentario) => (
-        <Col key={comentario.user.nombre}>
+       {list.slice(index, index + imgPerSlide).map((comentario) => (
+        <Col key={comentario.user._id}>
           <Card className="d-flex cardComentarios wrap">
             {/* <Card.ImgOverlay> */}
             <Card.Img variant="top" className="imagenUserComentarios" src={comentario.user.imagenUser} alt={comentario.user.apellido} />
