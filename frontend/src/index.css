@@ -1094,8 +1094,10 @@ text-align: center;
 .containerCarousel {
   justify-self: center !important;
   display: flex !important;
-  flex-direction: row !important;
+  flex-direction: column !important;
+  /* flex-direction: row !important; */
   justify-content: center;
+  align-items: center;
   background-image: url('../public/assets/bodyBackgroud.jfif');
   background-repeat: no-repeat;
   background-size: cover;
@@ -1132,9 +1134,14 @@ text-align: center;
 }
 
 .comentarioUsuario {
+  justify-content: center;
+  align-items: center;
   padding: 1rem;
- width: 80%;
+ /* width: 80%; */
+ max-width: 70%;
  letter-spacing: 0.1em;
+ display: flex;
+ flex-direction: column;
 }
 
 /* ........... Pagina de verificacion ................ */
@@ -1192,4 +1199,65 @@ text-align: center;
 .reservas-title h2 {
   font-size: 5rem;
   color: #ba0909;
+}
+
+
+.signAqui:hover {
+  /* letter-spacing: 5px !important; */
+  color:green !important;
+
+}
+
+.googleLogin {
+  border-radius: 12px !important;
+  padding: 0.5rem !important;
+}
+
+/** ----------------------- Nosotros//DondeEncontrarnos------------ */
+
+
+.contenedorMapa {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.contenedorIframe {
+  width: 100%;
+}
+/** ----------------------- modalComentario // HOME------------ */
+
+.botonModalComentarioBoton{
+  background-color: black !important;
+  color: white;
+}
+.botonModalComentarioBoton:focus{
+    color: #af1717;
+}
+.botonModalComentarioBoton:hover{
+    color: #b42222;
+}
+
+.modalComentario {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  font-family: 'DM Sans', sans-serif;
+  
+}
+
+.modal-content {
+  height: 30vh;
+  width: 50vw;  
+}
+.modal-content form textarea {
+  width:100%;
+  padding: 0.5rem;
+}
+
+.botonesModal {
+  background-color: #000000;
+  color: #fafafa;
+  font-family: 'DM Sans', sans-serif !important;
 }

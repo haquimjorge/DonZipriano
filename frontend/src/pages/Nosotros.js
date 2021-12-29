@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "../components/NavBar";
 import Footer from "../components/Footer";
+import DondeEncontrarnos from "../components/DondeEncontrarnos";
 import Separator from "../components/Separator";
 
 const Nosotros = () => {
@@ -90,17 +91,8 @@ const Nosotros = () => {
           </div>
         </div>
       </div>
-      {/* <Separator />
-      <div className="nuestraCocina">
-                <div>
-                <h1>Nuestra Cocina</h1>
-                </div>
-         <div className="internoNuestro">
-                <div>
-
-                </div>
-         </div>
-      </div> */}
+     <Separator />
+     <DondeEncontrarnos/>
       <Footer />
     </>
   );
