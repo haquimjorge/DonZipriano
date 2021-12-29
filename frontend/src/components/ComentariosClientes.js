@@ -1,5 +1,6 @@
 import React from "react";
 import { Carousel, Row } from "react-bootstrap";
+import BotonModalComentario from "./BotonModalComentario";
 import CardComentarios from './CardComentarios'
 
 
@@ -112,6 +113,9 @@ const ComentariosClientes = () => {
             )
           )}
         </Carousel>
+        <div className="botonModalComentarioHome">
+          <BotonModalComentario/>
+        </div>
         </div>
 
     </>)

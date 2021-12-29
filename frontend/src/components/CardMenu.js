@@ -3,7 +3,7 @@ import Slider from "@mui/material/Slider";
 import "animate.css";
 
 const CardMenu = ({ meal }) => {
-  console.log(meal);
+  // console.log(meal);
 
   const mealEntradas = meal.filter((meal) => meal.timeFood === "Entrada");
 
@@ -39,13 +39,13 @@ const CardMenu = ({ meal }) => {
             /> */}
 
           <div className="title-menu-container">
-            <div className="logo-menu">
+            {/* <div className="logo-menu">
               <img
                 id="logo-nav"
                 src="/assets/DonZLogo.png"
                 alt="Logo Don Zipriano"
               />
-            </div>
+            </div> */}
             <div className="titulo-menu">
               <h1>Menu </h1>
             </div>
