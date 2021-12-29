@@ -84,8 +84,6 @@ const SignUp = (props) => {
   }
   
 
-  console.log('MESSAGE EN SIGN UP')
-  console.log(props.message)
   const responseGoogle = (response) => {
     const { givenName, familyName, email, googleId, imageUrl } =
     response.profileObj;
