@@ -79,7 +79,7 @@ const userControllers = {
         }).save();
         const token = jwt.sign({ user }, process.env.SECRET_KEY);
 
-        res.json({ response: user, success: true, error: null, token: token });
+        res.json({ response: user, success: true, error: null, token: token, message: 'Autenticacion exitosa' });
         }
   
     } catch (e) {
