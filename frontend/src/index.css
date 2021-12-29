@@ -326,12 +326,12 @@ footer {
   min-height: 20vh;
   width:70%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
 }
-.footer-container div{
+/* .footer-container div{
   margin: 0.5rem;
-}
+} */
 .footer-integrantes {
   
     display: flex;
