@@ -30,12 +30,16 @@ const Admin = (props) => {
         </Tooltip>
       );
 
-    //   function handleEdit(id, type){
-    //       if(selectedId === id){
-    //           setSelectedId('')
-    //       }else if(selectedId === )
-    //     //  aqui capturo el id de la comida y si es precio o no
-    //   }
+      function handleEdit(id, type){
+          if(selectedId === id){
+              setSelectedId('')
+          }else if(selectedId === "" ){
+              setSelectedId(id)
+          }else if(selectedId !== "" && selectedId !==id){
+            setSelectedId(id)
+          }
+        //  aqui capturo el id de la comida y si es precio o no
+      }
 
     let editPencil = <OverlayTrigger
     placement="top"
