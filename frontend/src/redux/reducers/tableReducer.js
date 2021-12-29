@@ -1,5 +1,5 @@
 const initialState = {
-  tables: [],
+  tables: [], oneTable: {}
 };
 
 const tableReducer = (state = initialState, action) => {
@@ -8,7 +8,12 @@ const tableReducer = (state = initialState, action) => {
       return {
         ...state,
         tables: action.payload,
-      };
+      }
+      case "getTable":
+      return {
+        ...state,
+        oneTable: action.payload
+      }
     default:
       return state;
   }

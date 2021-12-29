@@ -15,8 +15,10 @@ import { Navigate } from "react-router-dom";
 import Verify from './pages/Verify'
 import Admin from './pages/Admin'
 import withRouter from "./utilities/withRouter";
+import Mesa from "./pages/Mesa"
 
 const VerifyDinamic = withRouter(Verify)
+const TablesDinamic = withRouter(Mesa)
 
 function App(props) {
   const { authUser } = props;
@@ -52,7 +54,7 @@ function App(props) {
           <Route path="/reservas" element={<Reservas />} />
           <Route path="/eventos" element={<Eventos />} />
           <Route path="/nosotros" element={<Nosotros />} />
-
+          <Route path="/tables/:tableId" element={<TablesDinamic/>}/>
           <Route path="*" element={<Home />} />
           <Route path="/account" element={<Account />}/>
           <Route path="/verificacion/:uniqueString" element={<VerifyDinamic />}/>

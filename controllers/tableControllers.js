@@ -44,6 +44,15 @@ const tableControllers = {
       console.error(e);
     }
   },
+  oneTable: async (req, res) => {
+    try {
+      let oneTable = await Table.findOne({ _id: req.params.tableId });
+      res.json({ success: true, error: null, response: oneTable });
+    } catch (e) {
+      res.json({ success: false, error: e, response: null });
+      console.error(e);
+    }
+  },
 };
 
 module.exports = tableControllers;

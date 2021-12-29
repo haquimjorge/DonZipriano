@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 const Mesas = ({ table }) => {
   console.log(table);
@@ -14,11 +15,14 @@ const Mesas = ({ table }) => {
           {table.map((table) => {
             return (
               <div className="contenedor-mesa">
+                <NavLink className="tables-link" to={`/tables/${table._id}`}>
                 <img
+                 onClick={() => console.log(table._id)}
                   className="mesa-disponible"
                   src="/assets/mesadisponible.png"
                   alt="Mesa Disponible"
                 />
+                </NavLink>
               </div>
             );
           })}
