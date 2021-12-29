@@ -551,6 +551,9 @@ footer ul li {
   backdrop-filter: blur(5px);
   backdrop-filter: brightness(85%);
   letter-spacing: 0.1em;
+  /* padding: 5rem;
+  margin: -4rem;
+  z-index: -5; */
 }
 .nuestroChef h1 {
   padding: 1rem;
@@ -1158,17 +1161,50 @@ footer ul li {
 
 /** ----------------------- Nosotros//DondeEncontrarnos------------ */
 
-
 .contenedorMapa {
   display: flex;
   flex-direction: column;
   width: 100%;
   justify-content: center;
   align-items: center;
+  backdrop-filter: blur(5px);
+  backdrop-filter: brightness(85%);
+  
 }
-.contenedorIframe {
+.contenedorMapa h2 {
+    padding:0.5rem;
+}
+  .contenedorIframe {
+  display: flex;
   width: 100%;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
+.contenedorIframe Iframe{
+    border-radius: 15px;
+    width:50%;
+    height: 40vh;
+    padding: 0.5rem;
+    margin: 0.5rem;
+}
+
+.horariosNosotros {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  backdrop-filter: blur(5px);
+  backdrop-filter: brightness(75%); 
+}
+.horariosNosotros p{
+  font-size: large;
+font-family: 'DM Sans', sans-serif;
+}
+.cerrado{
+  text-decoration:underline ;
+}
+
 /** ----------------------- modalComentario // HOME------------ */
 
 .botonModalComentarioBoton{
