@@ -469,11 +469,18 @@ footer ul li {
   text-align: center;
 }
 
+.divlikes{
+  display:flex;
+  align-items: center;
+  justify-content: flex-end;
+  
+}
 .card-food-container {
+  /* padding:1rem; */
   margin-top: 1rem;
   border-radius: 5rem;
   width: 50% !important;
-  height: 40vh;
+  height: 35vh!important;
   background-color: #000000a6;
   box-shadow: 10px 10px 5px 0px rgba(28, 28, 28, 0.88);
   -webkit-box-shadow: 10px 10px 5px 0px rgba(28, 28, 28, 0.88);
@@ -489,6 +496,10 @@ footer ul li {
 .card-food-content {
   width: 50%;
   font-size: 15px;
+  line-height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 .food-content-container {
@@ -506,7 +517,7 @@ footer ul li {
 
 .precios-menu {
   color: rgb(34, 102, 55);
-  font-size: 1.7rem;
+  font-size: 1.5rem;
 }
 
 .slider-container {
@@ -896,7 +907,7 @@ footer ul li {
 
   .card-food-container {
     margin-top: 1rem;
-
+    
     border-radius: 5rem;
     width: 100% !important;
     height: 30vh;
@@ -905,6 +916,12 @@ footer ul li {
   .card-food-content {
     font-size: 0.8rem;
     width: 50%;
+    line-height: unset;
+    
+  }
+
+  .precios-menu{
+    font-size: 1rem;
   }
 
   .card-food-container {
@@ -959,6 +976,16 @@ footer ul li {
 @media (max-width: 419px) {
   #logo-nav {
     display: none;
+  }
+
+  .card-food-container h5{
+    font-size: 1rem;
+    margin-top:0.5rem;
+
+  }
+
+  .card-food-container{
+    height: 40vh!important;
   }
 }
 /* ........... pagEVENTOS ................ */
