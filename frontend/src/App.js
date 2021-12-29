@@ -23,11 +23,6 @@ const TablesDinamic = withRouter(Mesa)
 function App(props) {
   const { authUser } = props;
   const token = localStorage.getItem("token");
-  console.log('este es el usuario actual')
-  if(props.user){
-
-      console.log(props.user.role)
-  }
 
   useEffect(() => {
     if (token) {

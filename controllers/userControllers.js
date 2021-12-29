@@ -31,7 +31,7 @@ const sendEmail = async(email,uniqueString)=>{
             height:100px;" src='https://i.imgur.com/di3iSw5.png' alt='logo zipriano'/>
             <h2 style="text-align:center;  font-size: 1.5rem;">Gracias por registrarte con nosotros!</h2>
             <p style="text-align:center">Con tu cuenta podras: Hacer reseñas, Reservar y darle favorito a las comidas</p>
-            <p style="text-align:center; font-size: 1.2rem;">Por favor, para verificar tu correo, haz click <a href="http://localhost:3000/verify/${uniqueString}">aqui</a></p>
+            <p style="text-align:center; font-size: 1.2rem;">Por favor, para verificar tu correo, haz click <a href="http://localhost:3000/verificacion/${uniqueString}">aqui</a></p>
         </div>`
     }
     await transporter.sendMail(mailOptions)
@@ -79,7 +79,7 @@ const userControllers = {
         }).save();
         const token = jwt.sign({ user }, process.env.SECRET_KEY);
 
-        res.json({ response: user, success: true, error: null, token: token });
+        res.json({ response: user, success: true, error: null, token: token, message: 'Autenticacion exitosa' });
         }
   
     } catch (e) {

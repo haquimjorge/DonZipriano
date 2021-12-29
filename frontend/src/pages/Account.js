@@ -48,19 +48,10 @@ const Account = (props) => {
 
   if (!props.user) return <Navigate to="/" />
 
-  /*if (props.user) {
-    
-    console.log(props.user)
-    const {name, lastName, image, password } = props.user
   
-    setData({name, lastName, image, password})
-  
-  
-  
-  }else return <Navigate to="/" />*/
 
   const togglePassword = (e) => {
-    //const checked = e.target.checked;
+    
 
     setShowPass(!showPass);
   };
@@ -73,7 +64,7 @@ const Account = (props) => {
     
     setData({ ...data, newData })
     props.modify(newData)
-    //else console.log("No hay usuario o cambios de datos")
+    
   }
 
 
@@ -95,8 +86,8 @@ const Account = (props) => {
             name: props.user.name,
             lastName: props.user.lastName,
             image: props.user.image,
-            password: '',
-            passwordConfirmation: ''
+            /*password: '',
+            passwordConfirmation: ''*/
 
           }}
           validationSchema={Yup.object({
@@ -110,7 +101,7 @@ const Account = (props) => {
               .trim()
               .required("Este campo no puede estar vacío"),
             image: Yup.string().required("Este campo no puede estar vacío"),
-            password: Yup.string()
+            /*password: Yup.string()
               .min(7, "Debe tener minimo 7 caracteres")
               .max(30, "No debe exceder los 30 caracteres")
               .minLowercase(3, "Al menos 3 minúsculas")
@@ -118,7 +109,7 @@ const Account = (props) => {
               .minNumbers(1, "Al menos 1 número")
               .minSymbols(1, "Al menos 1 símbolo"),
             passwordConfirmation: Yup.string()
-              .oneOf([Yup.ref('password'), null], 'Passwords must match')
+              .oneOf([Yup.ref('password'), null], 'Passwords must match')*/
           })}
           onSubmit={(values, { setSubmitting }) => {
             submitData(values);
@@ -146,7 +137,7 @@ const Account = (props) => {
             />
 
 
-            <div>
+            {/*<div>
               <input
                 onClick={(e) => {
                   togglePassword(e);
@@ -173,7 +164,7 @@ const Account = (props) => {
                 type={(!showPass) ? "password" : "text"}
                 placeholder="kevin"
               />
-            </div>
+              </div>*/}
             <div className="btn-container">
               <button className="text-light p-2 m-2 btn-sign" type="submit">
                 Guardar Cambios

@@ -26,15 +26,14 @@ const commentsActions = {
 //   };
 // },
   getComments: () => {
-    const token = localStorage.getItem('token')
+    
     return async (dispatch, getState) => {
-      let comments = await axios.get(
-        `http://localhost:4000/api/comments/`,null,{
-            headers:{
-            'Authorization':'Bearer '+ token
-          }});
+      let response = await axios.get(
+        `http://localhost:4000/api/comments/`);
           // console.log(comments)
-    dispatch({ type: "GET_COMMENTS", payload:comments});
+
+    //console.log(comments)
+    dispatch({ type: "GET_COMMENTS", payload:response.data.comments});
   };
 },
 

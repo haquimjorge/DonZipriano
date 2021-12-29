@@ -2,7 +2,7 @@ const Table = require("../models/Table");
 
 const tableControllers = {
   uploadTable: async (req, res) => {
-    const { amountPeople, availability } = req.body;
+    const { amountPeople, availability, email } = req.body;
     try {
       let newTable = new Table({ amountPeople, availability }).save();
       res.json({ success: true, error: null, response: newTable });
@@ -21,11 +21,12 @@ const tableControllers = {
     }
   },
   modifyTable: async (req, res) => {
-    const { id } = req.body;
+    const { tableId } = req.params;
     try {
       let updatedTable = await Table.findOneAndUpdate(
-        { _id: id },
-        { ...req.body }
+        { _id: tableId },
+        { ...req.body },
+        {new:true}
       );
       res.json({ success: true, error: null, response: updatedTable });
     } catch (e) {

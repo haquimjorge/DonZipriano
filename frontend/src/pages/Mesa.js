@@ -4,6 +4,8 @@ import { connect } from "react-redux";
 import tableActions from "../redux/action/tableActions";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
+import { Navigate } from "react-router-dom";
+
 
 const Mesa = (props) => {
   console.log(props);
@@ -11,10 +13,22 @@ const Mesa = (props) => {
 
   useEffect(() => {
     props.getOneTable(props.params.tableId);
+    console.log(props);
   }, []);
 
-  console.log(props);
+  useEffect(() => {
+    if(!props.oneTable)props.getOneTable(props.params.tableId);
+  }, [props.oneTable]);
+  
+  const reservar = ()=>{
+    props.reserveTable(props.params.tableId, props.user.email)
+  }
+  const quitarReserva =()=>{
+    props.reserventTable(props.params.tableId)
+  }
 
+  
+  console.log(props);
   return (
     <div>
       <NavBar />
@@ -29,7 +43,12 @@ const Mesa = (props) => {
               />
             </div>
             <div className="contenedor-info-mesa">
-              <h1>Cantidad de Personas: {props.oneTable.amountPeople}</h1>
+              <h2>Cantidad de Personas: {props.oneTable.amountPeople}</h2>
+              <h2>{props.user &&(props.oneTable.email===props.user.email)&&`Correo: ${props.user.email}`}</h2>
+              <h2>Disponiblidad: {props.oneTable.availability?"Disponible":"Reservada"}</h2>
+              {(props.user&&(props.oneTable.email===props.user.email))&&<button onClick={quitarReserva}>Quitar Reserva</button>}
+              {( (props.oneTable.availability) || ( props.user && !(props.oneTable.email===props.user.email) ) )&&<button onClick={reservar} disabled={(props.user||!props.oneTable.availability)?false:true}>Reservar</button>}
+              
             </div>
           </div>
         </div>
@@ -41,11 +60,14 @@ const Mesa = (props) => {
 
 const mapDispatchToProps = {
   getOneTable: tableActions.getOneTable,
+  reserveTable: tableActions.reserveTable,
+  reserventTable: tableActions.reserventTable
 };
 
 const mapStateToProps = (state) => {
   return {
     oneTable: state.tableReducer.oneTable,
+    user: state.authReducer.user
   };
 };
 

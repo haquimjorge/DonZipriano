@@ -2,6 +2,9 @@ import React from "react";
 import { Carousel, Row } from "react-bootstrap";
 import BotonModalComentario from "./BotonModalComentario";
 import CardComentarios from './CardComentarios'
+import commentsActions from '../redux/action/commentsActions'
+import {useEffect} from 'react'
+import {connect} from 'react-redux'
 
 
 
@@ -11,7 +14,7 @@ let arrayComentarios = [
         comentario: "Me gusto la calidad de la pasta y la salsa, lo recomiendo!",
         user:{ nombre: "Marcelo",
         apellido: "Labraña",
-            imagenUser: 'https://www.milkround.com/advice/wp-content/uploads/how-to-take-a-good-linkedin-photo-1024x576.jpg'}
+            imagenUser: 'https://i.pinimg.com/originals/d1/cf/62/d1cf6294a3f560bb63f42367810b1d32.jpg'}
             
         
     },
@@ -74,16 +77,25 @@ let arrayComentarios = [
 
 
 
-const ComentariosClientes = () => {
+const ComentariosClientes = (props) => {
  
+
+    useEffect(()=>{
+      props.getComments()
+      
+      //if(!(props.comments.length>0))props.getComments()
+      
+    },[])
+    console.log(props.comments)
+
     const handleSelect = (_, e) => {
         if (e !== undefined) {
           e.target.className.includes("next")
-            ? currentIndex >= arrayComentarios.length
+            ? currentIndex >= props.comments.length
               ? (currentIndex = 0)
               : (currentIndex = currentIndex + imagesPerSlide)
             : currentIndex <= 0
-            ? (currentIndex = arrayComentarios.length - imagesPerSlide)
+            ? (currentIndex = props.comments.length - imagesPerSlide)
             : (currentIndex = currentIndex - imagesPerSlide);
         }
       };
@@ -96,12 +108,12 @@ const ComentariosClientes = () => {
     <>
     <div className="containerCarousel">
           <Carousel onSelect={handleSelect} interval={6000}>
-          {Array.from({ length: arrayComentarios.length / imagesPerSlide  }).map(
+          {Array.from({ length: props.comments.length / imagesPerSlide  }).map(
             (_, mapIndex) => (
               <Carousel.Item key={mapIndex} className="p-2">
                 <Row xs={1} sm={1} md={1} lg={2} className="g-4">
                   <CardComentarios
-                    list={arrayComentarios}
+                    list={props.comments}
                     index={currentIndex}
                     imgPerSlide={imagesPerSlide}
                     
@@ -122,5 +134,15 @@ const ComentariosClientes = () => {
     </>)
 };
 
-export default ComentariosClientes;
+const mapStateToProps = (state) => {
+  return {
+    comments: state.commentsReducer.comments
+  };
+};
+
+const mapDispatchToProps = {
+  getComments: commentsActions.getComments
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(ComentariosClientes);
 
