@@ -1153,9 +1153,9 @@ text-align: center;
     font-size: 1.3rem;
 }
 
-.verify-page-text{
+/* .verify-page-text{
   
-}
+} */
 
 /** ----------------------- MESAS ------------ */
 
@@ -1260,4 +1260,15 @@ text-align: center;
   background-color: #000000;
   color: #fafafa;
   font-family: 'DM Sans', sans-serif !important;
+}
+
+
+/* Chatbot */
+
+.chatbot {
+  --df-messenger-chat-background-color: #e00505;
+  --df-messenger-button-titlebar-color: #000000;
+  --df-messenger-font-color: #000000;
+  --df-messenger-bot-message: #ffffff;
+  --df-messenger-send-icon: #02880e;
 }
