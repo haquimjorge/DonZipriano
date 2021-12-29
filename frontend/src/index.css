@@ -1067,6 +1067,23 @@ footer ul li {
   width: 100%;
 }
 
+a.carousel-control-prev {
+  display: flex !important;
+  justify-content: left !important;
+}
+a.carousel-control-next {
+  display: flex !important;
+  justify-content: right !important;
+}
+span.carousel-control-next-icon {
+  padding-left:1rem !important;
+  margin-right: -1rem !important;
+}
+span.carousel-control-prev-icon {
+  padding-right:1rem !important;
+  margin-left: -1rem !important;
+}
+
 .containerCarousel Carousel {
   width: 100% !important;
 }
@@ -1084,6 +1101,8 @@ footer ul li {
   height: 20vh !important;
 }
 
+
+
 .imagenUserComentarios {
   width: 100px !important;
   height: 100px;
@@ -1096,11 +1115,38 @@ footer ul li {
   justify-content: center;
   align-items: center;
   padding: 1rem;
- /* width: 80%; */
- max-width: 70%;
- letter-spacing: 0.1em;
- display: flex;
- flex-direction: column;
+  /* width: 80%; */
+  max-width: 70%;
+  letter-spacing: 0.1em;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ........... mqCarousel ................ */
+
+@media (max-width: 700px) {
+  .containerCarousel {
+    width: 100% !important;
+    padding: 0 !important;
+  }
+  .cardComentarios {
+    /* flex-direction:column !important; */
+    height: 30vh !important;
+    width: 100% !important;  
+    
+  }
+  
+  
+  .containerCarousel Carousel {
+    width: 100% !important;
+  }  
+  .comentarioUsuario {
+    padding: 0 !important;
+    width: 100% !important;
+    justify-content: flex-start !important;
+
+  }
+  
 }
 
 /* ........... Pagina de verificacion ................ */

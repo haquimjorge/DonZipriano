@@ -104,6 +104,7 @@ const ComentariosClientes = () => {
                     list={arrayComentarios}
                     index={currentIndex}
                     imgPerSlide={imagesPerSlide}
+                    
                   />
                   <span className="invisible">
                     {(currentIndex += imagesPerSlide)}
