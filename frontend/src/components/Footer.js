@@ -73,7 +73,7 @@ const Footer = () => {
             </ul>
           </div>
           <div className="footer-integrantes ">
-          <p>Don Zipriano &copy; Pedro Guemes - Micaela Zampone - Kevin Von Hausen - Gabriel Cejas - Jorge Haquim - Esteban Maldonado - Marcelo Labraña</p>
+          <p>Don Zipriano &copy; Micaela Zampone - Kevin Von Hausen - Gabriel Cejas - Jorge Haquim - Esteban Maldonado - Marcelo Labraña - Pedro Guemes</p>
           </div>
           
       

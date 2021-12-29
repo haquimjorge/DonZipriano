@@ -10,7 +10,6 @@ const { getAllMeals, uploadMeal, modifyMeal, deleteMeal, likeMeal } =
 const tableControllers = require('../controllers/tableControllers');
 const commentsControllers = require('../controllers/commentsControllers');
 
-const { getAllMeals, uploadMeal, modifyMeal, deleteMeal } = mealControllers;
 const {
   uploadUser,
   authUser,

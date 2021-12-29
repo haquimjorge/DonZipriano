@@ -52,34 +52,21 @@ function App(props) {
           <Route path="/reservas" element={<Reservas />} />
           <Route path="/eventos" element={<Eventos />} />
           <Route path="/nosotros" element={<Nosotros />} />
-<<<<<<< HEAD
-          <Route path="*" element={<Navigate to="/" />} />
-          <Route path="/account" element={<Account />} />
-=======
           <Route path="*" element={<Home />} />
           <Route path="/account" element={<Account />}/>
           <Route path="/verificacion/:uniqueString" element={<VerifyDinamic />}/>
 
->>>>>>> e9f9b755f6d1b05950868cda1f782df7c027319e
         </Routes>
         {/* <Forms/> */}
       </BrowserRouter>
     </>
   );
 }
-<<<<<<< HEAD
-const mapStateToProps = (state) => {
-  return {
-    user: state.authReducer.user,
-  };
-};
-=======
 const mapStateToProps = (state) =>{
     return{
         user: state.authReducer.user
     }
 }
->>>>>>> e9f9b755f6d1b05950868cda1f782df7c027319e
 
 const mapDispatchToProps = {
   authUser: userActions.authUser,
