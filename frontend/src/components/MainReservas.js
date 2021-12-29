@@ -25,7 +25,7 @@ const MainReservas = () => {
             lunes a lunes de 8:00 a 23:00 hs.
             </p>
             <p className="pb-5">
-            Hacé tu pedido por WhatsApp
+            Hacé tu pedido por <a target="_blank" href="https://api.whatsapp.com/send?phone=1135402027&text=Me%20interesa%20contactarme%20con%20alguien%20del%20restaurant">Whatsapp</a>
             </p>
           </div>
         </div>
