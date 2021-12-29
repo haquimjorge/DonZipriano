@@ -13,7 +13,7 @@ const initialState = {
         case "GET_COMMENTS":
             return{
                 ...state,
-                comment:action.payload,
+                comments:action.payload,
                 error:action.payload.error
             }
         case "DELETE_COMMENT":

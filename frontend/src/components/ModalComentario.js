@@ -10,7 +10,7 @@ import {Link} from 'react-router-dom'
 
 function ModalComentario(props) {
 
-const token = localStorage.getItem("token");
+
 const {  user, postComment } = props;
 
 const [comment, setComment]=useState('')
@@ -20,7 +20,7 @@ const handleEnviar = async () => {
       // e.preventDefault();
 
     setComment(!comment);
-    if (!user._id) {
+    if (!user) {
       toasty("error", `Debes estar registrado para dejar una reseña.`);
     } else {
       const newComment = {
