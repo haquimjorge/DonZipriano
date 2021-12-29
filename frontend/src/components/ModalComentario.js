@@ -17,16 +17,22 @@ const [comment, setComment]=useState('')
 const _id = user ? user._id: null;
 
 const handleEnviar = async () => {
+      // e.preventDefault();
 
     setComment(!comment);
-    if (!_id) {
-      toasty("error", `debes estar registrado para dejar una reseña, registrate ${<span as={Link} to={'/registrarse'} >aqui</span>}`);
+    if (!user._id) {
+      toasty("error", `Debes estar registrado para dejar una reseña.`);
     } else {
-      let response = await postComment(comment, token);
+      const newComment = {
+            comment: commentRef.current.value,
+            user: user,
+          };
+      let response = await postComment(newComment);
     }
-
+    commentRef.current.value = ""
 }
 
+const commentRef = useRef() 
 
   return (
       <Modal
@@ -43,12 +49,12 @@ const handleEnviar = async () => {
         </Modal.Header>
         <Modal.Body>
           <form>
-              <textarea placeholder="reseña" maxLength={150}/>
+              <textarea  className="textareaComment" ref={commentRef} placeholder="Reseña" maxLength={150}/>
+               <Button className='botonesModal'  onClick={handleEnviar}>Enviar</Button>     
           </form>
         </Modal.Body>
         <Modal.Footer>
           <Button className='botonesModal' onClick={props.onHide}>Cancelar</Button>
-          <Button className='botonesModal' onClick={handleEnviar}>Enviar</Button>
         </Modal.Footer>
       </Modal>
     );
