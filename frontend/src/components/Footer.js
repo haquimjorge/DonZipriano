@@ -98,7 +98,7 @@ const Footer = () => {
           <div className="footer-map">
           <iframe
             title="map"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5678.737030154669!2d8.449736927232225!3d44.63038461639959!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12d2d5c79bab6901%3A0xa01d996aa43f2e66!2s15010%20Cavatore%2C%20Alessandria%2C%20Italia!5e0!3m2!1ses!2sar!4v1640359343611!5m2!1ses!2sar"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.8109431117177!2d-58.40195068477083!3d-34.58364998046472!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca9e0e97a297%3A0xd5316c35130d25df!2sJos%C3%A9%20Le%C3%B3n%20Pagano%202697%2C%20C1425%20AOA%2C%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1640796368972!5m2!1ses!2sar"
             width="400"
             height="450"
             style={{border:"0"}}

@@ -20,7 +20,7 @@ const handleEnviar = async () => {
 
     setComment(!comment);
     if (!_id) {
-      toasty("error", `debes estar registrado para dejar una reseña, registrate ${<span as={Link} to={'/registrarse'} >aqui</span>}`);
+      toasty("error", `debes estar registrado para dejar una reseña, registrate ${<button as={Link} to={'/registrarse'} >aqui</button>}`);
     } else {
       let response = await postComment(comment, token);
     }
@@ -43,7 +43,7 @@ const handleEnviar = async () => {
         </Modal.Header>
         <Modal.Body>
           <form>
-              <textarea placeholder="reseña" maxLength={150}/>
+              <textarea className="textareaComment" placeholder="reseña" maxLength={150}/>
           </form>
         </Modal.Body>
         <Modal.Footer>
