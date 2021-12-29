@@ -56,31 +56,10 @@ const Nosotros = () => {
             
             <p>En el mercado Argentino
             trabajó como chef ex en FILO restaurante y asesorando al grupo A
-            PUNTO sobre la pizza napoletana. Era el principio de lo que hoy en
-            día es moda en la capital porteña y el mundo: la difusión del
-            concepto de Pizza Napoletana y Pizza Napoletana Contemporánea.
+            PUNTO sobre la pizza napoletana.
             </p>
-            <p> En la
-            temporada 2017/2018 abre las puertas de Il Faro da Luigi en José
-            Ignacio, siendo un gran éxito como la mejor propuesta gastronómica
-            italiana del Este.</p> 
-            <p>Con Il Faro comienza la importación de materia
-            prima directamente de Italia, ofreciendo así una gastronomía
-            respetuosa de los estándar de calidad requeridos por la tradición
-            Italiana, junto a la importación de los hornos Grimaldi.</p>
-            <p> En la
-            temporada 2018/2019 pasó al mando de un restaurante icónico de la
-            península: L’ Incanto siguiendo con la misma propuesta gastronómica
-            y siendo los primeros de Uruguay en afiliarse a la APN (Asociación
-            Pizzaiolo Napoletani). Además del asesoramiento en el mercado
-            uruguayo en I’Marangatú, Grupo Don Pepperone, y Almacén de pizza.</p>
-            <p> Cada vez se hacía más fuerte el desarrollo de la Pizza Napolitana en
-            Sur América, así continuo investigando y asesorando el mercado
-            argentino: Orno del Grupo Casa Cavia y Brigata del Gruppo Lowell’s,
-            entre otros. Para el 2020 comenzó a dar vida al proyecto NAPUL’E’
-            basado principalmente en la propuesta de La pizza Napoletana stg y
-            della Pizza Napoletana Contemporánea aprobado siempre por la APN.</p>
-            <p>Hoy frente al mando de Napule, difundiendo la verdadera cultura de
+           
+            <p>Hoy frente al mando de DonZipriano, difundiendo la verdadera cultura de
             la gastronomía tradicional italiana especialmente del sud de Italia
             sin influencia local. Importando materia prima italiana y de
             temporada logra desarrollar la cocina típica de sus abuelos y

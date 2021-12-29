@@ -574,9 +574,12 @@ footer ul li {
   margin: 1rem;
 }
 
+
 .divImagenSobreNosotros {
   display: flex;
   width: 50%;
+  height: 30%;
+  align-self: center;
 }
 
 .divImagenSobreNosotros img {
@@ -610,42 +613,25 @@ footer ul li {
   font-family: "DM Sans", sans-serif !important;
   color: #fafafa;
 }
-
-@media (max-width: 1270px) {
+@media (max-width: 1024px) {
   .internoNuestro {
     display: flex;
     flex-direction: column !important;
-    padding: 0.6rem;
-    width: 100%;
-    margin: 0.5rem;
+
   }
 
   .sobreNosotrosTexto {
     width: 100%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    margin: 0rem;
-    text-shadow: 3px 3px 2px rgba(0, 0, 0, 0.418);
-    padding: 0rem;
-    backdrop-filter: blur(10px);
-    backdrop-filter: brightness(40%) !important;
-  }
 
-  .sobreNosotrosTexto p {
-    font-family: "DM Sans", sans-serif !important;
-    color: #fafafa;
-  }
-
-  #textoChef {
-    font-family: "DM Sans", sans-serif !important;
-    color: #fafafa;
   }
   .divImagenSobreNosotros {
     display: flex;
-    width: 100%;
+    width: 70%;
+    height: 50%;
+    align-self: center;
+    justify-content: center;
   }
+
 }
 
 /* ............⬆⬆⬆ SOBRE NOSOTROS ⬆⬆⬆...................... */
@@ -987,7 +973,7 @@ footer ul li {
 
 .contenedorEventos {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   width: 100%;
   align-self: center !important;
@@ -1010,8 +996,8 @@ footer ul li {
 .contenedorDescripcionEventos {
   padding: 0.5rem;
   margin: 0.5rem;
-  text-align: justify;
-  width: 40%;
+  
+  width: 80%;
   text-shadow: 2px 2px rgba(0, 0, 0, 0.486) !important;
   font-size: large;
   font-family: "DM Sans", sans-serif !important;
@@ -1026,7 +1012,7 @@ footer ul li {
 }
 
 .formEventos {
-  width: 65%;
+  width: 75%;
 }
 .formEventos h4 {
   padding: 0.5rem;
@@ -1176,6 +1162,7 @@ footer ul li {
 }
   .contenedorIframe {
   display: flex;
+  flex-direction:column;
   width: 100%;
   justify-content: center;
   align-items: center;
@@ -1190,6 +1177,7 @@ footer ul li {
 }
 
 .horariosNosotros {
+  
   display: flex;
   flex-direction: column;
   padding: 0.5rem;
