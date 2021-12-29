@@ -8,13 +8,13 @@ import Nosotros from "./pages/Nosotros";
 import SignUp from "./pages/SignUp";
 import SignIn from "./pages/SignIn";
 import React, { useEffect } from "react";
-import Account from "./pages/Account"
+import Account from "./pages/Account";
 import userActions from "./redux/action/userActions";
 import { connect } from "react-redux";
 import { Navigate } from "react-router-dom";
 
 function App(props) {
-  const { authUser,user } = props;
+  const { authUser } = props;
   const token = localStorage.getItem("token");
 
   useEffect(() => {
@@ -30,7 +30,7 @@ function App(props) {
         <Routes>
           <Route path="/" element={<Home />} exact />
           {/* <Route path="/menu" element={<Menu/>}/> */}
-          {!token ? <Route path="/ingresar" element={<SignIn />} exact /> : ''}
+          {!token ? <Route path="/ingresar" element={<SignIn />} exact /> : ""}
           {!token ? (
             <Route path="/registrarse" element={<SignUp />} exact />
           ) : (
@@ -39,21 +39,21 @@ function App(props) {
 
           <Route path="/menu" element={<Menu />} />
           <Route path="/reservas" element={<Reservas />} />
-          <Route path="/eventos" element={<Eventos/>} />
+          <Route path="/eventos" element={<Eventos />} />
           <Route path="/nosotros" element={<Nosotros />} />
           <Route path="*" element={<Navigate to="/" />} />
-          <Route path="/account" element={<Account />}/>
+          <Route path="/account" element={<Account />} />
         </Routes>
         {/* <Forms/> */}
       </BrowserRouter>
     </>
   );
 }
-const mapStateToProps=(state)=>{
-    return{
-        user:state.authReducer.user
-    }
-}
+const mapStateToProps = (state) => {
+  return {
+    user: state.authReducer.user,
+  };
+};
 
 const mapDispatchToProps = {
   authUser: userActions.authUser,

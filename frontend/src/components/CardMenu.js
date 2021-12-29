@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Slider from "@mui/material/Slider";
+import Likes from "./Likes"
 import "animate.css";
 
 const CardMenu = ({ meal }) => {
@@ -19,10 +20,6 @@ const CardMenu = ({ meal }) => {
     setValue(newValue);
   };
 
-  console.log(mealEntradas);
-  console.log(mealPlatosPrincipales);
-  console.log(mealPostres);
-  console.log(mealBebidas);
 
   return (
     <>
@@ -77,13 +74,15 @@ const CardMenu = ({ meal }) => {
                           <p>{entrada.description}</p>
                           <p>{entrada.type}</p>
                           <p className="precios-menu">$ {entrada.price}</p>
+                          <Likes className="like" meal={entrada}/>
                         </div>
                         <div
                           className="card-food-pic"
                           style={{
                             backgroundImage: `URL(${entrada.image})`,
-                          }}
-                        ></div>
+                          }}>
+                  
+                          </div>
                       </div>
                     </div>
                   );
@@ -117,6 +116,7 @@ const CardMenu = ({ meal }) => {
                           <p>{plato.description}</p>
                           <p>{plato.type}</p>
                           <p className="precios-menu">$ {plato.price}</p>
+                          <Likes className="like" meal={plato}/>
                         </div>
                         <div
                           className="card-food-pic"
@@ -158,6 +158,7 @@ const CardMenu = ({ meal }) => {
                           <p>{postre.description}</p>
                           <p>{postre.type}</p>
                           <p className="precios-menu">$ {postre.price}</p>
+                          <Likes className="like" meal={postre}/>
                         </div>
                         <div
                           className="card-food-pic"
@@ -198,6 +199,7 @@ const CardMenu = ({ meal }) => {
                           <p>{bebida.description}</p>
                           <p>{bebida.type}</p>
                           <p className="precios-menu">$ {bebida.price}</p>
+                          <Likes className="like" meal={bebida}/>
                         </div>
                         <div
                           className="card-food-pic"
