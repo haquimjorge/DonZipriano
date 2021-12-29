@@ -8,7 +8,7 @@ import Nosotros from "./pages/Nosotros";
 import SignUp from "./pages/SignUp";
 import SignIn from "./pages/SignIn";
 import React, { useEffect } from "react";
-import Account from "./pages/Account"
+import Account from "./pages/Account";
 import userActions from "./redux/action/userActions";
 import { connect } from "react-redux";
 import { Navigate } from "react-router-dom";
@@ -40,7 +40,7 @@ function App(props) {
         <Routes>
           <Route path="/" element={<Home />} exact />
           {/* <Route path="/menu" element={<Menu/>}/> */}
-          {!token ? <Route path="/ingresar" element={<SignIn />} exact /> : ''}
+          {!token ? <Route path="/ingresar" element={<SignIn />} exact /> : ""}
           {!token ? (
             <Route path="/registrarse" element={<SignUp />} exact />
           ) : (
@@ -50,23 +50,36 @@ function App(props) {
           {props.user && props.user.role === "Admin" && <Route path="/admin" element={<Admin />}/>}
           <Route path="/menu" element={<Menu />} />
           <Route path="/reservas" element={<Reservas />} />
-          <Route path="/eventos" element={<Eventos/>} />
+          <Route path="/eventos" element={<Eventos />} />
           <Route path="/nosotros" element={<Nosotros />} />
+<<<<<<< HEAD
+          <Route path="*" element={<Navigate to="/" />} />
+          <Route path="/account" element={<Account />} />
+=======
           <Route path="*" element={<Home />} />
           <Route path="/account" element={<Account />}/>
           <Route path="/verificacion/:uniqueString" element={<VerifyDinamic />}/>
 
+>>>>>>> e9f9b755f6d1b05950868cda1f782df7c027319e
         </Routes>
         {/* <Forms/> */}
       </BrowserRouter>
     </>
   );
 }
+<<<<<<< HEAD
+const mapStateToProps = (state) => {
+  return {
+    user: state.authReducer.user,
+  };
+};
+=======
 const mapStateToProps = (state) =>{
     return{
         user: state.authReducer.user
     }
 }
+>>>>>>> e9f9b755f6d1b05950868cda1f782df7c027319e
 
 const mapDispatchToProps = {
   authUser: userActions.authUser,

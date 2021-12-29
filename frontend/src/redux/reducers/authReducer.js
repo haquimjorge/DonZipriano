@@ -1,5 +1,6 @@
 const initialState = {
   user: null,
+  _id: null,
   error: null,
   message:null,
   success: null
@@ -8,8 +9,10 @@ const initialState = {
 const authReducer = (state = initialState, action) => {
   switch (action.type) {
     case "SAVE_USER":
+      localStorage.setItem("_id", action.payload.user._id)
       return {
         ...state,
+        _id: action.payload.user._id,
         user: action.payload.user,
         error: action.payload.error,
         message:action.payload.message,
@@ -25,12 +28,15 @@ const authReducer = (state = initialState, action) => {
       return {
         ...initialState,
       };
-      case "SIGN_IN":
-          return{
-              ...state,
-              user:action.payload.user,
-              error:action.payload.error
-          }
+    case "SIGN_IN":
+      console.log(action.payload.user._id)
+      localStorage.setItem("_id", action.payload.user._id)
+      return {
+        ...state,
+        _id: action.payload.user._id,
+        user: action.payload.user,
+        error: action.payload.error,
+      };
     default:
       return state;
   }
