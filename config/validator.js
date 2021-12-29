@@ -27,11 +27,11 @@ const validator = (req, res, next) => {
       .string()
       .required()
       .trim()
-      .min(3)
+      .min(1)
       .max(35)
       .pattern(new RegExp("[A-Za-z]"))
       .messages({
-        "string.min": "Last name must contain at least 3 letters",
+        "string.min": "Last name must contain at least 1 letters",
         "string.max": "Last name must not exceed 15 letters",
         "string.empty": "Last name cannot be empty",
         "string.pattern.base": "Last name can only contain letters",
