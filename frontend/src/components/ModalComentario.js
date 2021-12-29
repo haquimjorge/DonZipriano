@@ -10,7 +10,7 @@ import {Link} from 'react-router-dom'
 
 function ModalComentario(props) {
 
-const token = localStorage.getItem("token");
+
 const {  user, postComment } = props;
 
 const [comment, setComment]=useState('')

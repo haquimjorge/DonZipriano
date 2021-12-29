@@ -80,16 +80,16 @@ const CardComentarios = (props) => {
     return (
     <>
        {list.slice(index, index + imgPerSlide).map((comentario) => (
-        <Col key={comentario.user._id}>
+        <Col key={comentario._id}>
           <Card className="d-flex cardComentarios wrap">
             {/* <Card.ImgOverlay> */}
-            <Card.Img variant="top" className="imagenUserComentarios" src={comentario.user.imagenUser} alt={comentario.user.apellido} />
+            <Card.Img variant="top" className="imagenUserComentarios" src={comentario.user[0].image} alt={comentario.user[0].lastName} />
               <div className="comentarioUsuario">
                   <Card.Title className="text-light col-6 text-center image-title">
-                  {`${comentario.user.nombre} ${comentario.user.apellido}:`}
+                  {`${comentario.user[0].name} ${comentario.user[0].lastName}:`}
                   </Card.Title>
                   <Card.Text className="text-light col-6 text-center image-title">
-                  {`"${comentario.comentario}"`}
+                  {`"${comentario.comment}"`}
                   </Card.Text>
               </div>
             {/* </Card.ImgOverlay> */}

@@ -4,6 +4,7 @@ import BotonModalComentario from "./BotonModalComentario";
 import CardComentarios from './CardComentarios'
 import commentsActions from '../redux/action/commentsActions'
 import {useEffect} from 'react'
+import {connect} from 'react-redux'
 
 
 
@@ -79,19 +80,22 @@ let arrayComentarios = [
 const ComentariosClientes = (props) => {
  
 
-    /*useEffect(()=>{
-      if(!comments) props.getComments
-    },[])*/
-
+    useEffect(()=>{
+      props.getComments()
+      
+      //if(!(props.comments.length>0))props.getComments()
+      
+    },[])
+    console.log(props.comments)
 
     const handleSelect = (_, e) => {
         if (e !== undefined) {
           e.target.className.includes("next")
-            ? currentIndex >= arrayComentarios.length
+            ? currentIndex >= props.comments.length
               ? (currentIndex = 0)
               : (currentIndex = currentIndex + imagesPerSlide)
             : currentIndex <= 0
-            ? (currentIndex = arrayComentarios.length - imagesPerSlide)
+            ? (currentIndex = props.comments.length - imagesPerSlide)
             : (currentIndex = currentIndex - imagesPerSlide);
         }
       };
@@ -104,12 +108,12 @@ const ComentariosClientes = (props) => {
     <>
     <div className="containerCarousel">
           <Carousel onSelect={handleSelect} interval={6000}>
-          {Array.from({ length: arrayComentarios.length / imagesPerSlide  }).map(
+          {Array.from({ length: props.comments.length / imagesPerSlide  }).map(
             (_, mapIndex) => (
               <Carousel.Item key={mapIndex} className="p-2">
                 <Row xs={1} sm={1} md={1} lg={2} className="g-4">
                   <CardComentarios
-                    list={arrayComentarios}
+                    list={props.comments}
                     index={currentIndex}
                     imgPerSlide={imagesPerSlide}
                     
