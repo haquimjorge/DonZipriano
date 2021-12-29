@@ -1341,3 +1341,18 @@ font-family: 'DM Sans', sans-serif;
   --df-messenger-bot-message: #ffffff;
   --df-messenger-send-icon: #02880e;
 }
+
+
+/*  ADMIN   */
+
+.admin-edit-icon{
+    transition: .5s;
+    /* filter: invert(26%) sepia(55%) saturate(1670%) hue-rotate(329deg) brightness(0%) contrast(105%); */
+  width: 1rem;
+  cursor: pointer;
+}
+
+.admin-edit-icon:hover{
+    transition: .2s;
+    filter: invert(26%) sepia(55%) saturate(1670%) hue-rotate(329deg) brightness(105%) contrast(105%);
+}

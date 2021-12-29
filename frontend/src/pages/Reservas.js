@@ -15,7 +15,7 @@ const Reservas = (props) => {
   return (
     <>
       <Navbar />
-      <Mesas table={props.table} />
+      <Mesas table={props.table} user={props.user}/>
       <Footer />
     </>
   );
@@ -26,6 +26,7 @@ const mapDispatchToProps = {
 const mapStateToProps = (state) => {
   return {
     table: state.tableReducer.tables,
+    user: state.authReducer.user
   };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(Reservas);

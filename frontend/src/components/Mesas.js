@@ -1,8 +1,9 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-const Mesas = ({ table }) => {
+const Mesas = ({ table, user }) => {
   console.log(table);
+  console.log(user)
 
   return (
     <>
@@ -15,14 +16,25 @@ const Mesas = ({ table }) => {
           {table.map((table) => {
             return (
               <div className="contenedor-mesa">
-                <NavLink className="tables-link" to={`/tables/${table._id}`}>
-                <img
-                 onClick={() => console.log(table._id)}
+
+                {(table.availability||(user && (user.email==table.email) ) )?
+                  <NavLink className="tables-link" to={`/tables/${table._id}`}>
+
+
+                    <img
+                      onClick={() => console.log(table._id)}
+                      className="mesa-disponible"
+                      src="/assets/mesadisponible.png"
+                      alt="Mesa Disponible"
+                    />
+
+                  </NavLink>
+                  :<img 
                   className="mesa-disponible"
-                  src="/assets/mesadisponible.png"
-                  alt="Mesa Disponible"
-                />
-                </NavLink>
+                  src="/assets/mesanodisponible.png"
+                  alt="Mesa No Disponible"
+                  />
+                }
               </div>
             );
           })}
