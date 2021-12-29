@@ -471,12 +471,16 @@ footer ul li {
 
 .divlikes{
   display:flex;
+  flex-direction:column;
   align-items: center;
   justify-content: flex-end;
+  font-family:sans-serif;
   
 }
 .card-food-container {
-  /* padding:1rem; */
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
   margin-top: 1rem;
   border-radius: 5rem;
   width: 50% !important;
@@ -496,7 +500,7 @@ footer ul li {
 .card-food-content {
   width: 50%;
   font-size: 15px;
-  line-height: 90%;
+  
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -749,7 +753,10 @@ footer ul li {
     margin-top: 1rem;
     border-radius: 5rem;
     width: 80vw;
-    height: 40vh;
+   
+  }
+  .card-food-content{
+    font-size: 0.8rem;
   }
 
   .main-text-hero {
@@ -757,8 +764,7 @@ footer ul li {
   }
 }
 
-@media (min-width: 769px) {
-}
+
 @media (max-width: 768px) {
   .restaurant-content {
     display: flex;

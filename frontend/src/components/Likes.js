@@ -32,11 +32,11 @@ const Likes = (props) => {
   };
   return (
     <div className="divlikes">
+      <div>{mealLikes.length}</div> 
       <div onClick={likeI}>
       {like}
         
       </div>
-      <div>{mealLikes.length}</div> 
     </div>
   );
 };
