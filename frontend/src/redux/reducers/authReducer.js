@@ -2,7 +2,8 @@ const initialState = {
   user: null,
   _id: null,
   error: null,
-  message: null,
+  message:null,
+  success: null
 };
 
 const authReducer = (state = initialState, action) => {
@@ -14,11 +15,13 @@ const authReducer = (state = initialState, action) => {
         _id: action.payload.user._id,
         user: action.payload.user,
         error: action.payload.error,
-        message: action.payload.message,
+        message:action.payload.message,
+        success: action.payload.success
       };
 
     case "IS_AUTH":
       return {
+          ...state,
         user: action.payload,
       };
     case "LOG_OUT":

@@ -64,8 +64,10 @@ const NavBar = (props) => {
             id="dropdown-basic-button"
             title={imagenUsuario}
           >
-            {props.user ? (
-              <>
+            {props.user ? props.user.role === "Admin"? ( <>
+                <Dropdown.Item as={Link} to="/admin">
+                  Admin Panel
+                </Dropdown.Item>
                 <Dropdown.Item as={Link} to="/account">
                   Account
                 </Dropdown.Item>
@@ -73,16 +75,27 @@ const NavBar = (props) => {
                   Log Out
                 </Dropdown.Item>
               </>
-            ) : (
-              <>
-                <Dropdown.Item as={Link} to="/ingresar">
+             
+            ) : ( <>
+                <Dropdown.Item as={Link} to="/account">
+                  Account
+                </Dropdown.Item>
+                <Dropdown.Item onClick={() => props.logOut()}>
+                  Log Out
+                </Dropdown.Item>
+              </>
+              
+                
+            ):(<><Dropdown.Item as={Link} to="/ingresar">
                   Ingresar
                 </Dropdown.Item>
                 <Dropdown.Item as={Link} to="/registrarse">
                   Registrarse
                 </Dropdown.Item>
-              </>
-            )}
+              </>)
+
+            
+            }
           </DropdownButton>
         </Container>
       </Navbar>

@@ -31,13 +31,10 @@ const sendEmail = async(email,uniqueString)=>{
             height:100px;" src='https://i.imgur.com/di3iSw5.png' alt='logo zipriano'/>
             <h2 style="text-align:center;  font-size: 1.5rem;">Gracias por registrarte con nosotros!</h2>
             <p style="text-align:center">Con tu cuenta podras: Hacer reseñas, Reservar y darle favorito a las comidas</p>
-            <p style="text-align:center; font-size: 1.2rem;">Por favor, para verificar tu correo, haz click <a href="http://localhost:4000/api/verify/${uniqueString}">aqui</a></p>
+            <p style="text-align:center; font-size: 1.2rem;">Por favor, para verificar tu correo, haz click <a href="http://localhost:3000/verify/${uniqueString}">aqui</a></p>
         </div>`
     }
-    await transporter.sendMail(mailOptions, function(error,response){
-        if(error) console.log('estoy aca en sendmain'+JSON.stringify(error))
-        else console.log('enviado'+JSON.stringify(response))
-    })
+    await transporter.sendMail(mailOptions)
 
 }
 
@@ -54,6 +51,7 @@ const userControllers = {
                     success: true,
                     error: null,
                     token: token,
+                    message: "Cuenta ingresada con exito!"
                   });     
             }
         }
@@ -115,7 +113,6 @@ const userControllers = {
           image,
           uniqueString,
         }).save();
-        // const token = jwt.sign({ user }, process.env.SECRET_KEY);
         await sendEmail(email,uniqueString)
         res.json({ response: null, success: true, token: null, error: null, message:"Enviamos una verificacion por correo. Por favor, revisa tu bandeja de entrada" });
         }
@@ -219,13 +216,19 @@ const userControllers = {
       const user = await User.findOne({uniqueString:uniqueString})
       if(user){
           user.emailVerified=true
-          user.save()
-          res.redirect("http://localhost:3000/")
-        //   return  res.json({success:true, response:"Su email se ha verificado correctamente"})
-        //   aca redireccionar  auna pagina donde te dice que el email ha sido verificado correctamente
-        // redireccionar y logear inmediatamente, seria tomar el user y pasar el token al local storage
+          await user.save()
+        const token = jwt.sign({ user }, process.env.SECRET_KEY);
+        res.json({
+          success: true,
+          response: user,
+          error: null,
+          token: token,
+          message: "¡Verificacion exitosa! Ingresando con su cuenta automaticamente"
+        });
+      }else if(!user){
+          res.json({success:false,response:null,error:'Su email no se ha podido verificar.', message:null})
       }else{
-          res.json({success:false,response:'Su email no se ha podido verificar. Por favor intente creando una nueva cuenta'})
+          res.json({success:false,response:null,error:'Su email no se ha podido verificar.', message:null})
       }
 
   }

@@ -11,11 +11,10 @@ const userActions = {
       if (response.data.response) {
         localStorage.setItem("token", response.data.token);
       }
-      console.log("ACTION: ESTO DEVUELVE EL BACKEND");
-      console.log(response.data);
+
       dispatch({
         type: "SAVE_USER",
-        payload: { user: response.data.response, error: response.data.error },
+        payload: { user: response.data.response, error: response.data.error, message:response.data.message },
       });
     };
   },
@@ -29,8 +28,7 @@ const userActions = {
             headers: { Authorization: "Bearer " + token },
           }
         );
-        console.log("ACTION: ESTO ES LA RESPUESTA DEL BACKEND");
-        console.log(user);
+
         dispatch({ type: "IS_AUTH", payload: user.data.response });
         return { response: user.data.response };
       } catch (e) {
@@ -80,13 +78,24 @@ const userActions = {
       if (response.data.response) {
         localStorage.setItem("token", response.data.token);
       }
-      console.log("ACTION: ESTO DEVUELVE EL BACKEND");
-      console.log(response.data);
       dispatch({
         type: "SAVE_USER",
         payload: { user: response.data.response, error: response.data.error, message: response.data.message },
       });
     };
+  },
+  verifyEmail : (uniqueString)=>{
+      return async (dispatch)=>{
+          let response = await axios.get("http://localhost:4000/api/verify/"+uniqueString)
+          if (response.data.response) {
+            localStorage.setItem("token", response.data.token);
+          }
+          dispatch({
+            type: "SAVE_USER",
+            payload: { user: response.data.response, error: response.data.error, message:response.data.message, success: response.data.success },
+          });
+
+      }
   }
 }
  
