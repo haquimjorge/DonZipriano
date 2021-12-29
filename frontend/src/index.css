@@ -1145,9 +1145,28 @@ footer ul li {
   margin-top: 5rem;
 }
 
+.info-mesa {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-mesa {
+  height: 20vh;
+}
+
 .mesa-disponible {
   width: 5vw;
   cursor: pointer;
+}
+
+.contenedor-img-mesa {
+  width: 15vw;
+}
+
+.contenedor-info-mesa {
+  /* border: 1px solid red; */
+  width: 15vw;
 }
 
 .reservas-title {
