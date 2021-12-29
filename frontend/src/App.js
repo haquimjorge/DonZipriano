@@ -13,10 +13,19 @@ import userActions from "./redux/action/userActions";
 import { connect } from "react-redux";
 import { Navigate } from "react-router-dom";
 import Verify from './pages/Verify'
+import Admin from './pages/Admin'
+import withRouter from "./utilities/withRouter";
+
+const VerifyDinamic = withRouter(Verify)
 
 function App(props) {
-  const { authUser,user } = props;
+  const { authUser } = props;
   const token = localStorage.getItem("token");
+  console.log('este es el usuario actual')
+  if(props.user){
+
+      console.log(props.user.role)
+  }
 
   useEffect(() => {
     if (token) {
@@ -38,22 +47,24 @@ function App(props) {
             ""
           )}
 
+          {props.user && props.user.role === "Admin" && <Route path="/admin" element={<Admin />}/>}
           <Route path="/menu" element={<Menu />} />
           <Route path="/reservas" element={<Reservas />} />
           <Route path="/eventos" element={<Eventos/>} />
           <Route path="/nosotros" element={<Nosotros />} />
-          <Route path="*" element={<Navigate to="/" />} />
+          <Route path="*" element={<Home />} />
           <Route path="/account" element={<Account />}/>
-          <Route path="/verificacion" element={<Verify />}/>
+          <Route path="/verificacion/:uniqueString" element={<VerifyDinamic />}/>
+
         </Routes>
         {/* <Forms/> */}
       </BrowserRouter>
     </>
   );
 }
-const mapStateToProps=(state)=>{
+const mapStateToProps = (state) =>{
     return{
-        user:state.authReducer.user
+        user: state.authReducer.user
     }
 }
 
