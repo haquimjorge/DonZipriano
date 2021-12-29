@@ -324,12 +324,14 @@ footer {
   min-height: 20vh;
   width: 70%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
 }
-.footer-container div {
+
+/* .footer-container div{
+
   margin: 0.5rem;
-}
+} */
 .footer-integrantes {
   display: flex;
   flex-direction: column;
@@ -1042,8 +1044,10 @@ footer ul li {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 20%;
-  padding: 2rem;
-  margin: 2rem 0 2rem 0;
+  padding: 6rem;
+  /* padding: 2rem; */
+  margin: -6rem 0 -6rem 0;
+  /* margin: 2rem 0 2rem 0; */
   width: 100%;
 }
 

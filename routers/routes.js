@@ -8,10 +8,10 @@ const userControllers = require("../controllers/userControllers");
 
 const { getAllMeals, uploadMeal, modifyMeal, deleteMeal, likeMeal } =
   mealControllers;
-
 const tableControllers = require('../controllers/tableControllers');
+const commentsControllers = require('../controllers/commentsControllers');
 
-
+const { getAllMeals, uploadMeal, modifyMeal, deleteMeal } = mealControllers;
 const {
   uploadUser,
   authUser,
@@ -23,6 +23,7 @@ const {
 } = userControllers;
 
 const {uploadTable, getAllTables, modifyTable, deleteTable} = tableControllers
+const {getComments, postComment, deleteComment } = commentsControllers
 
 
 Router.route("/user/google").post(validator, uploadUser);
@@ -53,14 +54,22 @@ Router.route("/meals/like/:id").put(
   likeMeal
 );
 
-
 /* TABLES */
 Router.route("/tables")
-  .get(getAllTables)
-  .post(uploadTable)
-  .put(modifyTable)
-  .delete(deleteTable);
+.get(getAllTables)
+.post(uploadTable)
+.put(modifyTable)
+.delete(deleteTable);
 
 Router.route("/tables/:tableId").delete(deleteTable);
+
+
+/* COMMENTS */
+  Router.route("/comments")
+  .get(getComments)
+  .post(postComment)
+
+  Router.route("/comments/:commentId")
+  .delete(deleteComment);
 
 module.exports = Router;

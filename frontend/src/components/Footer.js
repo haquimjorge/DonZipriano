@@ -57,7 +57,7 @@ const Footer = () => {
               <li>
                 <NavLink
                   style={{ color: "#ba0909", textDecoration: "none" }}
-                  to="/contacto"
+                  to="/Eventos"
                 >
                   Contacto
                 </NavLink>
