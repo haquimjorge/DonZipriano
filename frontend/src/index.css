@@ -1259,7 +1259,6 @@ font-family: 'DM Sans', sans-serif;
   justify-content: center;
   align-items: center;
   font-family: 'DM Sans', sans-serif;
-  
 }
 
 .modal-content {
@@ -1269,6 +1268,11 @@ font-family: 'DM Sans', sans-serif;
 .modal-content form textarea {
   width:100%;
   padding: 0.5rem;
+}
+
+.textareaComment {
+  max-width: 100%;
+  max-height: 100px;
 }
 
 .botonesModal {
