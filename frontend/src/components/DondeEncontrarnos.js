@@ -25,16 +25,11 @@ const DondeEncontrarnos = ({ meal }) => {
                 </div>
                 <div className="horariosNosotros">
                   <h2>Horarios:</h2>
-                  <p>Lunes a lunes de 8:00 a 23:00 hs.</p>
+                  <p>Martes a Domingo de 20hs a 01hs.</p>
+                  <p>Lunes cerrado</p>
                   <p>Reservas de 11:00 a 19:00 hs.</p>
-                  {/* <p>Lunes	<span className="cerrado">Cerrado</span></p>
-                  <p>Martes	20:00 a 23:50</p>
-                  <p>Miércoles	20:00 a 23:50</p>
-                  <p>Jueves	20:00 a 23:50</p>
-                  <p>Viernes	20:00 a 23:50</p>
-                  <p>Sábado  20:00 a 23:50 </p>
-                  <p>Domingo  20:00 a 23:00 </p> */}
-                   <p>Los horarios pueden variar</p>
+                  
+  
                 </div>
                 
         </div>

@@ -1300,8 +1300,11 @@ span.carousel-control-prev-icon {
 }
 
 .contenedor-mesa {
+  display: flex;
+  justify-content: center;
   width: 8vw;
-  margin-top: 5rem;
+  padding: 2rem;
+
 }
 
 .info-mesa {
