@@ -5,6 +5,7 @@ const passport = require("../config/passport");
 const mealControllers = require("../controllers/mealControllers");
 const userControllers = require("../controllers/userControllers");
 const tableControllers = require('../controllers/tableControllers');
+const commentsControllers = require('../controllers/commentsControllers');
 
 const { getAllMeals, uploadMeal, modifyMeal, deleteMeal } = mealControllers;
 const {
@@ -17,6 +18,7 @@ const {
   verifyEmail,
 } = userControllers;
 const {uploadTable, getAllTables, modifyTable, deleteTable} = tableControllers
+const {getComments, postComment, deleteComment } = commentsControllers
 
 Router.route("/user/google").post(validator, uploadUser);
 
@@ -47,6 +49,13 @@ Router.route("/tables")
   .post(uploadTable)
   .put(modifyTable)
   .delete(deleteTable);
+
+  Router.route("/comments")
+  .get(getComments)
+  .post(postComment)
+
+  Router.route("/comments/:commentId")
+  .delete(deleteComment);
 
 Router.route("/tables/:tableId").delete(deleteTable);
 

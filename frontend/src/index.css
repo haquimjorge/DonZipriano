@@ -1102,8 +1102,10 @@ text-align: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 20%;
-  padding: 2rem;
-  margin: 2rem 0 2rem 0;
+  padding: 6rem;
+  /* padding: 2rem; */
+  margin: -6rem 0 -6rem 0;
+  /* margin: 2rem 0 2rem 0; */
   width: 100%;
 }
 

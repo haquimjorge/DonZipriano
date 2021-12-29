@@ -1,9 +1,22 @@
-import React from 'react'
+import {React, useRef, useState} from 'react'
+import commentsActions from "../redux/action/commentsActions";
+import { connect } from "react-redux";
 import {Modal, Button} from 'react-bootstrap'
-// require("react-bootstrap/Modal")
+
+
 
 function ModalComentario(props) {
-    return (
+
+const [comment, setComment]=useState('')
+
+const handleEnviar = async () => {
+
+
+
+}
+
+
+  return (
       <Modal
         {...props}
         size="lg"
@@ -17,22 +30,29 @@ function ModalComentario(props) {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          {/* <h4>Dejanos tu feedback</h4> */}
-          {/* <p>
-            Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-            dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-            consectetur ac, vestibulum at eros.
-          </p> */}
           <form>
-              <textarea maxLength={150}/>
+              <textarea placeholder="reseña" maxLength={150}/>
           </form>
         </Modal.Body>
         <Modal.Footer>
           <Button className='botonesModal' onClick={props.onHide}>Cancelar</Button>
-          <Button className='botonesModal' onClick={props.onHide}>Enviar</Button>
+          <Button className='botonesModal' onClick={handleEnviar}>Enviar</Button>
         </Modal.Footer>
       </Modal>
     );
   }
 
-  export default ModalComentario
+  // export default ModalComentario
+
+
+  const mapStateToProps = (state) => {
+    return {
+      user: state.commentsReducer.comments,
+    };
+  };
+  
+  const mapDispatchToProps = {
+    postComment: commentsActions.postComment
+  };
+  
+  export default connect(mapStateToProps, mapDispatchToProps)(ModalComentario);
