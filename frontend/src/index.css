@@ -469,11 +469,18 @@ footer ul li {
   text-align: center;
 }
 
+.divlikes{
+  display:flex;
+  align-items: center;
+  justify-content: flex-end;
+  
+}
 .card-food-container {
+  /* padding:1rem; */
   margin-top: 1rem;
   border-radius: 5rem;
   width: 50% !important;
-  height: 40vh;
+  height: 35vh!important;
   background-color: #000000a6;
   box-shadow: 10px 10px 5px 0px rgba(28, 28, 28, 0.88);
   -webkit-box-shadow: 10px 10px 5px 0px rgba(28, 28, 28, 0.88);
@@ -489,6 +496,10 @@ footer ul li {
 .card-food-content {
   width: 50%;
   font-size: 15px;
+  line-height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 .food-content-container {
@@ -506,7 +517,7 @@ footer ul li {
 
 .precios-menu {
   color: rgb(34, 102, 55);
-  font-size: 1.7rem;
+  font-size: 1.5rem;
 }
 
 .slider-container {
@@ -574,9 +585,12 @@ footer ul li {
   margin: 1rem;
 }
 
+
 .divImagenSobreNosotros {
   display: flex;
   width: 50%;
+  height: 30%;
+  align-self: center;
 }
 
 .divImagenSobreNosotros img {
@@ -610,42 +624,25 @@ footer ul li {
   font-family: "DM Sans", sans-serif !important;
   color: #fafafa;
 }
-
-@media (max-width: 1270px) {
+@media (max-width: 1024px) {
   .internoNuestro {
     display: flex;
     flex-direction: column !important;
-    padding: 0.6rem;
-    width: 100%;
-    margin: 0.5rem;
+
   }
 
   .sobreNosotrosTexto {
     width: 100%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    margin: 0rem;
-    text-shadow: 3px 3px 2px rgba(0, 0, 0, 0.418);
-    padding: 0rem;
-    backdrop-filter: blur(10px);
-    backdrop-filter: brightness(40%) !important;
-  }
 
-  .sobreNosotrosTexto p {
-    font-family: "DM Sans", sans-serif !important;
-    color: #fafafa;
-  }
-
-  #textoChef {
-    font-family: "DM Sans", sans-serif !important;
-    color: #fafafa;
   }
   .divImagenSobreNosotros {
     display: flex;
-    width: 100%;
+    width: 70%;
+    height: 50%;
+    align-self: center;
+    justify-content: center;
   }
+
 }
 
 /* ............⬆⬆⬆ SOBRE NOSOTROS ⬆⬆⬆...................... */
@@ -910,7 +907,7 @@ footer ul li {
 
   .card-food-container {
     margin-top: 1rem;
-
+    
     border-radius: 5rem;
     width: 100% !important;
     height: 30vh;
@@ -919,6 +916,12 @@ footer ul li {
   .card-food-content {
     font-size: 0.8rem;
     width: 50%;
+    line-height: unset;
+    
+  }
+
+  .precios-menu{
+    font-size: 1rem;
   }
 
   .card-food-container {
@@ -974,6 +977,16 @@ footer ul li {
   #logo-nav {
     display: none;
   }
+
+  .card-food-container h5{
+    font-size: 1rem;
+    margin-top:0.5rem;
+
+  }
+
+  .card-food-container{
+    height: 40vh!important;
+  }
 }
 /* ........... pagEVENTOS ................ */
 
@@ -987,7 +1000,7 @@ footer ul li {
 
 .contenedorEventos {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   width: 100%;
   align-self: center !important;
@@ -1010,8 +1023,8 @@ footer ul li {
 .contenedorDescripcionEventos {
   padding: 0.5rem;
   margin: 0.5rem;
-  text-align: justify;
-  width: 40%;
+  
+  width: 80%;
   text-shadow: 2px 2px rgba(0, 0, 0, 0.486) !important;
   font-size: large;
   font-family: "DM Sans", sans-serif !important;
@@ -1026,7 +1039,7 @@ footer ul li {
 }
 
 .formEventos {
-  width: 65%;
+  width: 75%;
 }
 .formEventos h4 {
   padding: 0.5rem;
@@ -1132,9 +1145,28 @@ footer ul li {
   margin-top: 5rem;
 }
 
+.info-mesa {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-mesa {
+  height: 20vh;
+}
+
 .mesa-disponible {
   width: 5vw;
   cursor: pointer;
+}
+
+.contenedor-img-mesa {
+  width: 15vw;
+}
+
+.contenedor-info-mesa {
+  /* border: 1px solid red; */
+  width: 15vw;
 }
 
 .reservas-title {
@@ -1176,6 +1208,7 @@ footer ul li {
 }
   .contenedorIframe {
   display: flex;
+  flex-direction:column;
   width: 100%;
   justify-content: center;
   align-items: center;
@@ -1190,6 +1223,7 @@ footer ul li {
 }
 
 .horariosNosotros {
+  
   display: flex;
   flex-direction: column;
   padding: 0.5rem;

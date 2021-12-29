@@ -12,11 +12,10 @@ const FormEventos = () => {
 
   const [form, setForm] = useState({
     nombre: "",
-    lastName: "",
+    apellido: "",
     email: "",
-    password: "",
-    photo: "",
-    country: "",
+    evento: "",
+    invitados: "",
   });
   const onSubmit = (data) => {
     alert(JSON.stringify(data));
@@ -49,7 +48,7 @@ const FormEventos = () => {
             placeholder="Nombre"
             name="nombre"
             onChange={handleChange}
-            value={form.firstName}
+            value={form.nombre}
           />
           {errors?.nombre && (
             <Alert className="col-xl-12 p-0 m-0" variant="warning">

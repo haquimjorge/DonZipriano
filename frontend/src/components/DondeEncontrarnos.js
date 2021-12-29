@@ -21,6 +21,8 @@ const DondeEncontrarnos = ({ meal }) => {
                     allowfullscreen=""
                     loading="lazy"
                 ></iframe>
+                <p className="m-2">Av. Alicia Moreau de Justo 1930, C1107AFN CABA</p>
+                </div>
                 <div className="horariosNosotros">
                   <h2>Horarios:</h2>
                   <p>Lunes a lunes de 8:00 a 23:00 hs.</p>
@@ -34,7 +36,7 @@ const DondeEncontrarnos = ({ meal }) => {
                   <p>Domingo  20:00 a 23:00 </p> */}
                    <p>Los horarios pueden variar</p>
                 </div>
-                </div>
+                
         </div>
     </>
   );

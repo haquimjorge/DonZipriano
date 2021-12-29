@@ -31,12 +31,17 @@ const Likes = (props) => {
     }
   };
   return (
-    <div onClick={likeI}>
+    <div className="divlikes">
+      <div onClick={likeI}>
       {like}
-      <p>{mealLikes.length}</p>
+        
+      </div>
+      <div>{mealLikes.length}</div> 
     </div>
   );
 };
+
+
 const mapDispatchToProps = {
   likeMeal: mealActions.likeMeal,
 };
