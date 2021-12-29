@@ -2,16 +2,28 @@ import {React, useRef, useState} from 'react'
 import commentsActions from "../redux/action/commentsActions";
 import { connect } from "react-redux";
 import {Modal, Button} from 'react-bootstrap'
+import toasty from "./Toast";
+import {Link} from 'react-router-dom'
+
 
 
 
 function ModalComentario(props) {
 
+const token = localStorage.getItem("token");
+const {  user, postComment } = props;
+
 const [comment, setComment]=useState('')
+const _id = user ? user._id: null;
 
 const handleEnviar = async () => {
 
-
+    setComment(!comment);
+    if (!_id) {
+      toasty("error", `debes estar registrado para dejar una reseña, registrate ${<span as={Link} to={'/registrarse'} >aqui</span>}`);
+    } else {
+      let response = await postComment(comment, token);
+    }
 
 }
 
@@ -47,7 +59,9 @@ const handleEnviar = async () => {
 
   const mapStateToProps = (state) => {
     return {
-      user: state.commentsReducer.comments,
+      // user: state.commentsReducer.comments,
+      user: state.authReducer.user,
+
     };
   };
   

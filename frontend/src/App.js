@@ -62,13 +62,11 @@ function App(props) {
     </>
   );
 }
-
 const mapStateToProps = (state) =>{
     return{
         user: state.authReducer.user
     }
 }
-
 
 const mapDispatchToProps = {
   authUser: userActions.authUser,

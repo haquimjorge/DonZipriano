@@ -24,7 +24,7 @@ const Likes = (props) => {
   const likeI = async () => {
     setLikeIcon(!likeIcon);
     if (!_id) {
-      toasty("error", "You must be registered to like this activity");
+      toasty("error", "debes estar registrado para dar likes");
     } else {
       let response = await likeMeal(meal._id, token);
       setMealLikes(response.data.response);

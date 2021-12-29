@@ -9,7 +9,7 @@ const DondeEncontrarnos = ({ meal }) => {
 
        <div className="contenedorMapa">
             <div>
-                <h1>Donde encontrarnos:</h1>
+                <h2>Donde encontrarnos:</h2>
             </div>
             <div className="contenedorIframe" >
                 <iframe
@@ -21,6 +21,17 @@ const DondeEncontrarnos = ({ meal }) => {
                     allowfullscreen=""
                     loading="lazy"
                 ></iframe>
+                <div className="horariosNosotros">
+                  <h2>Horarios:</h2>
+                  <p>Lunes	<span className="cerrado">Cerrado</span></p>
+                  <p>Martes	20:00 a 23:50</p>
+                  <p>Miércoles	20:00 a 23:50</p>
+                  <p>Jueves	20:00 a 23:50</p>
+                  <p>Viernes	20:00 a 23:50</p>
+                  <p>Sábado  20:00 a 23:50 </p>
+                  <p>Domingo  20:00 a 23:00 </p>
+                   <p>Los horarios pueden variar</p>
+                </div>
                 </div>
         </div>
     </>
