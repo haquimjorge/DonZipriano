@@ -12,32 +12,31 @@ const Likes = (props) => {
   const { meal, likeMeal } = props;
   const [mealLikes, setMealLikes] = useState(meal.iLikeIt);
   const [likeIcon, setLikeIcon] = useState(true);
-  console.log(meal.iLikeIt)
-  let like =
-    mealLikes[0] && mealLikes[0].includes(_id) ? (
-      <FcLike className="pointer" />
-    ) : (
-      <FaHeart className="pointer" />
-    );
-  
+  console.log(likeIcon);
+
+  let like = mealLikes.includes(_id) ? (
+    <FcLike className="pointer" />
+  ) : (
+    
+    <FaHeart className="pointer" />
+  );
+
   const likeI = async () => {
-    setLikeIcon(false);
+    setLikeIcon(!likeIcon);
     if (!_id) {
       toasty("error", "You must be registered to like this activity");
     } else {
       let response = await likeMeal(meal._id, token);
       setMealLikes(response.data.response);
     }
-    setLikeIcon(true);
   };
   return (
-    <div onClick={likeIcon ? likeI : null}>
+    <div onClick={likeI}>
       {like}
       <p>{mealLikes.length}</p>
     </div>
   );
 };
-
 const mapDispatchToProps = {
   likeMeal: mealActions.likeMeal,
 };
