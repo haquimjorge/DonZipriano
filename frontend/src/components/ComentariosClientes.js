@@ -11,7 +11,7 @@ let arrayComentarios = [
         comentario: "Me gusto la calidad de la pasta y la salsa, lo recomiendo!",
         user:{ nombre: "Marcelo",
         apellido: "Labraña",
-            imagenUser: 'https://www.milkround.com/advice/wp-content/uploads/how-to-take-a-good-linkedin-photo-1024x576.jpg'}
+            imagenUser: 'https://i.pinimg.com/originals/d1/cf/62/d1cf6294a3f560bb63f42367810b1d32.jpg'}
             
         
     },
