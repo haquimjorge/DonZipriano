@@ -10,6 +10,13 @@ const tableActions = {
         );
     };
   },
+  getOneTable: (id) => {
+    return async (dispatch) => {
+      let response = await axios.get("http://localhost:4000/api/tables/" + id);
+      console.log(response);
+      dispatch({ type: "getTable", payload: response.data.response });
+    };
+  },
 };
 
 export default tableActions;

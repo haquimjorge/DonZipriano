@@ -21,7 +21,7 @@ const {
   verifyEmail,
 } = userControllers;
 
-const {uploadTable, getAllTables, modifyTable, deleteTable} = tableControllers
+const {uploadTable, getAllTables, modifyTable, deleteTable, oneTable} = tableControllers
 const {getComments, postComment, deleteComment } = commentsControllers
 
 
@@ -60,7 +60,7 @@ Router.route("/tables")
 .put(modifyTable)
 .delete(deleteTable);
 
-Router.route("/tables/:tableId").delete(deleteTable);
+Router.route("/tables/:tableId").delete(deleteTable).get(oneTable)
 
 
 /* COMMENTS */

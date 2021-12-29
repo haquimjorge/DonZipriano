@@ -3,11 +3,10 @@ import { NavLink } from "react-router-dom";
 import { FaTwitter, FaLinkedin, FaFacebookSquare } from "react-icons/fa";
 // import { IconName } from "react-icons/fc";
 
-
 const Footer = () => {
   return (
     <>
-    <svg
+      <svg
         style={{ transform: "rotate(0deg)", transition: "0.3s" }}
         viewBox="0 0 1440 100"
         version="1.1"
@@ -26,10 +25,9 @@ const Footer = () => {
         ></path>
       </svg>
       <footer>
-       
         <div className="footer-container">
           <div className="footer-nav">
-          <ul>
+            <ul>
               <li>
                 <NavLink
                   style={{ color: "#ba0909", textDecoration: "none" }}
@@ -73,41 +71,57 @@ const Footer = () => {
             </ul>
           </div>
           <div className="footer-integrantes ">
-          <p>Don Zipriano &copy; Micaela Zampone - Kevin Von Hausen - Gabriel Cejas - Jorge Haquim - Esteban Maldonado - Marcelo Labraña - Pedro Guemes</p>
+            <p>
+              Don Zipriano &copy; Micaela Zampone - Kevin Von Hausen - Gabriel
+              Cejas - Jorge Haquim - Esteban Maldonado - Marcelo Labraña - Pedro
+              Guemes
+            </p>
           </div>
-          
-      
-        <div className="redes">
+
+          <div className="redes">
             <div className="icon-f">
-              <a target="_blank" rel="noreferrer"  rel="noopener" href={'https://www.facebook.com'}>
-              <FaFacebookSquare className="icon" />
+              <a
+                target="_blank"
+                rel="noreferrer"
+                rel="noopener"
+                href={"https://www.facebook.com"}
+              >
+                <FaFacebookSquare className="icon" />
               </a>
             </div>
             <div className="icon-f">
-              <a target="_blank" rel="noreferrer"  rel="noopener" href={'https://www.twitter.com'}>
-              <FaTwitter className="icon" />
+              <a
+                target="_blank"
+                rel="noreferrer"
+                rel="noopener"
+                href={"https://www.twitter.com"}
+              >
+                <FaTwitter className="icon" />
               </a>
             </div>
             <div className="icon-f">
-              <a target="_blank" rel="noreferrer"  rel="noopener" href={'https://www.linkedin.com'}>
-              <FaLinkedin className="icon" />
+              <a
+                target="_blank"
+                rel="noreferrer"
+                rel="noopener"
+                href={"https://www.linkedin.com"}
+              >
+                <FaLinkedin className="icon" />
               </a>
             </div>
           </div>
-            </div>
-          <div className="footer-map">
+        </div>
+        <div className="footer-map">
           <iframe
-            title="map"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5678.737030154669!2d8.449736927232225!3d44.63038461639959!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12d2d5c79bab6901%3A0xa01d996aa43f2e66!2s15010%20Cavatore%2C%20Alessandria%2C%20Italia!5e0!3m2!1ses!2sar!4v1640359343611!5m2!1ses!2sar"
+          title="map"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.319888104349!2d-58.367169184650294!3d-34.621355665938815!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccb96756ef42b%3A0xe81b5b162482c0cf!2sMindHub!5e0!3m2!1ses-419!2sar!4v1640796919692!5m2!1ses-419!2sar"
             width="400"
             height="450"
             style={{border:"0"}}
             allowfullscreen=""
             loading="lazy"
           ></iframe>
-          </div>
-         
-        
+        </div>
       </footer>
     </>
   );
