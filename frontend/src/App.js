@@ -52,10 +52,10 @@ function App(props) {
           <Route path="/reservas" element={<Reservas />} />
           <Route path="/eventos" element={<Eventos />} />
           <Route path="/nosotros" element={<Nosotros />} />
+
           <Route path="*" element={<Home />} />
           <Route path="/account" element={<Account />}/>
           <Route path="/verificacion/:uniqueString" element={<VerifyDinamic />}/>
-
         </Routes>
         {/* <Forms/> */}
       </BrowserRouter>

@@ -327,8 +327,9 @@ footer {
   justify-content: space-between;
   align-items: center;
 }
+
 /* .footer-container div{
-.footer-container div {
+
   margin: 0.5rem;
 } */
 .footer-integrantes {
@@ -414,7 +415,6 @@ footer ul li {
   text-align: center;
   align-items: center;
   justify-content: center;
-    
 }
 
 .titulo-menu h1 {

@@ -7,37 +7,36 @@ import toasty from "./Toast";
 
 const Likes = (props) => {
   const token = localStorage.getItem("token");
-  const _id = localStorage.getItem("_id");
+  const { meal, likeMeal, user } = props;
+  const _id = user ? user._id: null;
 
-  const { meal, likeMeal } = props;
   const [mealLikes, setMealLikes] = useState(meal.iLikeIt);
   const [likeIcon, setLikeIcon] = useState(true);
-  console.log(meal.iLikeIt)
-  let like =
-    mealLikes[0] && mealLikes[0].includes(_id) ? (
+
+  
+  let like  = mealLikes.includes(_id) ? (
       <FcLike className="pointer" />
     ) : (
       <FaHeart className="pointer" />
     );
-  
+
+
   const likeI = async () => {
-    setLikeIcon(false);
+    setLikeIcon(!likeIcon);
     if (!_id) {
-      toasty("error", "You must be registered to like this activity");
+      toasty("error", "debes estar registrado para dar likes");
     } else {
       let response = await likeMeal(meal._id, token);
       setMealLikes(response.data.response);
     }
-    setLikeIcon(true);
   };
   return (
-    <div onClick={likeIcon ? likeI : null}>
+    <div onClick={likeI}>
       {like}
       <p>{mealLikes.length}</p>
     </div>
   );
 };
-
 const mapDispatchToProps = {
   likeMeal: mealActions.likeMeal,
 };
@@ -45,7 +44,6 @@ const mapDispatchToProps = {
 const mapStateToProps = (state) => {
   return {
     user: state.authReducer.user,
-    _id: state.authReducer_id,
   };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(Likes);

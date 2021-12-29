@@ -52,34 +52,38 @@ const mealControllers = {
     }
   },
   likeMeal: (req, res) => {
-   
+
     Meal.findOne({ _id: req.params.id })
       .then((meal) => {
         if (meal.iLikeIt.includes(req.user._id)) {
-          meal
+          Meal
             .findOneAndUpdate(
               { _id: req.params.id },
               { $pull: { iLikeIt: req.user._id } },
               { new: true }
             )
             .then((newLike) =>
-              res.json({ success: true, response: newLike.iLikeIt })
+            {console.log(newLike)
+              return res.json({ success: true, response: newLike.iLikeIt })
+            }
+                 
             )
             .catch((error) => console.log(error));
         } else {
-          meal
+          Meal
             .findOneAndUpdate(
               { _id: req.params.id },
               { $push: { iLikeIt: req.user._id } },
               { new: true }
             )
             .then((newLike) =>
-              res.json({ success: true, response: newLike.iLikeIt })
+              {console.log(newLike)
+                return res.json({ success: true, response: newLike.iLikeIt })}
             )
             .catch((error) => console.log(error));
         }
       })
-      .catch((error) => res.json({ success: false, response: error }));
+      .catch((error) => console.log(error));
   },
 };
 

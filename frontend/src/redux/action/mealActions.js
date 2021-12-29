@@ -11,6 +11,8 @@ const mealActions = {
   likeMeal: (id, token) =>{
     return async () => {
             try{
+              console.log(id)
+              console.log(token)
                 let response = await axios.put(`http://localhost:4000/api/meals/like/${id}`, {},{
                 headers:{
                     Authorization: 'Bearer '+ token
