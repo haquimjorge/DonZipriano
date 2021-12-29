@@ -85,17 +85,10 @@ const CardComentarios = (props) => {
             {/* <Card.ImgOverlay> */}
             <Card.Img variant="top" className="imagenUserComentarios" src={comentario.user[0].image} alt={comentario.user[0].lastName} />
               <div className="comentarioUsuario">
-<<<<<<< HEAD
                   <Card.Title className="text-light  image-title">
                   {`${comentario.user[0].name} ${comentario.user[0].lastName}:`}
                   </Card.Title>
                   <Card.Text className="text-light  image-title">
-=======
-                  <Card.Title className="text-light image-title">
-                  {`${comentario.user[0].name} ${comentario.user[0].lastName}:`}
-                  </Card.Title>
-                  <Card.Text className="text-light image-title">
->>>>>>> f3e8855776a60849d411cc10778141ef6f1ae784
                   {`"${comentario.comment}"`}
                   </Card.Text>
               </div>
