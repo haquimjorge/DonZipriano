@@ -7,19 +7,19 @@ import toasty from "./Toast";
 
 const Likes = (props) => {
   const token = localStorage.getItem("token");
-  const _id = localStorage.getItem("_id");
+  const { meal, likeMeal, user } = props;
+  const _id = user ? user._id: null;
 
-  const { meal, likeMeal } = props;
   const [mealLikes, setMealLikes] = useState(meal.iLikeIt);
   const [likeIcon, setLikeIcon] = useState(true);
-  console.log(likeIcon);
 
-  let like = mealLikes.includes(_id) ? (
-    <FcLike className="pointer" />
-  ) : (
-    
-    <FaHeart className="pointer" />
-  );
+  
+  let like  = mealLikes.includes(_id) ? (
+      <FcLike className="pointer" />
+    ) : (
+      <FaHeart className="pointer" />
+    );
+
 
   const likeI = async () => {
     setLikeIcon(!likeIcon);
@@ -44,7 +44,6 @@ const mapDispatchToProps = {
 const mapStateToProps = (state) => {
   return {
     user: state.authReducer.user,
-    _id: state.authReducer_id,
   };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(Likes);
