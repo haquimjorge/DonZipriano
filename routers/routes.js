@@ -60,7 +60,7 @@ Router.route("/tables")
 .put(modifyTable)
 .delete(deleteTable);
 
-Router.route("/tables/:tableId").delete(deleteTable).get(oneTable)
+Router.route("/tables/:tableId").delete(deleteTable).get(oneTable).put(modifyTable)
 
 
 /* COMMENTS */
