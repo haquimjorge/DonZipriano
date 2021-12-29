@@ -478,7 +478,9 @@ footer ul li {
   
 }
 .card-food-container {
-  /* padding:1rem; */
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
   margin-top: 1rem;
   border-radius: 5rem;
   width: 50% !important;
@@ -751,7 +753,7 @@ footer ul li {
     margin-top: 1rem;
     border-radius: 5rem;
     width: 80vw;
-    height: 40vh!important;
+   
   }
   .card-food-content{
     font-size: 0.8rem;
