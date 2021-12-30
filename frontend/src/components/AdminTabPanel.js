@@ -108,7 +108,7 @@ const renderEdit = (props) => (
 
     return(
         <Tab.Pane eventKey={props.timeFood}>
-          <p>entradas</p>
+          <h2 className="p-2 text-center bg-dark rounded shadow">{props.title}</h2>
           <div className="d-flex flex-wrap">
           {props.meals.map(plate=> 
            <Card className="col-12 col-md-6 col-xxl-4 col-xl-4 col-lg-6 col-sm-12 col-xs-12">
@@ -146,7 +146,7 @@ const renderEdit = (props) => (
                </Row> 
            </Card.Body>
            <Card.Footer className="bg-danger">
-             <small className="text-white d-flex justify-content-end">Eliminar</small>
+             <button onClick={()=>console.log(plate._id)} className="text-white bg-danger d-flex justify-content-center admin-delete-meal-button w-100">Eliminar</button>
            </Card.Footer>
          </Card>  
             )}

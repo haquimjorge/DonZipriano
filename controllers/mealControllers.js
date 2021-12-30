@@ -5,7 +5,7 @@ const mealControllers = {
     const { name, price, lastPrice, image, description, type, timeFood } =
       req.body;
     try {
-      let newMeal = new Meal({
+      let newMeal = await new Meal({
         name,
         price,
         lastPrice,

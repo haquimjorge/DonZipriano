@@ -24,6 +24,8 @@ import FormR from "react-bootstrap/Form";
 
 const StringInput = ({ label, ...props }) => {
     const [field, meta] = useField(props);
+
+    
   
     return (
       <div className={props.className}>
@@ -49,19 +51,23 @@ const StringInput = ({ label, ...props }) => {
 
     const [field, meta] = useField(props);
     return (
-      <div>
+      <div className="mb-3 d-flex justify-content-center">
         <label className="text-dark" htmlFor={props.id || props.name}>{label}</label>
+        <div className="mb-3 d-flex justify-content-center flex-column">
+
         <select {...field} {...props} />
         {meta.touched && meta.error ? (
-          <div className="error text-danger">{meta.error}</div>
-        ) : null}
+            <div className="error text-danger text-end">{meta.error}</div>
+            ) : null}
+            </div>
       </div>
     );
  
   };
 const Admin = (props) => {
     const [key, setKey] = useState('menu');
-
+    console.log('COMPONENTE: PROPS.SUCCESS')
+    console.log(props.success)
     console.log('COMPONENT: LISTA DE MEALS')
     console.log(props.meals)
     const {getMeals, getUsers } = props
@@ -70,34 +76,14 @@ const Admin = (props) => {
         getUsers()
     },[getMeals, getUsers])
 
+   
+
     console.log("PROPS.USERS:")
     console.log(props.users)
 
-    const renderEdit = (props) => (
-        <Tooltip id="button-tooltip" {...props}>
-          Editar
-        </Tooltip>
-      );
-
-      // function handleEdit(id, type){
-      //     if(selectedId === id){
-      //         setSelectedId('')
-      //     }else if(selectedId === "" ){
-      //         setSelectedId(id)
-      //     }else if(selectedId !== "" && selectedId !==id){
-      //       setSelectedId(id)
-      //     }
-      //   //  aqui capturo el id de la comida y si es precio o no
-      // }
-
-  //   let editPencil = <OverlayTrigger
-  //   placement="top"
-  //   delay={{ show: 25, hide: 25 }}
-  //   overlay={renderEdit}
-  // >
-  //   <img onClick={()=>handleEdit()} src={Pencil} alt='pencil' className="admin-edit-icon"/>
-  //   </OverlayTrigger>
-
+    function cleanSuccess(){
+        props.setSuccess(null)
+    }
 
 
     let entryPlates =props.meals.filter(meal=> meal.timeFood === "Entrada")
@@ -124,7 +110,7 @@ const Admin = (props) => {
         {/* <p>este es el menu</p> */}
        
   
-    <Tab.Container id="left-tabs-example" defaultActiveKey="first" >
+    <Tab.Container id="left-tabs-example" defaultActiveKey="entryPlates" >
   <Row>
     <Col sm={3}>
       <Nav variant="pills" className="flex-column">
@@ -147,17 +133,20 @@ const Admin = (props) => {
     </Col>
     <Col sm={9}>
       <Tab.Content>
-          <AdminTabPanel timeFood="entryPlates" meals={entryPlates} />
+          <AdminTabPanel timeFood="entryPlates" meals={entryPlates} title='Entradas' />
        
-        <AdminTabPanel timeFood='mainPlates' meals={mainPlates} />
+        <AdminTabPanel timeFood='mainPlates' meals={mainPlates} title='Platos Principales' />
         
-        <AdminTabPanel timeFood='deserts' meals={deserts} />
+        <AdminTabPanel timeFood='deserts' meals={deserts} title='Postres' />
       
-        <AdminTabPanel timeFood='drinks' meals={drinks} />
+        <AdminTabPanel timeFood='drinks' meals={drinks} title='Bebestibles' />
 
-    <Tab.Pane eventKey='upload' > 
-    <p className="text-dark">adasdkhad</p>
-    <Card className="col-12 col-md-6 col-xxl-4 col-xl-4 col-lg-6 col-sm-12 col-xs-12">
+    <Tab.Pane eventKey='upload'> 
+    <div className="d-flex justify-content-center flex-column align-items-center">
+    <p className="text-white text-center display-6 bg-danger p-1 rounded shadow text-shadow">Subir Comida</p>
+
+    
+    {!props.success?  <Card className="col-12 col-md-10 col-xxl-6 col-xl-6 col-lg-8 col-sm-12 col-xs-12 p-2 admin-card-upload">
            <Card.Img variant="top" src={DefaultFood} />
            <Card.Body className="admin-card-body d-flex flex-column align-items-around justify-content-between">
            <Formik
@@ -167,7 +156,7 @@ const Admin = (props) => {
             image: "",
             price:0,
             timeFood:'',
-            typeFood:''
+            type:''
           }}
           validationSchema={Yup.object({
             name: Yup.string()
@@ -179,7 +168,7 @@ const Admin = (props) => {
               .trim()
               .required("Este campo es obligatorio"),
             image: Yup.string().required("Este campo es obligatorio"),
-            typeFood: Yup.string()
+            type: Yup.string()
 
             .oneOf(
               ['Pasteleria', 'Pizza', 'Pescados', 'Alcohol', 'Sin Alcohol','Pastas'],
@@ -201,15 +190,10 @@ const Admin = (props) => {
             price : Yup.number().required("Debe ser un numero")
           })}
           onSubmit={(values, { setSubmitting}) => {
-              console.log(values)
-
+              props.uploadMeal(values)
           }}
         >
           <Form>
-              <div className="d-flex">
-
-
-              
               <StringInput
                 label="Nombre"
                 name="name"
@@ -217,7 +201,7 @@ const Admin = (props) => {
                 placeholder="kevin"
                 className="w-100"
               />
-              <SelectInput label="Tipo de Comida" name="typeFood">
+              <SelectInput label="Tipo de Comida" name="type">
 <option value="">Selecciona el tipo de comida</option>
 <option value="Pasteleria">Pasteleria</option>
 <option value="Pizza">Pizza</option>
@@ -226,7 +210,7 @@ const Admin = (props) => {
 <option value="Alcohol">Alcohol</option>
 <option value="Sin Alcohol">Sin Alcohol</option>
 </SelectInput>
-</div>
+
               <StringInput
                 label="Descripcion"
                 name="description"
@@ -260,17 +244,25 @@ const Admin = (props) => {
               type="number"
               placeholder="kevin"
             />
+<div className="d-flex justify-content-center">
 
-            <button type="submit" >Subir</button>
+            <button className="w-100 admin-submit-button" type="submit" >Subir</button>
+</div>
           </Form>
         </Formik>
          
   
            </Card.Body>
-           <Card.Footer className="bg-success">
-             <small className="text-white d-flex justify-content-end">Subir</small>
-           </Card.Footer>
-         </Card>  
+         </Card>
+         
+         :  
+         <div className="d-flex justify-content-center flex-column align-items-center">
+             <p className="display-6 text-success text-shadow">Comida cargada exitosamente</p>
+             <button className="w-100 admin-submit-button" onClick={()=> props.cleanSuccess()} >Subir otra</button>  
+         </div> 
+         }
+         </div>
+     
     
     
     </Tab.Pane>
@@ -319,11 +311,14 @@ const mapStateToProps = (state) => {
     return {
       meals: state.mealsReducer.meals,
       users: state.usersReducer.users,
+      success: state.mealsReducer.success
     };
   };
   
   const mapDispatchToProps = {
     getMeals: mealActions.fetchMeal,
-    getUsers: userActions.getUsers
+    getUsers: userActions.getUsers,
+    uploadMeal : mealActions.uploadMeal,
+    cleanSuccess: mealActions.cleanSuccess
   };
   export default connect(mapStateToProps, mapDispatchToProps)(Admin);

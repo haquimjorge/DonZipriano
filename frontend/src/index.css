@@ -1467,6 +1467,11 @@ font-family: 'DM Sans', sans-serif;
     filter: invert(26%) sepia(55%) saturate(1670%) hue-rotate(329deg) brightness(105%) contrast(105%);
   }
 
+  .admin-upload-image{
+      width: 5rem;
+      height: 5rem;
+  }
+
 /* .tabsAdmin {
   color:black !important;
 } */
@@ -1501,3 +1506,27 @@ font-family: 'DM Sans', sans-serif;
     width: 200px;
     height: 200px;
   }
+
+  .admin-submit-button{
+    transition: .2s;
+    
+    
+      color:white;
+      background-color: #1e5a31;
+      border-radius: 10px;
+  }
+  .admin-submit-button:hover{
+      transition: .2s;
+    background-color: #103b1e;
+  }
+
+.admin-submit-button:active{
+    background-color: black;
+    transform: scale(1.01);
+    box-shadow: 1px 1px 1px black;
+}
+
+.admin-card-upload{
+    background-color: rgba(0, 0, 0, 0.432);
+    box-shadow: 2px 2px 5px black;
+}
