@@ -558,8 +558,6 @@ footer ul li {
   /* color: black; */
   text-shadow: 3px 3px 2px rgba(0, 0, 0, 0.15);
   flex-direction: column;
-  backdrop-filter: blur(5px);
-  backdrop-filter: brightness(85%);
   letter-spacing: 0.1em;
 }
 
@@ -570,8 +568,6 @@ footer ul li {
   background-color: #ba090900;
   text-shadow: 3px 3px 2px rgba(0, 0, 0, 0.418);
   flex-direction: column;
-  backdrop-filter: blur(5px);
-  backdrop-filter: brightness(85%);
   letter-spacing: 0.1em;
   /* padding: 5rem;
   margin: -4rem;
@@ -593,7 +589,8 @@ footer ul li {
   display: flex;
   padding: 0.5rem;
   width: 90%;
-  margin: 1rem;
+  margin-bottom: 4rem;
+  /* margin: 1rem; */
 }
 
 .divImagenSobreNosotros {
@@ -601,10 +598,16 @@ footer ul li {
   width: 50%;
   height: 30%;
   align-self: center;
+  justify-content: flex-end;
 }
 
+.imagen-historia{
+  width: 90%;
+}
+
+
 .divImagenSobreNosotros img {
-  width: 100%;
+  /* width: 100%; */
   border-radius: 10px;
 }
 
@@ -612,6 +615,7 @@ footer ul li {
   height: 50% !important;
   padding: 1rem;
   align-self: center;
+
 }
 
 .sobreNosotrosTexto {
@@ -1085,8 +1089,6 @@ footer ul li {
 .tituloEventos {
   text-align: center;
   text-shadow: 2px 2px rgba(92, 28, 28, 0.657) !important;
-  backdrop-filter: blur(10px);
-  backdrop-filter: brightness(80%);
   margin-bottom: 0;
 }
 
@@ -1097,8 +1099,6 @@ footer ul li {
   width: 100%;
   align-self: center !important;
   justify-content: center;
-  backdrop-filter: blur(10px);
-  backdrop-filter: brightness(80%);
 }
 
 .contenedorLogoEventos {
@@ -1124,8 +1124,6 @@ footer ul li {
 }
 
 .contenedorFormEventos {
-  backdrop-filter: blur(10px);
-  backdrop-filter: brightness(80%);
   display: flex;
   justify-content: center;
 }
@@ -1188,8 +1186,6 @@ span.carousel-control-prev-icon {
   align-items: center !important;
   flex-direction: row !important;
   width: 100% !important;
-  backdrop-filter: blur(5px);
-  backdrop-filter: brightness(55%);
   height: 25vh !important;
 }
 
@@ -1346,8 +1342,6 @@ span.carousel-control-prev-icon {
   width: 100%;
   justify-content: center;
   align-items: center;
-  backdrop-filter: blur(5px);
-  backdrop-filter: brightness(85%);
 }
 .contenedorMapa h2 {
   padding: 0.5rem;
@@ -1373,8 +1367,6 @@ span.carousel-control-prev-icon {
   flex-direction: column;
   padding: 0.5rem;
   margin: 0.5rem;
-  backdrop-filter: blur(5px);
-  backdrop-filter: brightness(75%);
 }
 .horariosNosotros p {
   font-size: large;
@@ -1755,6 +1747,8 @@ span.carousel-control-prev-icon {
 
 .nav-link {
   color: #b42222 !important;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.61) !important;
+
 }
 
 .nav-pills .nav-link.active,
@@ -1766,3 +1760,9 @@ span.carousel-control-prev-icon {
 .card-admin-items {
   height: 20vh;
 }
+
+
+/* .btn-primary {
+  background-color:#af1717 !important;
+
+} */
