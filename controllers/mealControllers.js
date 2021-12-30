@@ -30,11 +30,12 @@ const mealControllers = {
     }
   },
   modifyMeal: async (req, res) => {
-    const { id } = req.body;
+    const { id, valor } = req.body;
     try {
       let updatedMeal = await Meal.findOneAndUpdate(
         { _id: id },
-        { ...req.body }
+        { ...req.body },
+        {new:true}
       );
       res.json({ success: true, error: null, response: updatedMeal });
     } catch (e) {
@@ -45,6 +46,7 @@ const mealControllers = {
   deleteMeal: async (req, res) => {
     try {
       let deletedMeal = await Meal.findOneAndDelete({ _id: req.params.mealId });
+    //   esto me devuelve la meal eliminada 
       res.json({ success: true, error: null, response: deletedMeal });
     } catch (e) {
       res.json({ success: false, error: e, response: null });

@@ -1189,7 +1189,7 @@ span.carousel-control-prev-icon {
 .cardComentarios {
   color: white !important;
   display: flex !important;
-  background-color: #ba090900 !important;
+  background-color: #000000c7 !important;
   justify-content: center !important;
   align-items: center !important;
   flex-direction: row !important;
@@ -1300,8 +1300,11 @@ span.carousel-control-prev-icon {
 }
 
 .contenedor-mesa {
+  display: flex;
+  justify-content: center;
   width: 8vw;
-  margin-top: 5rem;
+  padding: 2rem;
+
 }
 
 .info-mesa {
