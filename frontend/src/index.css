@@ -212,6 +212,7 @@ a {
   background-size: cover;
   /* margin-bottom: -6rem;
   margin-top: -6rem; */
+  margin-top: -8rem;
 }
 
 /* ...................MAIN PAST........... */
@@ -220,7 +221,6 @@ a {
   color: rgb(34, 102, 55);
   font-family: "Permanent Marker", cursive;
   padding-left: 1rem;
-
 }
 
 /* ...............MAIN CHEF.............. */
@@ -262,7 +262,7 @@ a {
   align-items: center;
   transform: rotate(-10deg);
 }
-.titulo-menu h1{
+.titulo-menu h1 {
   letter-spacing: 12px !important;
 }
 
@@ -408,7 +408,6 @@ footer ul li {
   display: flex;
   align-items: center;
   justify-content: center;
-
 }
 .titulo-menu {
   display: flex;
@@ -469,22 +468,21 @@ footer ul li {
   text-align: center;
 }
 
-.divlikes{
-  display:flex;
-  flex-direction:column;
+.divlikes {
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: flex-end;
-  font-family:sans-serif;
-  
+  font-family: sans-serif;
 }
 .card-food-container {
-  display:flex;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   margin-top: 1rem;
   border-radius: 5rem;
   width: 50% !important;
-  height: 35vh!important;
+  height: 35vh !important;
   background-color: #000000a6;
   box-shadow: 10px 10px 5px 0px rgba(28, 28, 28, 0.88);
   -webkit-box-shadow: 10px 10px 5px 0px rgba(28, 28, 28, 0.88);
@@ -500,7 +498,7 @@ footer ul li {
 .card-food-content {
   width: 50%;
   font-size: 15px;
-  
+
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -589,7 +587,6 @@ footer ul li {
   margin: 1rem;
 }
 
-
 .divImagenSobreNosotros {
   display: flex;
   width: 50%;
@@ -629,8 +626,7 @@ footer ul li {
   color: #fafafa;
 }
 
-
-.gorrochef{
+.gorrochef {
   width: 6rem;
   height: 6rem;
   animation: bounce;
@@ -638,15 +634,15 @@ footer ul li {
   animation-iteration-count: infinite;
 }
 
-.pizzanosotros{
+.pizzanosotros {
   width: 10rem;
   height: 6rem;
- 
+
   animation: pizzanosotros 8s ease 0s infinite reverse none;
 }
 
-.banderaitaliana{
-  margin:0!important;
+.banderaitaliana {
+  margin: 0 !important;
   width: 10rem;
   height: 10rem;
   animation: banderaitaliana 3s ease 0s infinite reverse none;
@@ -713,20 +709,14 @@ footer ul li {
   }
 }
 
-
-
-
-
 @media (max-width: 1024px) {
   .internoNuestro {
     display: flex;
     flex-direction: column !important;
-
   }
 
   .sobreNosotrosTexto {
     width: 100%;
-
   }
   .divImagenSobreNosotros {
     display: flex;
@@ -735,7 +725,6 @@ footer ul li {
     align-self: center;
     justify-content: center;
   }
-
 }
 
 /* ............⬆⬆⬆ SOBRE NOSOTROS ⬆⬆⬆...................... */
@@ -842,9 +831,8 @@ footer ul li {
     margin-top: 1rem;
     border-radius: 5rem;
     width: 80vw;
-   
   }
-  .card-food-content{
+  .card-food-content {
     font-size: 0.8rem;
   }
 
@@ -852,7 +840,6 @@ footer ul li {
     font-size: 25px;
   }
 }
-
 
 @media (max-width: 768px) {
   .restaurant-content {
@@ -1002,7 +989,7 @@ footer ul li {
 
   .card-food-container {
     margin-top: 1rem;
-    
+
     border-radius: 5rem;
     width: 100% !important;
     height: 30vh;
@@ -1012,10 +999,9 @@ footer ul li {
     font-size: 0.8rem;
     width: 50%;
     line-height: unset;
-    
   }
 
-  .precios-menu{
+  .precios-menu {
     font-size: 1rem;
   }
 
@@ -1073,17 +1059,16 @@ footer ul li {
     display: none;
   }
 
-  .imagenUserComentarios{
-    display:none!important;
+  .imagenUserComentarios {
+    display: none !important;
   }
-  .card-food-container h5{
+  .card-food-container h5 {
     font-size: 1rem;
-    margin-top:0.5rem;
-
+    margin-top: 0.5rem;
   }
 
-  .card-food-container{
-    height: 40vh!important;
+  .card-food-container {
+    height: 40vh !important;
   }
 }
 /* ........... pagEVENTOS ................ */
@@ -1121,7 +1106,7 @@ footer ul li {
 .contenedorDescripcionEventos {
   padding: 0.5rem;
   margin: 0.5rem;
-  
+
   width: 80%;
   text-shadow: 2px 2px rgba(0, 0, 0, 0.486) !important;
   font-size: large;
@@ -1154,7 +1139,7 @@ footer ul li {
   /* flex-direction: row !important; */
   justify-content: center;
   align-items: center;
-  background-image: url('../public/assets/bodyBackgroud.jfif');
+  background-image: url("../public/assets/bodyBackgroud.jfif");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 20%;
@@ -1174,11 +1159,11 @@ a.carousel-control-next {
   justify-content: right !important;
 }
 span.carousel-control-next-icon {
-  padding-left:1rem !important;
+  padding-left: 1rem !important;
   margin-right: -1rem !important;
 }
 span.carousel-control-prev-icon {
-  padding-right:1rem !important;
+  padding-right: 1rem !important;
   margin-left: -1rem !important;
 }
 
@@ -1199,23 +1184,22 @@ span.carousel-control-prev-icon {
   height: 25vh !important;
 }
 
-.nombreComentario{
-  display:flex;
-  justify-content: flex-start!important;
+.nombreComentario {
+  display: flex;
+  justify-content: flex-start !important;
 }
-@media (max-width:620px){
-  .nombreComentario{
-    font-size: 18px!important;
+@media (max-width: 620px) {
+  .nombreComentario {
+    font-size: 18px !important;
   }
   .comentarioUsuario {
     justify-content: center;
     align-items: flex-start;
-    font-size:13px!important;
+    font-size: 13px !important;
     display: flex;
     flex-direction: column;
   }
 }
-
 
 .imagenUserComentarios {
   width: 100px !important;
@@ -1228,7 +1212,7 @@ span.carousel-control-prev-icon {
 .comentarioUsuario {
   justify-content: center;
   align-items: flex-start;
-  padding: 1rem;  
+  padding: 1rem;
   max-width: 70%;
   display: flex;
   flex-direction: column;
@@ -1238,37 +1222,32 @@ span.carousel-control-prev-icon {
 
 @media (max-width: 780px) {
   .containerCarousel {
-    min-height:100vh;
+    min-height: 100vh;
     width: 100% !important;
-    padding: 1!important;
+    padding: 1 !important;
   }
   .cardComentarios {
-   
     height: 25vh !important;
-    width: 100% !important;  
-    
+    width: 100% !important;
   }
-  
-  
+
   .containerCarousel Carousel {
     width: 100% !important;
-  }  
+  }
   .comentarioUsuario {
     padding: 0 !important;
     width: 100% !important;
     justify-content: flex-start !important;
-
   }
-  
 }
 
 /* ........... Pagina de verificacion ................ */
 
-.text-shadow{
-    text-shadow: 2px 2px 5px black;
+.text-shadow {
+  text-shadow: 2px 2px 5px black;
 }
-.google-text{
-    font-size: 1.3rem;
+.google-text {
+  font-size: 1.3rem;
 }
 
 /* .verify-page-text{
@@ -1304,7 +1283,6 @@ span.carousel-control-prev-icon {
   justify-content: center;
   width: 8vw;
   padding: 2rem;
-
 }
 
 .info-mesa {
@@ -1341,11 +1319,9 @@ span.carousel-control-prev-icon {
   color: #ba0909;
 }
 
-
 .signAqui:hover {
   /* letter-spacing: 5px !important; */
-  color:green !important;
-
+  color: green !important;
 }
 
 .googleLogin {
@@ -1363,70 +1339,68 @@ span.carousel-control-prev-icon {
   align-items: center;
   backdrop-filter: blur(5px);
   backdrop-filter: brightness(85%);
-  
 }
 .contenedorMapa h2 {
-    padding:0.5rem;
+  padding: 0.5rem;
 }
-  .contenedorIframe {
+.contenedorIframe {
   display: flex;
-  flex-direction:column;
+  flex-direction: column;
   width: 100%;
   justify-content: center;
   align-items: center;
   height: 100%;
 }
-.contenedorIframe Iframe{
-    border-radius: 15px;
-    width:50%;
-    height: 40vh;
-    padding: 0.5rem;
-    margin: 0.5rem;
+.contenedorIframe Iframe {
+  border-radius: 15px;
+  width: 50%;
+  height: 40vh;
+  padding: 0.5rem;
+  margin: 0.5rem;
 }
 
 .horariosNosotros {
-  
   display: flex;
   flex-direction: column;
   padding: 0.5rem;
   margin: 0.5rem;
   backdrop-filter: blur(5px);
-  backdrop-filter: brightness(75%); 
+  backdrop-filter: brightness(75%);
 }
-.horariosNosotros p{
+.horariosNosotros p {
   font-size: large;
-font-family: 'DM Sans', sans-serif;
+  font-family: "DM Sans", sans-serif;
 }
-.cerrado{
-  text-decoration:underline ;
+.cerrado {
+  text-decoration: underline;
 }
 
 /** ----------------------- modalComentario // HOME------------ */
 
-.botonModalComentarioBoton{
+.botonModalComentarioBoton {
   background-color: black !important;
   color: white;
 }
-.botonModalComentarioBoton:focus{
-    color: #af1717;
+.botonModalComentarioBoton:focus {
+  color: #af1717;
 }
-.botonModalComentarioBoton:hover{
-    color: #b42222;
+.botonModalComentarioBoton:hover {
+  color: #b42222;
 }
 
 .modalComentario {
   display: flex !important;
   justify-content: center;
   align-items: center;
-  font-family: 'DM Sans', sans-serif;
+  font-family: "DM Sans", sans-serif;
 }
 
 .modal-content {
   height: 30vh;
-  width: 50vw;  
+  width: 50vw;
 }
 .modal-content form textarea {
-  width:100%;
+  width: 100%;
   padding: 0.5rem;
 }
 
@@ -1438,9 +1412,8 @@ font-family: 'DM Sans', sans-serif;
 .botonesModal {
   background-color: #000000;
   color: #fafafa;
-  font-family: 'DM Sans', sans-serif !important;
+  font-family: "DM Sans", sans-serif !important;
 }
-
 
 /* Chatbot */
 
@@ -1452,32 +1425,31 @@ font-family: 'DM Sans', sans-serif;
   --df-messenger-send-icon: #02880e;
 }
 
-
 /*  ADMIN   */
 
-.admin-edit-icon{
-    transition: .5s;
-    /* filter: invert(26%) sepia(55%) saturate(1670%) hue-rotate(329deg) brightness(0%) contrast(105%); */
-    width: 1rem;
-    cursor: pointer;
-  }
-  
-  .admin-edit-icon:hover{
-    transition: .2s;
-    filter: invert(26%) sepia(55%) saturate(1670%) hue-rotate(329deg) brightness(105%) contrast(105%);
-  }
+.admin-edit-icon {
+  transition: 0.5s;
+  /* filter: invert(26%) sepia(55%) saturate(1670%) hue-rotate(329deg) brightness(0%) contrast(105%); */
+  width: 1rem;
+  cursor: pointer;
+}
 
-  .admin-upload-image{
-      width: 5rem;
-      height: 5rem;
-  }
+.admin-edit-icon:hover {
+  transition: 0.2s;
+  filter: invert(26%) sepia(55%) saturate(1670%) hue-rotate(329deg)
+    brightness(105%) contrast(105%);
+}
+
+.admin-upload-image {
+  width: 5rem;
+  height: 5rem;
+}
 
 /* .tabsAdmin {
   color:black !important;
 } */
-  
 
-  /*  ADMIN // usuarios  */
+/*  ADMIN // usuarios  */
 .cardUsersAdmin {
   display: flex !important;
   justify-content: center;
@@ -1486,47 +1458,302 @@ font-family: 'DM Sans', sans-serif;
   background-color: rgba(17, 16, 16, 0.63);
   border: solid 0.5px grey;
   border-radius: 12px;
-  color:white;
-  font-family: 'DM Sans', sans-serif;
+  color: white;
+  font-family: "DM Sans", sans-serif;
   /* margin: 0.3rem; */
 }
 
-
-  .userImageEnAdmin {
-    border-radius: 50%;
-    /* background-color: #f60d0da2; */
-    background: linear-gradient(
-      90deg,
-      rgb(30, 90, 49) 10%,
-      rgb(221, 213, 213) 46%,
-      rgba(186, 9, 9, 1) 75%
-    );
-    padding: 0.3rem;
-    margin: 0.5rem;
-    width: 200px;
-    height: 200px;
-  }
-
-  .admin-submit-button{
-    transition: .2s;
-    
-    
-      color:white;
-      background-color: #1e5a31;
-      border-radius: 10px;
-  }
-  .admin-submit-button:hover{
-      transition: .2s;
-    background-color: #103b1e;
-  }
-
-.admin-submit-button:active{
-    background-color: black;
-    transform: scale(1.01);
-    box-shadow: 1px 1px 1px black;
+.userImageEnAdmin {
+  border-radius: 50%;
+  /* background-color: #f60d0da2; */
+  background: linear-gradient(
+    90deg,
+    rgb(30, 90, 49) 10%,
+    rgb(221, 213, 213) 46%,
+    rgba(186, 9, 9, 1) 75%
+  );
+  padding: 0.3rem;
+  margin: 0.5rem;
+  width: 200px;
+  height: 200px;
 }
 
-.admin-card-upload{
-    background-color: rgba(0, 0, 0, 0.432);
-    box-shadow: 2px 2px 5px black;
+.admin-submit-button {
+  transition: 0.2s;
+
+  color: white;
+  background-color: #1e5a31;
+  border-radius: 10px;
+}
+.admin-submit-button:hover {
+  transition: 0.2s;
+  background-color: #103b1e;
+}
+
+.admin-submit-button:active {
+  background-color: black;
+  transform: scale(1.01);
+  box-shadow: 1px 1px 1px black;
+}
+
+.admin-card-upload {
+  background-color: rgba(0, 0, 0, 0.432);
+  box-shadow: 2px 2px 5px black;
+}
+
+@media (max-width: 321px) {
+  .restaurant-content {
+    margin-top: -2rem;
+  }
+
+  .separator-control {
+    margin-top: -4rem;
+  }
+
+  .main-pizza {
+    height: 120vh;
+    margin-bottom: 5rem;
+  }
+
+  .separator-pasta {
+    margin-bottom: 4.7rem;
+  }
+
+  #chef-pic {
+    width: 50vw;
+  }
+
+  .separator-chef {
+    margin-top: 5rem;
+  }
+
+  .separator-pizza {
+    margin-bottom: 4rem;
+  }
+
+  .separator-reservas {
+    margin-bottom: 4rem;
+  }
+
+  .reservas-content {
+    margin-bottom: -1rem;
+  }
+
+  .reservas-container {
+    margin-bottom: -3rem;
+  }
+}
+
+@media (max-width: 361px) {
+  .restaurant-content {
+    margin-top: -2rem;
+  }
+
+  .separator-control {
+    margin-top: -2rem;
+  }
+
+  .main-pizza {
+    height: 120vh;
+  }
+
+  .separator-pasta {
+    margin-bottom: 4.7rem;
+  }
+
+  #chef-pic {
+    width: 50vw;
+  }
+
+  .separator-chef {
+    margin-top: 5rem;
+  }
+
+  .separator-pizza {
+    margin-bottom: 4rem;
+  }
+
+  .separator-reservas {
+    margin-bottom: 4rem;
+  }
+}
+
+@media (max-width: 415px) {
+  .restaurant-content {
+    margin-top: -2rem;
+  }
+
+  .separator-control {
+    margin-top: -2rem;
+  }
+
+  .main-pizza {
+    height: 120vh;
+  }
+
+  .separator-pasta {
+    margin-bottom: 4.7rem;
+  }
+
+  #chef-pic {
+    width: 50vw;
+  }
+
+  .separator-chef {
+    margin-top: 5rem;
+  }
+
+  .separator-pizza {
+    margin-bottom: 4rem;
+  }
+
+  .separator-reservas {
+    margin-bottom: 4rem;
+  }
+}
+
+@media (max-width: 850px) {
+  .restaurant-content {
+    margin-top: -2rem;
+  }
+
+  .separator-control {
+    margin-top: -2rem;
+  }
+
+  .main-pizza {
+    height: 120vh;
+  }
+
+  .separator-pasta {
+    margin-bottom: 4rem;
+  }
+
+  #chef-pic {
+    width: 50vw;
+  }
+
+  .separator-chef {
+    margin-top: 4rem;
+  }
+
+  .separator-pizza {
+    margin-bottom: 4rem;
+  }
+
+  .separator-reservas {
+    margin-bottom: 4rem;
+  }
+}
+@media (max-width: 801px) {
+  .mesa-disponible {
+    width: 8vw;
+  }
+}
+
+@media (max-width: 501px) {
+  .mesa-disponible {
+    width: 15vw;
+  }
+}
+
+@media (max-width: 1501px) {
+  .restaurant-content {
+    margin-top: -3rem;
+  }
+
+  .separator-control {
+    margin-top: -3rem;
+  }
+
+  .main-pizza {
+    height: 120vh;
+  }
+
+  .separator-pasta {
+    margin-bottom: 3rem;
+  }
+
+  #chef-pic {
+    width: 50vw;
+  }
+
+  .separator-chef {
+    margin-top: 3rem;
+  }
+
+  .separator-pizza {
+    margin-bottom: 3rem;
+  }
+
+  .separator-reservas {
+    margin-bottom: 3rem;
+  }
+}
+
+@media (max-width: 751px) {
+  .restaurant-content {
+    margin-top: -2rem;
+  }
+
+  .separator-control {
+    margin-top: -5rem;
+  }
+  div .separator-dos {
+    margin-top: -3rem;
+  }
+
+  .main-pizza {
+    height: 120vh;
+  }
+
+  .separator-pasta {
+    margin-bottom: 4rem;
+  }
+
+  #chef-pic {
+    width: 50vw;
+  }
+
+  .separator-chef {
+    margin-top: 4rem;
+  }
+
+  .separator-pizza {
+    margin-bottom: 4rem;
+  }
+
+  .separator-reservas {
+    margin-bottom: 4rem;
+  }
+}
+
+@media (max-width: 570px) {
+  div .separator-dos {
+    margin-top: -1rem;
+  }
+}
+
+@media (max-width: 1951px) {
+  .separator-control {
+    margin-top: -4.5rem;
+  }
+}
+
+.admin-menu-items {
+  color: #b42222 !important;
+}
+
+.nav-link {
+  color: #b42222 !important;
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #fff;
+}
+
+.card-admin-items {
+  height: 20vh;
 }
