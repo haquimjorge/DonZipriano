@@ -101,13 +101,22 @@ nav {
   align-items: center;
 }
 
-/* .navbar {
-   width: 40vw; 
-   min-height: 10vh;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center; 
-} */
+a.dropdown-item.active{
+  background-color: red!important;
+
+}
+
+.nav-pills .nav-link.active{
+  background-color: red;
+  color:rgb(255, 255, 255);
+
+}
+.nav-link{
+  color: white;
+}
+.nav-link:hover{
+  color:red;
+}
 
 .navbar ul {
   list-style: none;
