@@ -585,7 +585,7 @@ footer ul li {
 .internoNuestro {
   display: flex;
   padding: 0.5rem;
-  width: 70%;
+  width: 90%;
   margin: 1rem;
 }
 
@@ -603,9 +603,9 @@ footer ul li {
 }
 
 #imagenChef {
-  height: 70% !important;
+  height: 50% !important;
   padding: 1rem;
-  align-self: flex-start;
+  align-self: center;
 }
 
 .sobreNosotrosTexto {
@@ -628,6 +628,95 @@ footer ul li {
   font-family: "DM Sans", sans-serif !important;
   color: #fafafa;
 }
+
+
+.gorrochef{
+  width: 6rem;
+  height: 6rem;
+  animation: bounce;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+
+.pizzanosotros{
+  width: 10rem;
+  height: 6rem;
+ 
+  animation: pizzanosotros 8s ease 0s infinite reverse none;
+}
+
+.banderaitaliana{
+  margin:0!important;
+  width: 10rem;
+  height: 10rem;
+  animation: banderaitaliana 3s ease 0s infinite reverse none;
+}
+
+@keyframes banderaitaliana {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+
+  30% {
+    transform: scale3d(1.25, 0.75, 1);
+  }
+
+  40% {
+    transform: scale3d(0.75, 1.25, 1);
+  }
+
+  50% {
+    transform: scale3d(1.15, 0.85, 1);
+  }
+
+  65% {
+    transform: scale3d(0.95, 1.05, 1);
+  }
+
+  75% {
+    transform: scale3d(1.05, 0.95, 1);
+  }
+
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
+}
+@keyframes pizzanosotros {
+  0%,
+  100% {
+    transform: rotate(0deg);
+    transform-origin: 50% 50%;
+  }
+
+  10% {
+    transform: rotate(8deg);
+  }
+
+  20%,
+  40%,
+  60% {
+    transform: rotate(-10deg);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: rotate(10deg);
+  }
+
+  80% {
+    transform: rotate(-8deg);
+  }
+
+  90% {
+    transform: rotate(8deg);
+  }
+}
+
+
+
+
+
 @media (max-width: 1024px) {
   .internoNuestro {
     display: flex;
@@ -984,6 +1073,9 @@ footer ul li {
     display: none;
   }
 
+  .imagenUserComentarios{
+    display:none!important;
+  }
   .card-food-container h5{
     font-size: 1rem;
     margin-top:0.5rem;
@@ -1104,9 +1196,25 @@ span.carousel-control-prev-icon {
   width: 100% !important;
   backdrop-filter: blur(5px);
   backdrop-filter: brightness(55%);
-  height: 20vh !important;
+  height: 25vh !important;
 }
 
+.nombreComentario{
+  display:flex;
+  justify-content: flex-start!important;
+}
+@media (max-width:620px){
+  .nombreComentario{
+    font-size: 18px!important;
+  }
+  .comentarioUsuario {
+    justify-content: center;
+    align-items: flex-start;
+    font-size:13px!important;
+    display: flex;
+    flex-direction: column;
+  }
+}
 
 
 .imagenUserComentarios {
@@ -1119,25 +1227,24 @@ span.carousel-control-prev-icon {
 
 .comentarioUsuario {
   justify-content: center;
-  align-items: center;
-  padding: 1rem;
-  /* width: 80%; */
+  align-items: flex-start;
+  padding: 1rem;  
   max-width: 70%;
-  letter-spacing: 0.1em;
   display: flex;
   flex-direction: column;
 }
 
 /* ........... mqCarousel ................ */
 
-@media (max-width: 700px) {
+@media (max-width: 780px) {
   .containerCarousel {
+    min-height:100vh;
     width: 100% !important;
-    padding: 0 !important;
+    padding: 1!important;
   }
   .cardComentarios {
-    /* flex-direction:column !important; */
-    height: 30vh !important;
+   
+    height: 25vh !important;
     width: 100% !important;  
     
   }
@@ -1193,8 +1300,11 @@ span.carousel-control-prev-icon {
 }
 
 .contenedor-mesa {
+  display: flex;
+  justify-content: center;
   width: 8vw;
-  margin-top: 5rem;
+  padding: 2rem;
+
 }
 
 .info-mesa {
