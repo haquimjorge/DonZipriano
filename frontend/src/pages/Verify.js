@@ -24,12 +24,6 @@ const Verify = (props) => {
     }
   }, [verifyEmail,uniqueString,user]);
 
-  console.log("COMPONENT: ESTO LLEGA DEL STORE");
-  console.log(props.user);
-  console.log('success:'+props.success)
-  console.log(props.message);
-  console.log(props.error);
-
   if(props.success!==null && redirect===false){
       setTimeout(() => {
         setRedirect(true);

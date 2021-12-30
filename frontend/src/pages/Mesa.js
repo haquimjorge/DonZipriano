@@ -8,12 +8,10 @@ import { Navigate } from "react-router-dom";
 
 
 const Mesa = (props) => {
-  console.log(props);
   const params = useParams();
 
   useEffect(() => {
     props.getOneTable(props.params.tableId);
-    console.log(props);
   }, []);
 
   useEffect(() => {
@@ -28,7 +26,7 @@ const Mesa = (props) => {
   }
 
   
-  console.log(props);
+
   return (
     <div>
       <NavBar />

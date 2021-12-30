@@ -2,8 +2,6 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 const Mesas = ({ table, user }) => {
-  console.log(table);
-  console.log(user)
 
   return (
     <>

@@ -1421,10 +1421,11 @@ font-family: 'DM Sans', sans-serif;
   font-family: 'DM Sans', sans-serif;
 }
 
-.modal-content {
+/* .modal-content {
   height: 30vh;
   width: 50vw;  
-}
+} */
+
 .modal-content form textarea {
   width:100%;
   padding: 0.5rem;
@@ -1529,4 +1530,28 @@ font-family: 'DM Sans', sans-serif;
 .admin-card-upload{
     background-color: rgba(0, 0, 0, 0.432);
     box-shadow: 2px 2px 5px black;
+}
+
+.admin-modal-image{
+    width: 8rem;
+    height: 5.5rem;
+    border-radius: 10px;
+    background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.admin-modal-delete-button{
+    transition: .2s;
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    padding: 5px;
+    border-color: white;
+
+}
+
+.admin-modal-delete-button:hover{
+    transition: .2s;
+    background-color: rgb(199, 184, 184);
 }

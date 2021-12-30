@@ -6,7 +6,7 @@ import { connect } from "react-redux";
 import mealActions from "../redux/action/mealActions";
 
 const Menu = (props) => {
-  console.log(props)
+
   const {fetchMeal} = props
   useEffect(() => {
     fetchMeal();

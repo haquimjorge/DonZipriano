@@ -1,6 +1,6 @@
 import { dividerClasses } from "@mui/material";
 import Pencil from '../assets/pencil.png'
-import {React, useEffect, useState} from "react";
+import {React, useEffect, useState, useRef} from "react";
 import Tooltip from "react-bootstrap/Tooltip";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Container from "react-bootstrap/Container";
@@ -13,12 +13,18 @@ import Row from 'react-bootstrap/Row'
 import Nav from 'react-bootstrap/Nav'
 import mealActions from '../redux/action/mealActions'
 import {connect} from 'react-redux'
+import CenterModal from '../components/CenterModal'
+import Button from 'react-bootstrap/Button'
+import Overlay from 'react-bootstrap/Overlay'
+import Popover from 'react-bootstrap/Popover'
 
 
 const AdminTabPanel = (props) =>{
     const [selectedId, setSelectedId] = useState('')
     const [editType, setEditType] = useState("");
     const [editInput, setEditInput] = useState('')
+    const [modalShow, setModalShow] = useState(false);
+
 
     let editPencil=(plate,type) => <OverlayTrigger
     placement="top"
@@ -83,6 +89,7 @@ function handleEdit(id, input, type){
   //  aqui capturo el id de la comida y si es precio o no
 }
 
+
 const renderEdit = (props) => (
     <Tooltip id="button-tooltip" {...props}>
       Editar
@@ -106,11 +113,17 @@ const renderEdit = (props) => (
     }
   }
 
+  function handleDelete(id){
+      setModalShow(true)
+      props.sendIdToDelete(id)
+  }
+
     return(
         <Tab.Pane eventKey={props.timeFood}>
           <h2 className="p-2 text-center bg-dark rounded shadow">{props.title}</h2>
           <div className="d-flex flex-wrap">
-          {props.meals.map(plate=> 
+          {props.meals.map(plate=>
+           <>
            <Card className="col-12 col-md-6 col-xxl-4 col-xl-4 col-lg-6 col-sm-12 col-xs-12">
            <Card.Img variant="top" src={plate.image} />
            <Card.Body className="admin-card-body d-flex flex-column align-items-around justify-content-between">
@@ -146,11 +159,18 @@ const renderEdit = (props) => (
                </Row> 
            </Card.Body>
            <Card.Footer className="bg-danger">
-             <button onClick={()=>console.log(plate._id)} className="text-white bg-danger d-flex justify-content-center admin-delete-meal-button w-100">Eliminar</button>
+             <button onClick={()=>handleDelete(plate._id)} className="text-white bg-danger d-flex justify-content-center admin-delete-meal-button w-100">Eliminar</button>
            </Card.Footer>
-         </Card>  
-            )}
+           
+         </Card> 
+         </>
+         
+         )}
+         <CenterModal show={modalShow} onHide={() => setModalShow(false)} />
+            
             </div>
+            
+      
         </Tab.Pane>
     )
 }
@@ -163,6 +183,7 @@ const mapStateToProps = (state) => {
   
   const mapDispatchToProps = {
     // sacar actions para modificar, eliminar y subir comida
-    modifyMeal : mealActions.modifyMeal
+    modifyMeal : mealActions.modifyMeal,
+    sendIdToDelete: mealActions.sendIdToDelete
   };
   export default connect(mapStateToProps, mapDispatchToProps)(AdminTabPanel);

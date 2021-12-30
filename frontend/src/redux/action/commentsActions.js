@@ -30,15 +30,11 @@ const commentsActions = {
     return async (dispatch, getState) => {
       let response = await axios.get(
         `http://localhost:4000/api/comments/`);
-          // console.log(comments)
-
-    //console.log(comments)
     dispatch({ type: "GET_COMMENTS", payload:response.data.comments});
   };
 },
 
 deleteComment:(token, commentId) => {      
-  // console.log(commentId)
   return async (dispatch, getState) => {
     try{
       let response = await axios.delete(`http://localhost:4000/api/comments/${commentId}`

@@ -39,7 +39,7 @@ const Account = (props) => {
 
   useEffect(() => {
     if (props.user) {
-      console.log(props.user)
+
       const { name, lastName, image, password } = props.user
 
       setData({ name, lastName, image, password })

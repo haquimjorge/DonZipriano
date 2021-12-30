@@ -86,7 +86,6 @@ const ComentariosClientes = (props) => {
       //if(!(props.comments.length>0))props.getComments()
       
     },[])
-    console.log(props.comments)
 
     const handleSelect = (_, e) => {
         if (e !== undefined) {

@@ -6,7 +6,7 @@ import tableActions from "../redux/action/tableActions";
 import { connect } from "react-redux";
 
 const Reservas = (props) => {
-  console.log(props);
+
   const { fetchTable } = props;
   useEffect(() => {
     fetchTable();

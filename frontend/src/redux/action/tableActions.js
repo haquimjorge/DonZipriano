@@ -13,7 +13,6 @@ const tableActions = {
   getOneTable: (id) => {
     return async (dispatch) => {
       let response = await axios.get("http://localhost:4000/api/tables/" + id);
-      console.log(response);
       if (response.data.success) dispatch({ type: "getTable", payload: response.data.response });
       else console.error("Algo salió mal")
     };
@@ -21,7 +20,6 @@ const tableActions = {
   reserveTable: (id, email)=>{
     return async(dispatch)=>{
       let response = await axios.put(`http://localhost:4000/api/tables/${id}`, {email: email, availability:false});
-      console.log(response)
       if(!response.data.success)console.error("Algo salió mal") 
       else dispatch({ type: "getTable", payload: response.data.response });
     }
@@ -29,7 +27,6 @@ const tableActions = {
   reserventTable: (id)=>{
     return async(dispatch)=>{
       let response = await axios.put(`http://localhost:4000/api/tables/${id}`, {email: "", availability:true});
-      console.log(response);
       if(!response.data.success) console.error("Algo salió mal")
       else dispatch({ type: "getTable", payload: response.data.response });
     }

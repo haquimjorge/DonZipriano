@@ -1,6 +1,7 @@
 const initialState = {
   meals: [],
   success: null,
+  meal: null,
 };
 
 const mealReducer = (state = initialState, action) => {
@@ -33,10 +34,7 @@ const mealReducer = (state = initialState, action) => {
         meals: editedMeals,
       };
     case "UPLOAD_MEAL":
-      //   concatenar la meal individual a la lista que ya tienen
       let current = state.meals.concat(action.payload.meal);
-      console.log("REDUCER: ESTO LLEGO DEL ACTION.PAYLOAD");
-      console.log(action.payload);
       return {
         ...state,
         meals: getUniqueValues(current),
@@ -47,6 +45,18 @@ const mealReducer = (state = initialState, action) => {
         ...state,
         success: null,
       };
+    case "SEND_DELETE_ID":
+        let mealDelete = state.meals.find(meal=> meal._id === action.payload)
+      return {
+        ...state,
+        meal: mealDelete,
+      };
+      case "DELETE_MEAL":
+          let newMeals = state.meals.filter(meal => meal._id !== action.payload._id)
+          return{
+              ...state,
+              meals: newMeals
+          }
     default:
       return state;
   }

@@ -1,4 +1,4 @@
-import {React, useEffect, useState} from "react";
+import {React, useEffect, useState, useRef} from "react";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import Container from "react-bootstrap/Container";
@@ -66,24 +66,21 @@ const StringInput = ({ label, ...props }) => {
   };
 const Admin = (props) => {
     const [key, setKey] = useState('menu');
-    console.log('COMPONENTE: PROPS.SUCCESS')
-    console.log(props.success)
-    console.log('COMPONENT: LISTA DE MEALS')
-    console.log(props.meals)
+    
+
+
+  
     const {getMeals, getUsers } = props
     useEffect(()=>{
         getMeals()
         getUsers()
     },[getMeals, getUsers])
 
-   
+ 
 
-    console.log("PROPS.USERS:")
-    console.log(props.users)
 
-    function cleanSuccess(){
-        props.setSuccess(null)
-    }
+
+    
 
 
     let entryPlates =props.meals.filter(meal=> meal.timeFood === "Entrada")
@@ -187,7 +184,7 @@ const Admin = (props) => {
              )
 
              .required('Requerido'),
-            price : Yup.number().required("Debe ser un numero")
+            price : Yup.number().max(1000, "No puede superar los 1000").required("Debe ser un numero")
           })}
           onSubmit={(values, { setSubmitting}) => {
               props.uploadMeal(values)
@@ -261,10 +258,7 @@ const Admin = (props) => {
              <button className="w-100 admin-submit-button" onClick={()=> props.cleanSuccess()} >Subir otra</button>  
          </div> 
          }
-         </div>
-     
-    
-    
+         </div>  
     </Tab.Pane>
       </Tab.Content>
     </Col>

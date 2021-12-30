@@ -4,7 +4,6 @@ import Likes from "./Likes"
 import "animate.css";
 
 const CardMenu = ({ meal }) => {
-  // console.log(meal);
 
   const mealEntradas = meal.filter((meal) => meal.timeFood === "Entrada");
 
