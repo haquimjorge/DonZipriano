@@ -1458,23 +1458,46 @@ font-family: 'DM Sans', sans-serif;
 .admin-edit-icon{
     transition: .5s;
     /* filter: invert(26%) sepia(55%) saturate(1670%) hue-rotate(329deg) brightness(0%) contrast(105%); */
-  width: 1rem;
-  cursor: pointer;
-}
-
-.admin-edit-icon:hover{
+    width: 1rem;
+    cursor: pointer;
+  }
+  
+  .admin-edit-icon:hover{
     transition: .2s;
     filter: invert(26%) sepia(55%) saturate(1670%) hue-rotate(329deg) brightness(105%) contrast(105%);
+  }
+
+/* .tabsAdmin {
+  color:black !important;
+} */
+  
+
+  /*  ADMIN // usuarios  */
+.cardUsersAdmin {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+  background-color: rgba(17, 16, 16, 0.63);
+  border: solid 0.5px grey;
+  border-radius: 12px;
+  color:white;
+  font-family: 'DM Sans', sans-serif;
+  /* margin: 0.3rem; */
 }
 
-.admin-textarea{
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
 
-    width: 100%;
-}
-
-.admin-card-body{
-    min-height: 14rem;
-}
+  .userImageEnAdmin {
+    border-radius: 50%;
+    /* background-color: #f60d0da2; */
+    background: linear-gradient(
+      90deg,
+      rgb(30, 90, 49) 10%,
+      rgb(221, 213, 213) 46%,
+      rgba(186, 9, 9, 1) 75%
+    );
+    padding: 0.3rem;
+    margin: 0.5rem;
+    width: 200px;
+    height: 200px;
+  }

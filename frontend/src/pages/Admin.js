@@ -5,11 +5,11 @@ import Container from "react-bootstrap/Container";
 import Tab from 'react-bootstrap/Tab'
 import Tabs from 'react-bootstrap/Tabs'
 import Card from 'react-bootstrap/Card'
-import CardGroup from 'react-bootstrap/CardGroup'
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
 import Nav from 'react-bootstrap/Nav'
 import mealActions from '../redux/action/mealActions'
+import userActions from '../redux/action/userActions'
 import {connect} from 'react-redux'
 import { dividerClasses } from "@mui/material";
 import Pencil from '../assets/pencil.png'
@@ -64,10 +64,39 @@ const Admin = (props) => {
 
     console.log('COMPONENT: LISTA DE MEALS')
     console.log(props.meals)
-    const {getMeals} = props
+    const {getMeals, getUsers } = props
     useEffect(()=>{
-       getMeals()
-    },[getMeals])
+        getMeals()
+        getUsers()
+    },[getMeals, getUsers])
+
+    console.log("PROPS.USERS:")
+    console.log(props.users)
+
+    const renderEdit = (props) => (
+        <Tooltip id="button-tooltip" {...props}>
+          Editar
+        </Tooltip>
+      );
+
+      // function handleEdit(id, type){
+      //     if(selectedId === id){
+      //         setSelectedId('')
+      //     }else if(selectedId === "" ){
+      //         setSelectedId(id)
+      //     }else if(selectedId !== "" && selectedId !==id){
+      //       setSelectedId(id)
+      //     }
+      //   //  aqui capturo el id de la comida y si es precio o no
+      // }
+
+  //   let editPencil = <OverlayTrigger
+  //   placement="top"
+  //   delay={{ show: 25, hide: 25 }}
+  //   overlay={renderEdit}
+  // >
+  //   <img onClick={()=>handleEdit()} src={Pencil} alt='pencil' className="admin-edit-icon"/>
+  //   </OverlayTrigger>
 
 
 
@@ -91,8 +120,8 @@ const Admin = (props) => {
       onSelect={(k) => setKey(k)}
       className="mb-3"
     >
-      <Tab eventKey="menu" title="Menú" className="min-vh-100">
-        <p>este es el menu</p>
+      <Tab eventKey="menu" title="Menú" className="min-vh-100 tabsAdmin ">
+        {/* <p>este es el menu</p> */}
        
   
     <Tab.Container id="left-tabs-example" defaultActiveKey="first" >
@@ -252,10 +281,29 @@ const Admin = (props) => {
         
         
       </Tab>
-      <Tab eventKey="usuarios" title="Usuarios">
-      <p>este es el usuarios</p>
+      <Tab className="tabsAdmin" eventKey="usuarios" title="Usuarios">      
+ 
+             <div className="d-flex flex-wrap">
+             {props.users.map(user => 
+              <Card className="col-12 col-md-6 col-xxl-4 col-xl-4 col-lg-6 col-sm-12 col-xs-12 cardUsersAdmin">
+              <Card.Img variant="top" className="userImageEnAdmin" rounded src={user.image} />
+              <Card.Body>
+                  <Row>
+                      <Col xs={11} sm={11} lg={11} md={11} className="p-0"><Card.Text className="text-light">nombre: {`${user.name} ${user.lastName}`}</Card.Text></Col>
+                  </Row>
+                  <Row>
+                      <Col xs={11} sm={11} lg={11} md={11} className="p-0">{ <Card.Text className="text-light">mail: {user.email}</Card.Text>}</Col>
+                  </Row>
+              </Card.Body>
+              <Card.Footer className="bg-danger">
+                <small className="text-white d-flex justify-content-end">Eliminar</small>
+              </Card.Footer>
+            </Card>  
+               )}
+               </div>
+
       </Tab>
-      <Tab eventKey="reservas" title="Reservas">
+      <Tab className="tabsAdmin" eventKey="reservas" title="Reservas">
       <p>este es el reservas</p>
       </Tab>
     </Tabs>
@@ -270,11 +318,12 @@ const Admin = (props) => {
 const mapStateToProps = (state) => {
     return {
       meals: state.mealsReducer.meals,
-    //   actualziar reducer con informacion nueva del modify, delete y upload
+      users: state.usersReducer.users,
     };
   };
   
   const mapDispatchToProps = {
-    getMeals: mealActions.fetchMeal
+    getMeals: mealActions.fetchMeal,
+    getUsers: userActions.getUsers
   };
   export default connect(mapStateToProps, mapDispatchToProps)(Admin);

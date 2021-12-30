@@ -25,6 +25,7 @@ const {uploadTable, getAllTables, modifyTable, deleteTable, oneTable} = tableCon
 const {getComments, postComment, deleteComment } = commentsControllers
 
 
+/* USERS */
 Router.route("/user/google").post(validator, uploadUser);
 
 Router.route("/user/registrar").post(validator, signUp);
@@ -38,8 +39,11 @@ Router.route("/user/autenticar").get(
 
 Router.route("/user/ingresar").post(signIn);
 
-Router.route("/user/modificar").get(getUsers).put(modifyUser);
+Router.route("/user/modificar").put(modifyUser);
 
+Router.route("/users").get(getUsers);
+
+/* MEALS */
 Router.route("/meals")
   .get(getAllMeals)
   .post(uploadMeal)
