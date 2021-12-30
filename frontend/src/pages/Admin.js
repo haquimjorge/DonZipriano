@@ -53,7 +53,7 @@ const StringInput = ({ label, ...props }) => {
         <label className="text-dark" htmlFor={props.id || props.name}>{label}</label>
         <select {...field} {...props} />
         {meta.touched && meta.error ? (
-          <div className="error">{meta.error}</div>
+          <div className="error text-danger">{meta.error}</div>
         ) : null}
       </div>
     );
@@ -137,7 +137,8 @@ const Admin = (props) => {
             description: "",
             image: "",
             price:0,
-            timeFood:''
+            timeFood:'',
+            typeFood:''
           }}
           validationSchema={Yup.object({
             name: Yup.string()
@@ -152,11 +153,8 @@ const Admin = (props) => {
             typeFood: Yup.string()
 
             .oneOf(
-
               ['Pasteleria', 'Pizza', 'Pescados', 'Alcohol', 'Sin Alcohol','Pastas'],
-
               'Tipo invalido'
-
             )
 
             .required('Requerido'),
@@ -179,6 +177,10 @@ const Admin = (props) => {
           }}
         >
           <Form>
+              <div className="d-flex">
+
+
+              
               <StringInput
                 label="Nombre"
                 name="name"
@@ -186,6 +188,16 @@ const Admin = (props) => {
                 placeholder="kevin"
                 className="w-100"
               />
+              <SelectInput label="Tipo de Comida" name="typeFood">
+<option value="">Selecciona el tipo de comida</option>
+<option value="Pasteleria">Pasteleria</option>
+<option value="Pizza">Pizza</option>
+<option value="Pescados">Pescados</option>
+<option value="Pastas">Pastas</option>
+<option value="Alcohol">Alcohol</option>
+<option value="Sin Alcohol">Sin Alcohol</option>
+</SelectInput>
+</div>
               <StringInput
                 label="Descripcion"
                 name="description"
@@ -211,15 +223,7 @@ const Admin = (props) => {
              <option value="Bebestible">Bebestible</option>
            </SelectInput>
 
-           <SelectInput label="Tipo de Comida" name="typeFood">
-<option value="">Selecciona el tipo de comida</option>
-<option value="Pasteleria">Pasteleria</option>
-<option value="Pizza">Pizza</option>
-<option value="Pescados">Pescados</option>
-<option value="Pastas">Pastas</option>
-<option value="Alcohol">Alcohol</option>
-<option value="Sin Alcohol">Sin Alcohol</option>
-</SelectInput>
+           
 
             <StringInput
               label="precio"
@@ -227,6 +231,8 @@ const Admin = (props) => {
               type="number"
               placeholder="kevin"
             />
+
+            <button type="submit" >Subir</button>
           </Form>
         </Formik>
          
