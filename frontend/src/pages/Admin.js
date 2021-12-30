@@ -10,6 +10,8 @@ import Row from 'react-bootstrap/Row'
 import Nav from 'react-bootstrap/Nav'
 import mealActions from '../redux/action/mealActions'
 import userActions from '../redux/action/userActions'
+import tableActions from '../redux/action/tableActions'
+import commentsActions from '../redux/action/commentsActions'
 import {connect} from 'react-redux'
 import { dividerClasses } from "@mui/material";
 import Pencil from '../assets/pencil.png'
@@ -65,22 +67,17 @@ const StringInput = ({ label, ...props }) => {
  
   };
 const Admin = (props) => {
-    const [key, setKey] = useState('menu');
-    
-
-
-  
-    const {getMeals, getUsers } = props
+    const [key, setKey] = useState('menu'); 
+    const {getMeals, getUsers, getTables, getComments } = props
     useEffect(()=>{
         getMeals()
         getUsers()
-    },[getMeals, getUsers])
+        getTables()
+        getComments()
+    },[getMeals, getUsers, getTables, getComments])
 
  
 
-
-
-    
 
 
     let entryPlates =props.meals.filter(meal=> meal.timeFood === "Entrada")
@@ -112,19 +109,19 @@ const Admin = (props) => {
     <Col sm={3}>
       <Nav variant="pills" className="flex-column">
         <Nav.Item>
-          <Nav.Link eventKey="entryPlates">Entradas</Nav.Link>
+          <Nav.Link className="admin-menu-items" eventKey="entryPlates">Entradas</Nav.Link>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link eventKey="mainPlates">Platos Principales</Nav.Link>
+          <Nav.Link className="admin-menu-items" eventKey="mainPlates">Platos Principales</Nav.Link>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link eventKey="deserts">Postres</Nav.Link>
+          <Nav.Link className="admin-menu-items" eventKey="deserts">Postres</Nav.Link>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link eventKey="drinks">Bebestibles</Nav.Link>
+          <Nav.Link className="admin-menu-items" eventKey="drinks">Bebestibles</Nav.Link>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link eventKey="upload">Subir Comida</Nav.Link>
+          <Nav.Link className="admin-menu-items" eventKey="upload">Subir Comida</Nav.Link>
         </Nav.Item>
       </Nav>
     </Col>
@@ -290,7 +287,48 @@ const Admin = (props) => {
 
       </Tab>
       <Tab className="tabsAdmin" eventKey="reservas" title="Reservas">
-      <p>este es el reservas</p>
+      
+      <div className="d-flex flex-wrap">
+             {props.tables.map(table => 
+              <Card className="col-12 col-md-6 col-xxl-4 col-xl-4 col-lg-6 col-sm-12 col-xs-12 cardTablesAdmin">
+                        <Card.Body>
+                  <Row>
+                      <Col xs={11} sm={11} lg={11} md={11} className="p-0"><Card.Text className="text-dark">mail: {`${table.email}`}</Card.Text></Col>
+                  </Row>
+                  <Row>
+                      <Col xs={11} sm={11} lg={11} md={11} className="p-0">{ <Card.Text className="text-dark"> comensales: {table.amountPeople}</Card.Text>}</Col>
+                  </Row>
+                  <Row>
+                      <Col xs={11} sm={11} lg={11} md={11} className="p-0">{ <Card.Text className="text-dark"> Disponibilidad: {table.availability}</Card.Text>}</Col>
+                  </Row>
+              </Card.Body>
+              <Card.Footer className="bg-danger">
+              </Card.Footer>
+            </Card>  
+               )}
+               </div>
+      </Tab>
+      <Tab className="tabsAdmin" eventKey="comentarios" title="Comentarios">
+      
+      <div className="d-flex flex-wrap">
+             {props.comments.map(comment => 
+              <Card className="col-12 col-md-6 col-xxl-4 col-xl-4 col-lg-6 col-sm-12 col-xs-12 cardTablesAdmin">
+                        <Card.Body>
+                  <Row>
+                      <Col xs={11} sm={11} lg={11} md={11} className="p-0"><Card.Text className="text-dark">mail: {`${comment.user[0].email}`}</Card.Text></Col>
+                  </Row>
+                  <Row>
+                      <Col xs={11} sm={11} lg={11} md={11} className="p-0"><Card.Text className="text-dark">nombre y apellido: {`${comment.user[0].name} ${comment.user[0].lastName}`}</Card.Text></Col>
+                  </Row>
+                  <Row>
+                      <Col xs={11} sm={11} lg={11} md={11} className="p-0">{ <Card.Text className="text-dark"> comentario:{comment.comment}</Card.Text>}</Col>
+                  </Row>
+              </Card.Body>
+              <Card.Footer className="bg-danger">
+              </Card.Footer>
+            </Card>  
+               )}
+               </div>
       </Tab>
     </Tabs>
 
@@ -305,14 +343,18 @@ const mapStateToProps = (state) => {
     return {
       meals: state.mealsReducer.meals,
       users: state.usersReducer.users,
-      success: state.mealsReducer.success
-    };
+      success: state.mealsReducer.success,
+      comments: state.commentsReducer.comments,
+      tables: state.tableReducer.tables };
   };
   
   const mapDispatchToProps = {
     getMeals: mealActions.fetchMeal,
     getUsers: userActions.getUsers,
     uploadMeal : mealActions.uploadMeal,
-    cleanSuccess: mealActions.cleanSuccess
+    cleanSuccess: mealActions.cleanSuccess,
+    getTables: tableActions.fetchTable,
+    getComments: commentsActions.getComments
+
   };
   export default connect(mapStateToProps, mapDispatchToProps)(Admin);

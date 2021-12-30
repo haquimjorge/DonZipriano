@@ -2,7 +2,7 @@ import React from "react";
 
 const Separator = () => {
   return (
-    <div>
+    <div className="separator-control separator-dos">
       <svg
         style={{ transform: "rotate(0deg)", transition: "0.3s" }}
         viewBox="0 0 1440 100"

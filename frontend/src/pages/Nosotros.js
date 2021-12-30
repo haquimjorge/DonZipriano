@@ -36,6 +36,7 @@ const Nosotros = () => {
           </div>
           <div className="divImagenSobreNosotros">
             <img
+            className="imagen-historia"
               src="/assets/donZiprianoSobreNosotrosEdit.png"
               alt="Imagen de don zipriano"
             />

@@ -179,7 +179,7 @@ const FormEventos = () => {
             </div>
           </div>
         </Form.Group>
-        <Button variant="primary text-light" type="submit">
+        <Button variant="danger text-light" type="submit">
           Enviar
         </Button>
       </Form>

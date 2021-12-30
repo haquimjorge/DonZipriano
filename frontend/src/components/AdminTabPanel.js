@@ -125,7 +125,7 @@ const renderEdit = (props) => (
           {props.meals.map(plate=>
            <>
            <Card className="col-12 col-md-6 col-xxl-4 col-xl-4 col-lg-6 col-sm-12 col-xs-12">
-           <Card.Img variant="top" src={plate.image} />
+           <Card.Img className="card-admin-items" variant="top" src={plate.image} />
            <Card.Body className="admin-card-body d-flex flex-column align-items-around justify-content-between">
                <Row>
                    <Col xs={1} sm={1} lg={1} md={1}  className="p-0">{editPencil(plate,'name')}</Col>
