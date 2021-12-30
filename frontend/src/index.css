@@ -33,6 +33,9 @@ nav {
   display: flex;
   background-color: #ffffff;
 }
+.navbar{
+    padding-top: 2.5rem !important;
+}
 
 .nav-link-container .nav-link {
   color: #ba0909 !important;
@@ -1301,8 +1304,13 @@ span.carousel-control-prev-icon {
 }
 
 .mesa-disponible {
+    
   width: 5vw;
   cursor: pointer;
+}
+
+.mesa-disponible:hover{
+    filter: invert(5%) sepia(1%) saturate(44%) hue-rotate(313deg) brightness(87%) contrast(87%);
 }
 
 .contenedor-img-mesa {
@@ -1431,10 +1439,18 @@ span.carousel-control-prev-icon {
 
 .admin-edit-icon {
   transition: 0.5s;
-  /* filter: invert(26%) sepia(55%) saturate(1670%) hue-rotate(329deg) brightness(0%) contrast(105%); */
   width: 1rem;
   cursor: pointer;
 }
+.flex-column .nav-item{
+    cursor: pointer;
+}
+.flex-column .nav-item:hover{
+    background-color: #e005052a;
+    border-radius: 5px;
+}
+
+
 
 .admin-edit-icon:hover {
   transition: 0.2s;

@@ -137,11 +137,11 @@ const Admin = (props) => {
 
     <Tab.Pane eventKey='upload'> 
     <div className="d-flex justify-content-center flex-column align-items-center">
-    <p className="text-white text-center display-6 bg-danger p-1 rounded shadow text-shadow">Subir Comida</p>
+    <p className="w-100 text-white text-center display-6 bg-dark p-1 rounded shadow text-shadow">Subir Comida</p>
 
     
     {!props.success?  <Card className="col-12 col-md-10 col-xxl-6 col-xl-6 col-lg-8 col-sm-12 col-xs-12 p-2 admin-card-upload">
-           <Card.Img variant="top" src={DefaultFood} />
+           <Card.Img variant="top" src="/assets/DonZLogo.png" />
            <Card.Body className="admin-card-body d-flex flex-column align-items-around justify-content-between">
            <Formik
           initialValues={{
@@ -268,8 +268,8 @@ const Admin = (props) => {
  
              <div className="d-flex flex-wrap">
              {props.users.map(user => 
-              <Card className="col-12 col-md-6 col-xxl-4 col-xl-4 col-lg-6 col-sm-12 col-xs-12 cardUsersAdmin">
-              <Card.Img variant="top" className="userImageEnAdmin" rounded src={user.image} />
+              <Card key={user._id} className="col-12 col-md-6 col-xxl-4 col-xl-4 col-lg-6 col-sm-12 col-xs-12 cardUsersAdmin">
+              <Card.Img variant="top" className="userImageEnAdmin"  src={user.image} />
               <Card.Body>
                   <Row>
                       <Col xs={11} sm={11} lg={11} md={11} className="p-0"><Card.Text className="text-light">nombre: {`${user.name} ${user.lastName}`}</Card.Text></Col>
@@ -278,9 +278,7 @@ const Admin = (props) => {
                       <Col xs={11} sm={11} lg={11} md={11} className="p-0">{ <Card.Text className="text-light">mail: {user.email}</Card.Text>}</Col>
                   </Row>
               </Card.Body>
-              <Card.Footer className="bg-danger">
-                <small className="text-white d-flex justify-content-end">Eliminar</small>
-              </Card.Footer>
+              
             </Card>  
                )}
                </div>
@@ -290,7 +288,7 @@ const Admin = (props) => {
       
       <div className="d-flex flex-wrap">
              {props.tables.map(table => 
-              <Card className="col-12 col-md-6 col-xxl-4 col-xl-4 col-lg-6 col-sm-12 col-xs-12 cardTablesAdmin">
+              <Card key={table._id} className="col-12 col-md-6 col-xxl-4 col-xl-4 col-lg-6 col-sm-12 col-xs-12 cardTablesAdmin">
                         <Card.Body>
                   <Row>
                       <Col xs={11} sm={11} lg={11} md={11} className="p-0"><Card.Text className="text-dark">mail: {`${table.email}`}</Card.Text></Col>
@@ -312,7 +310,7 @@ const Admin = (props) => {
       
       <div className="d-flex flex-wrap">
              {props.comments.map(comment => 
-              <Card className="col-12 col-md-6 col-xxl-4 col-xl-4 col-lg-6 col-sm-12 col-xs-12 cardTablesAdmin">
+              <Card key={comment._id} className="col-12 col-md-6 col-xxl-4 col-xl-4 col-lg-6 col-sm-12 col-xs-12 cardTablesAdmin">
                         <Card.Body>
                   <Row>
                       <Col xs={11} sm={11} lg={11} md={11} className="p-0"><Card.Text className="text-dark">mail: {`${comment.user[0].email}`}</Card.Text></Col>

@@ -18,7 +18,7 @@ const DondeEncontrarnos = ({ meal }) => {
                     width="800"
                     height="750"
                     style={{border:"0"}}
-                    allowfullscreen=""
+                    allowFullScreen=""
                     loading="lazy"
                 ></iframe>
                 <p className="m-2">Av. Alicia Moreau de Justo 1930, C1107AFN CABA</p>

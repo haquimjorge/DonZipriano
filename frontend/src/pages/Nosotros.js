@@ -12,9 +12,6 @@ const Nosotros = () => {
     <>
       <Navbar />
       <div className="nuestraHistoria">
-        {/* <div className="tituloSobreNosotros"> */}
-        {/* <h1>Nuestra Historia</h1> */}
-        {/* </div> */}
         <div className="internoNuestro">
           <div className="sobreNosotrosTexto">
             <h1 className="tituloSobreNosotros">Nuestra Historia</h1>
@@ -53,25 +50,25 @@ const Nosotros = () => {
             <img src="/assets/brangi.jpg" alt="Imagen del Chef" />
           </div>
           <div className="sobreNosotrosTexto">
-            <div class="d-flex align-items-center justify-content-around ">
-              <p class="col-8">
+            <div className="d-flex align-items-center justify-content-around ">
+              <p className="col-8">
                 Nacido en Napoli, chef executivo, pizzaiolo napoletano. Brangi
                 Hubine llegó a Uruguay por la temporada 2016/2017 con Eatalian
                 Style, un emprendimiento gastronómico en La Barra, Punta del
                 este con recetas del sud Italia modernizadas, respetando siempre
                 los ingredientes y los sabores tradicionales.{" "}
               </p>
-              <img class="gorrochef" src={gorrochef} alt="gorrochef" />
+              <img className="gorrochef" src={gorrochef} alt="gorrochef" />
             </div>
 
-            <div class="d-flex align-items-center justify-content-around p-2">
-              <img class="pizzanosotros" src={pizzanosotros} alt="pizzanosotros" />
-              <p class="col-8">
+            <div className="d-flex align-items-center justify-content-around p-2">
+              <img className="pizzanosotros" src={pizzanosotros} alt="pizzanosotros" />
+              <p className="col-8">
               En el mercado Argentino trabajó como chef ex en FILO restaurante y
               asesorando al grupo A PUNTO sobre la pizza napoletana.
               </p>
             </div>
-            <div class="d-flex flex-column align-items-center justify-content-evenly">
+            <div className="d-flex flex-column align-items-center justify-content-evenly">
               <p >
               Hoy frente al mando de DonZipriano, difundiendo la verdadera
               cultura de la gastronomía tradicional italiana especialmente del
@@ -82,7 +79,7 @@ const Nosotros = () => {
               actuales de Italia con atención especial en un trabajo sustentable
               y máximo respeto de las materias primas.
               </p>
-              <img class="banderaitaliana" src={banderaitaliana} alt="banderaitaliana" />
+              <img className="banderaitaliana" src={banderaitaliana} alt="banderaitaliana" />
             </div>
           
           </div>

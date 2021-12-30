@@ -37,23 +37,22 @@ const AdminTabPanel = (props) =>{
 function handleEdit(id, input, type){
     switch(type){
       case "name":
-          console.log("paso por el name")
           setEditType(type)
           setEditInput(input)
           if(selectedId === id && editType === type){
               setSelectedId('')
-              console.log(1)
+
           }else if(selectedId === "" ){
               setSelectedId(id)
-              console.log(2)
+
           }else if(selectedId !== "" && selectedId !==id){
             setSelectedId(id)
 
-            console.log(3)
+
           }
           break
       case 'description':
-          console.log("paso por el description")
+
           setEditType(type)
           setEditInput(input)
           if(selectedId === id && editType === type){
@@ -68,7 +67,6 @@ function handleEdit(id, input, type){
           break
       
       case 'price':
-          console.log("paso por el price")
           setEditType(type)
           setEditInput(input)
           if(selectedId === id && editType === type){
@@ -104,8 +102,6 @@ const renderEdit = (props) => (
           [body]: editedMessage,
         };
         props.modifyMeal(data);
-        console.log('COMPONENT: SE CAPTURA')
-        console.log(data)
         setSelectedId("");
       } else if (message === editedMessage) {
         setSelectedId("");
@@ -123,8 +119,8 @@ const renderEdit = (props) => (
           <h2 className="p-2 text-center bg-dark rounded shadow">{props.title}</h2>
           <div className="d-flex flex-wrap">
           {props.meals.map(plate=>
-           <>
-           <Card className="col-12 col-md-6 col-xxl-4 col-xl-4 col-lg-6 col-sm-12 col-xs-12">
+         
+           <Card key={plate._id} className="col-12 col-md-6 col-xxl-4 col-xl-4 col-lg-6 col-sm-12 col-xs-12">
            <Card.Img className="card-admin-items" variant="top" src={plate.image} />
            <Card.Body className="admin-card-body d-flex flex-column align-items-around justify-content-between">
                <Row>
@@ -163,7 +159,7 @@ const renderEdit = (props) => (
            </Card.Footer>
            
          </Card> 
-         </>
+        
          
          )}
          <CenterModal show={modalShow} onHide={() => setModalShow(false)} />

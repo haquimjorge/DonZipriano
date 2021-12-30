@@ -48,7 +48,7 @@ const CardMenu = ({ meal }) => {
                 .filter((meal) => meal.price <= value)
                 .map((entrada) => {
                   return (
-                    <div className="card-food-container animate__animated animate__shakeX">
+                    <div key={entrada._id} className="card-food-container animate__animated animate__shakeX">
                       <h5>{entrada.name}</h5>
                       <div className="food-content-container ">
                         <div className="card-food-content">
@@ -81,7 +81,7 @@ const CardMenu = ({ meal }) => {
                 .filter((meal) => meal.price <= value)
                 .map((plato) => {
                   return (
-                    <div className="card-food-container">
+                    <div key={plato._id} className="card-food-container">
                       <h5>{plato.name}</h5>
                       <div className="food-content-container">
                         <div className="card-food-content">
@@ -114,7 +114,7 @@ const CardMenu = ({ meal }) => {
                 .filter((meal) => meal.price <= value)
                 .map((postre) => {
                   return (
-                    <div className="card-food-container">
+                    <div key={postre._id} className="card-food-container">
                       <h5>{postre.name}</h5>
                       <div className="food-content-container">
                         <div className="card-food-content">
@@ -147,7 +147,7 @@ const CardMenu = ({ meal }) => {
                 .filter((meal) => meal.price <= value)
                 .map((bebida) => {
                   return (
-                    <div className="card-food-container">
+                    <div key={bebida._id} className="card-food-container">
                       <h5>{bebida.name}</h5>
                       <div className="food-content-container">
                         <div className="card-food-content">

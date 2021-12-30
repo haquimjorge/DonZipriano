@@ -26,7 +26,7 @@ const commentsControllers = {
   deleteComment:async (req, res) => {
     let comment;
     const _id = req.params.commentId;
-    // console.log(req.params.commentId)
+
     try {
       comment = await Comment.findOneAndDelete({
         _id:_id,

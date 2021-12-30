@@ -7,7 +7,7 @@ const Eventos = () => {
   return (
     <>
       <NavBar />
-      <div class='wave-top'></div>
+      <div className='wave-top'></div>
       <h1 className="tituloEventos">Consultas por eventos</h1>
       <div className="contenedorEventos">
         <div className="contenedorDescripcionEventos">

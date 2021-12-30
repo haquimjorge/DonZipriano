@@ -13,7 +13,7 @@ const Mesas = ({ table, user }) => {
         <div className="suelo-mesas">
           {table.map((table) => {
             return (
-              <div className="contenedor-mesa">
+              <div key={table._id} className="contenedor-mesa">
 
                 {(table.availability||(user && (user.email==table.email) ) )?
                   <NavLink className="tables-link" to={`/tables/${table._id}`}>

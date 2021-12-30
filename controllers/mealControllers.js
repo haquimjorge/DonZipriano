@@ -65,7 +65,7 @@ const mealControllers = {
               { new: true }
             )
             .then((newLike) =>
-            {console.log(newLike)
+            {
               return res.json({ success: true, response: newLike.iLikeIt })
             }
                  
@@ -79,7 +79,7 @@ const mealControllers = {
               { new: true }
             )
             .then((newLike) =>
-              {console.log(newLike)
+              {
                 return res.json({ success: true, response: newLike.iLikeIt })}
             )
             .catch((error) => console.log(error));
