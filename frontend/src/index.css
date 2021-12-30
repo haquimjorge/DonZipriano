@@ -1097,7 +1097,7 @@ span.carousel-control-prev-icon {
 .cardComentarios {
   color: white !important;
   display: flex !important;
-  background-color: #ba090900 !important;
+  background-color: #000000c7 !important;
   justify-content: center !important;
   align-items: center !important;
   flex-direction: row !important;
@@ -1366,5 +1366,5 @@ font-family: 'DM Sans', sans-serif;
 }
 
 .admin-card-body{
-    height: 14rem;
+    min-height: 14rem;
 }

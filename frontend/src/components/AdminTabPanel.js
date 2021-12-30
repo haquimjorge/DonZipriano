@@ -11,6 +11,9 @@ import CardGroup from 'react-bootstrap/CardGroup'
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
 import Nav from 'react-bootstrap/Nav'
+import mealActions from '../redux/action/mealActions'
+import {connect} from 'react-redux'
+
 
 const AdminTabPanel = (props) =>{
     const [selectedId, setSelectedId] = useState('')
@@ -23,9 +26,7 @@ const AdminTabPanel = (props) =>{
     overlay={renderEdit}
   >
     <img onClick={()=>handleEdit(plate._id,plate[type], type)} src={Pencil} alt='pencil' className="admin-edit-icon"/>
-    </OverlayTrigger>
-
-
+</OverlayTrigger>
 
 function handleEdit(id, input, type){
     switch(type){
@@ -88,7 +89,23 @@ const renderEdit = (props) => (
     </Tooltip>
   );
 
-  console.log(props.timeFood)
+  function handleEditMessage(editedMessage, message, event, mealId,body) {
+    if (event.charCode === 13) {
+      if (message !== editedMessage) {
+        let data = {
+          id: mealId,
+          [body]: editedMessage,
+        };
+        props.modifyMeal(data);
+        console.log('COMPONENT: SE CAPTURA')
+        console.log(data)
+        setSelectedId("");
+      } else if (message === editedMessage) {
+        setSelectedId("");
+      }
+    }
+  }
+
     return(
         <Tab.Pane eventKey={props.timeFood}>
           <p>entradas</p>
@@ -105,15 +122,27 @@ const renderEdit = (props) => (
                               overlay={
                                 <Tooltip id="key">Presiona enter para editar</Tooltip>
                               }
-                            ><input value={editInput} onChange={(e) => setEditInput(e.target.value)} /></OverlayTrigger> : <Card.Text className="text-dark">{plate.name}</Card.Text>}</Col>
+                            ><input onKeyPress={(e)=> handleEditMessage(e.target.value,plate.name,e,plate._id,'name')} value={editInput} onChange={(e) => setEditInput(e.target.value)} /></OverlayTrigger> : <Card.Text className="text-dark">{plate.name}</Card.Text>}</Col>
                </Row>
                <Row>
                    <Col xs={1} sm={1} lg={1} md={1}  className="p-0">{editPencil(plate,'description')}</Col>
-                   <Col xs={11} sm={11} lg={11} md={11} className="p-0">{selectedId === plate._id && editType=== 'description'?  <textarea className="admin-textarea" rows="3" value={editInput} onChange={(e) => setEditInput(e.target.value)}></textarea> : <Card.Text className="text-dark">{plate.description}</Card.Text>}</Col>
+                   <Col xs={11} sm={11} lg={11} md={11} className="p-0">{selectedId === plate._id && editType=== 'description'?  <OverlayTrigger
+                              key="1"
+                              placement="top"
+                              overlay={
+                                <Tooltip id="key">Presiona enter para editar</Tooltip>
+                              }
+                            ><textarea onKeyPress={(e)=> handleEditMessage(e.target.value,plate.description,e,plate._id,'description')} className="admin-textarea" rows="3" value={editInput} onChange={(e) => setEditInput(e.target.value)}></textarea></OverlayTrigger> : <Card.Text className="text-dark">{plate.description}</Card.Text>}</Col>
                </Row>
                <Row>
                    <Col xs={1} sm={1} lg={1} md={1}  className="p-0">{editPencil(plate,'price')}</Col>
-                   <Col xs={11} sm={11} lg={11} md={11} className="p-0">{selectedId === plate._id && editType=== 'price'?  <input value={editInput} onChange={(e) => setEditInput(e.target.value)}></input> : <Card.Text className="text-dark">${plate.price}</Card.Text>}</Col>
+                   <Col xs={11} sm={11} lg={11} md={11} className="p-0">{selectedId === plate._id && editType=== 'price'?  <OverlayTrigger
+                              key="1"
+                              placement="top"
+                              overlay={
+                                <Tooltip id="key">Presiona enter para editar</Tooltip>
+                              }
+                            ><input onKeyPress={(e)=> handleEditMessage(e.target.value,plate.price,e,plate._id,'price')} value={editInput} onChange={(e) => setEditInput(e.target.value)}></input></OverlayTrigger> : <Card.Text className="text-dark">${plate.price}</Card.Text>}</Col>
                </Row> 
            </Card.Body>
            <Card.Footer className="bg-danger">
@@ -126,4 +155,14 @@ const renderEdit = (props) => (
     )
 }
 
-export default AdminTabPanel
+const mapStateToProps = (state) => {
+    return {
+      
+    };
+  };
+  
+  const mapDispatchToProps = {
+    // sacar actions para modificar, eliminar y subir comida
+    modifyMeal : mealActions.modifyMeal
+  };
+  export default connect(mapStateToProps, mapDispatchToProps)(AdminTabPanel);
