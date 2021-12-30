@@ -9,7 +9,7 @@ Por otra parte, la aplicación web cuenta con un bot a modo de guía para facili
 
 # Demo 🖥
 
-Pueden ver la demo de la página visitando:  <a href="https://don-zipriano.herokuapp.com/" target="blank">Don Zipriano</a> 
+Pueden ver la demo de la página visitando:  <a href="https://don-zipriano.herokuapp.com/" target="_blank">Don Zipriano</a> 
  
 ##
 
