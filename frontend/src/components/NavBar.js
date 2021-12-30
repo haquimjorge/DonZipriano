@@ -69,7 +69,7 @@ const NavBar = (props) => {
                   Admin Panel
                 </Dropdown.Item>
                 <Dropdown.Item as={Link} to="/account">
-                  Account
+                  Cuenta
                 </Dropdown.Item>
                 <Dropdown.Item onClick={() => props.logOut()}>
                   Log Out
@@ -78,7 +78,7 @@ const NavBar = (props) => {
              
             ) : ( <>
                 <Dropdown.Item as={Link} to="/account">
-                  Account
+                  Cuenta
                 </Dropdown.Item>
                 <Dropdown.Item onClick={() => props.logOut()}>
                   Log Out

@@ -19,13 +19,13 @@ const Home = () => {
                 <Hero/>
                 <Separator/>
                 <MainPasta/>
-                <Separator/>
+                {/* <Separator/> */}
                 <MainChef/>
-                <Separator/>
+                {/* <Separator/> */}
                 <MainPizza/>
-                <Separator/>
+                {/* <Separator/> */}
                 <MainReservas/>
-                <Separator/>
+                {/* <Separator/> */}
                 <ComentariosClientes/>
                 <Footer/>
                 
