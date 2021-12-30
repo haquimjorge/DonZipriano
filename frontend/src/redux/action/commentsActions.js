@@ -5,7 +5,7 @@ const commentsActions = {
     const token = localStorage.getItem('token')
     return async (dispatch, getState) => {
       let response = await axios.post(
-        `http://localhost:4000/api/comments/`,{user,comment},{
+        `https://don-zipriano.herokuapp.com/api/comments/`,{user,comment},{
             headers:{
             'Authorization':'Bearer '+ token
           }});
@@ -29,7 +29,7 @@ const commentsActions = {
     
     return async (dispatch, getState) => {
       let response = await axios.get(
-        `http://localhost:4000/api/comments/`);
+        `https://don-zipriano.herokuapp.com/api/comments/`);
     dispatch({ type: "GET_COMMENTS", payload:response.data.comments});
   };
 },
@@ -37,7 +37,7 @@ const commentsActions = {
 deleteComment:(token, commentId) => {      
   return async (dispatch, getState) => {
     try{
-      let response = await axios.delete(`http://localhost:4000/api/comments/${commentId}`
+      let response = await axios.delete(`https://don-zipriano.herokuapp.com/api/comments/${commentId}`
       , {
         headers : {
           Authorization: 'Bearer '+ token

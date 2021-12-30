@@ -5,7 +5,7 @@ const userActions = {
     return async (dispatch) => {
       console.log("ACTION: ME LLEGA ESTO DEL COMPONENTE");
       let response = await axios.post(
-        "http://localhost:4000/api/user/google",
+        "https://don-zipriano.herokuapp.com/api/user/google",
         user
       );
       if (response.data.response) {
@@ -23,7 +23,7 @@ const userActions = {
       try {
         const token = localStorage.getItem("token");
         const user = await axios.get(
-          "http://localhost:4000/api/user/autenticar",
+          "https://don-zipriano.herokuapp.com/api/user/autenticar",
           {
             headers: { Authorization: "Bearer " + token },
           }
@@ -46,7 +46,7 @@ const userActions = {
   signIn: (user) => {
     return async (dispatch) => {
       let response = await axios.post(
-        "http://localhost:4000/api/user/ingresar",
+        "https://don-zipriano.herokuapp.com/api/user/ingresar",
         user
       );
       if (response.data.response) {
@@ -61,7 +61,7 @@ const userActions = {
   modify: (userMod) => {
     return async (dispatch) => {
       console.log("HOLA")
-      let response = await axios.put('http://localhost:4000/api/user/modificar', userMod)
+      let response = await axios.put('https://don-zipriano.herokuapp.com/api/user/modificar', userMod)
       if (response.data.success) dispatch({
         type: "SIGN_IN",
         payload: { user: response.data.response, error: response.data.error }
@@ -72,7 +72,7 @@ const userActions = {
   signUp: (user) => {
     return async (dispatch) => {
       let response = await axios.post(
-        "http://localhost:4000/api/user/registrar",
+        "https://don-zipriano.herokuapp.com/api/user/registrar",
         user
       );
       if (response.data.response) {
@@ -86,7 +86,7 @@ const userActions = {
   },
   verifyEmail : (uniqueString)=>{
       return async (dispatch)=>{
-          let response = await axios.get("http://localhost:4000/api/verify/"+uniqueString)
+          let response = await axios.get("https://don-zipriano.herokuapp.com/api/verify/"+uniqueString)
           if (response.data.response) {
             localStorage.setItem("token", response.data.token);
           }
@@ -100,7 +100,7 @@ const userActions = {
 
   getUsers : ()=>{
     return async (dispatch)=>{
-      let response = await axios.get("http://localhost:4000/api/users/")
+      let response = await axios.get("https://don-zipriano.herokuapp.com/api/users/")
      
       dispatch({
         type: "GET_USERS",

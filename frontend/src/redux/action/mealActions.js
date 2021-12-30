@@ -4,14 +4,14 @@ const mealActions = {
   fetchMeal: () => {
     return (dispatch) => {
       axios
-        .get("http://localhost:4000/api/meals")
+        .get("https://don-zipriano.herokuapp.com/api/meals")
         .then((res) => dispatch({ type: "fetchMealt", payload: res.data.response }));
     };
   },
   likeMeal: (id, token) =>{
     return async () => {
             try{
-                let response = await axios.put(`http://localhost:4000/api/meals/like/${id}`, {},{
+                let response = await axios.put(`https://don-zipriano.herokuapp.com/api/meals/like/${id}`, {},{
                 headers:{
                     Authorization: 'Bearer '+ token
                 }
@@ -26,19 +26,19 @@ const mealActions = {
 },
 modifyMeal: (data) => {
     return async (dispatch) => {
-        let response = await axios.put("http://localhost:4000/api/meals",data);
+        let response = await axios.put("https://don-zipriano.herokuapp.com/api/meals",data);
         dispatch({ type: "MODIFY_MEAL", payload: response.data.response });
     };
   },
   deleteMeal : (id)=>{
     return async (dispatch) => {
-        let response = await axios.delete("http://localhost:4000/api/meals/"+id);
+        let response = await axios.delete("https://don-zipriano.herokuapp.com/api/meals/"+id);
         dispatch({ type: "DELETE_MEAL", payload: response.data.response });
     };
   },
   uploadMeal : (meal)=>{
       return async (dispatch)=>{
-          let response = await axios.post("http://localhost:4000/api/meals", meal)
+          let response = await axios.post("https://don-zipriano.herokuapp.com/api/meals", meal)
           dispatch({type:"UPLOAD_MEAL", payload:{meal:response.data.response, success:response.data.success}})
       }
   },

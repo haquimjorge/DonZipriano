@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/static/css/main.aec8273b.css",
+    "main.js": "/static/js/main.bd6ecde0.js",
+    "static/media/fondosuelo.jpg": "/static/media/fondosuelo.082472dbcccc75b148ee.jpg",
+    "static/media/brindis.jpg": "/static/media/brindis.20dd03bfb6c74d5beebf.jpg",
+    "static/media/fondomenu.png": "/static/media/fondomenu.d1ada5c58b31b751490c.png",
+    "static/media/cheflour.jpg": "/static/media/cheflour.77005542b1d8fe1e8d4b.jpg",
+    "static/media/restaurant.jpg": "/static/media/restaurant.fb2e15106e1f93f19cc3.jpg",
+    "static/media/bodyBackgroud.jfif": "/static/media/bodyBackgroud.4e01cee573f2d2f15810.jfif",
+    "static/media/banderaitaliana.png": "/static/media/banderaitaliana.c5cc1d61ae70e0fe80e6.png",
+    "static/media/pizzanosotros.png": "/static/media/pizzanosotros.fc29028b3a344422b998.png",
+    "static/media/gorrochef.png": "/static/media/gorrochef.15a60e1dae4a493b8d2e.png",
+    "static/media/breakfast.png": "/static/media/breakfast.635cbde26c97ead99f14.png",
+    "static/media/user.png": "/static/media/user.68cb0bff29e4bb329a2d.png",
+    "index.html": "/index.html",
+    "main.aec8273b.css.map": "/static/css/main.aec8273b.css.map",
+    "main.bd6ecde0.js.map": "/static/js/main.bd6ecde0.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.aec8273b.css",
+    "static/js/main.bd6ecde0.js"
+  ]
+}

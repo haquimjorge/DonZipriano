@@ -142,7 +142,7 @@ const SignIn = (props) => {
             <p className="text-white text-shadow google-text">o ingresa con Google</p>
                   <GoogleLogin
                   className="googleLogin"
-                    clientId="190201580680-u46pho0n2vjalcan540tm22oan4vhc0v.apps.googleusercontent.com"
+                    clientId="190201580680-uaqnf8k8og580g0bvco36o3lvgn4gm2d.apps.googleusercontent.com"
                     buttonText="Ingresa con Google"
                     onSuccess={responseGoogle}
                     onFailure={responseGoogle}
