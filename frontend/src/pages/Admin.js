@@ -331,13 +331,13 @@ const Admin = (props) => {
               <Card className="col-12 col-md-6 col-xxl-4 col-xl-4 col-lg-6 col-sm-12 col-xs-12 cardTablesAdmin">
                         <Card.Body>
                   <Row>
-                      <Col xs={11} sm={11} lg={11} md={11} className="p-0"><Card.Text className="text-dark">mail: {`${comment.user.email}`}</Card.Text></Col>
+                      <Col xs={11} sm={11} lg={11} md={11} className="p-0"><Card.Text className="text-dark">mail: {`${comment.user[0].email}`}</Card.Text></Col>
                   </Row>
                   <Row>
-                      <Col xs={11} sm={11} lg={11} md={11} className="p-0"><Card.Text className="text-dark">mail: {`${comment.user.nombre} ${comment.user.apellido}`}</Card.Text></Col>
+                      <Col xs={11} sm={11} lg={11} md={11} className="p-0"><Card.Text className="text-dark">nombre y apellido: {`${comment.user[0].name} ${comment.user[0].lastName}`}</Card.Text></Col>
                   </Row>
                   <Row>
-                      <Col xs={11} sm={11} lg={11} md={11} className="p-0">{ <Card.Text className="text-dark"> comentario:{comment.comentario}</Card.Text>}</Col>
+                      <Col xs={11} sm={11} lg={11} md={11} className="p-0">{ <Card.Text className="text-dark"> comentario:{comment.comment}</Card.Text>}</Col>
                   </Row>
               </Card.Body>
               <Card.Footer className="bg-danger">
