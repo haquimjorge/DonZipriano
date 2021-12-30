@@ -96,7 +96,20 @@ const userActions = {
           });
 
       }
+  },
+
+  getUsers : ()=>{
+    return async (dispatch)=>{
+      let response = await axios.get("http://localhost:4000/api/users/")
+     
+      dispatch({
+        type: "GET_USERS",
+        payload: { user: response.data.response, error: response.data.error, message:response.data.message, success: response.data.success },
+      });
+
   }
+  }
+
 }
  
 
