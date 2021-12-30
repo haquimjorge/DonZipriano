@@ -122,19 +122,19 @@ const Admin = (props) => {
     <Col sm={3}>
       <Nav variant="pills" className="flex-column">
         <Nav.Item>
-          <Nav.Link eventKey="entryPlates">Entradas</Nav.Link>
+          <Nav.Link className="admin-menu-items" eventKey="entryPlates">Entradas</Nav.Link>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link eventKey="mainPlates">Platos Principales</Nav.Link>
+          <Nav.Link className="admin-menu-items" eventKey="mainPlates">Platos Principales</Nav.Link>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link eventKey="deserts">Postres</Nav.Link>
+          <Nav.Link className="admin-menu-items" eventKey="deserts">Postres</Nav.Link>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link eventKey="drinks">Bebestibles</Nav.Link>
+          <Nav.Link className="admin-menu-items" eventKey="drinks">Bebestibles</Nav.Link>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link eventKey="upload">Subir Comida</Nav.Link>
+          <Nav.Link className="admin-menu-items" eventKey="upload">Subir Comida</Nav.Link>
         </Nav.Item>
       </Nav>
     </Col>
